@@ -1,4 +1,5 @@
 QT       += core gui
+QT += sql widgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -20,6 +21,7 @@ SOURCES += \
     cashaccount.cpp \
     client.cpp \
     controller.cpp \
+    databasecarservicedao.cpp \
     dbworker.cpp \
     document.cpp \
     main.cpp \
@@ -36,6 +38,7 @@ HEADERS += \
     cashaccount.h \
     client.h \
     controller.h \
+    databasecarservicedao.h \
     dbworker.h \
     document.h \
     mainwindow.h \

@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "databasecarservicedao.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -25,5 +26,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+private:
+    DataBaseCarServiceDAO dao;
 };
 #endif // MAINWINDOW_H

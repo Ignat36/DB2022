@@ -1,0 +1,5 @@
+INSERT INTO workingequipment (`idWorkingEquipment`, `Name`, `AssignmentOfUse`, `LastTimeUsed`, `Price`) VALUES ('1', 'Домкрат', 'Машину поднимать', '08.10.2022', '3000');
+INSERT INTO worker (`Salary`, `HireDate`, `UnpaidHours`, `PaidHours`, `Qualification`, `PersonalQualities`, `Person_idPerson`, `idWorker`) VALUES ('1000', '23.08.2022', '50', '550', 'Юридическое высшее', 'Норм челик', '2', '1');
+INSERT INTO client (`Person_idPerson`, `idClient`) VALUES ('1', '1');
+INSERT INTO person (`idPerson`, `FIO`, `CardNumber`, `PhoneNumber`, `MailAdres`) VALUES ('1', 'Шаргородский Игнат', '123123321321', '293555104', 'shariignat@mail.ru')
+INSERT INTO car (`idCar`, `Brand`, `Model`, `BodyStyle`, `Defects`, `RequiredComponents`, `Client_idClient`) VALUES ('1', 'Reno', 'Logan', '3', 'None', 'None', '1');
