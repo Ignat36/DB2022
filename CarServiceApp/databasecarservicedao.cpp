@@ -24,12 +24,12 @@ bool DataBaseCarServiceDAO::CreateConnection()
     if(isConnected)
         return true;
 
-    DataBase = QSqlDatabase::addDatabase("QMYSQL");
+    DataBase = QSqlDatabase::addDatabase("QPSQL");
     DataBase.setHostName("localhost");
-    DataBase.setPort(3306);
-    DataBase.setPassword("Ignat36623");
-    DataBase.setDatabaseName("mydb");
-    DataBase.setUserName("root");
+    DataBase.setPort(5432);
+    DataBase.setPassword("36623");
+    DataBase.setDatabaseName("CarService");
+    DataBase.setUserName("postgres");
 
     if(!DataBase.open())
     {

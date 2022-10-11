@@ -31,6 +31,7 @@ inner join person
 	on cashaccount.Person_idPerson = person.idPerson
 .................................................................................
 select * from document 
+
 inner join client
 	on client.idClient = document.Client_idClient
 inner join car
