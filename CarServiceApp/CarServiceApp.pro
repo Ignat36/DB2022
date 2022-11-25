@@ -22,7 +22,6 @@ SOURCES += \
     client.cpp \
     controller.cpp \
     databasecarservicedao.cpp \
-    dbworker.cpp \
     document.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -39,7 +38,6 @@ HEADERS += \
     client.h \
     controller.h \
     databasecarservicedao.h \
-    dbworker.h \
     document.h \
     mainwindow.h \
     person.h \

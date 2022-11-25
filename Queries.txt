@@ -1,13 +1,5 @@
-INSERT INTO worker_has_document (`Worker_idWorker`, `Document_idDocument`) VALUES ('1', '1');
-INSERT INTO document_has_service (`Document_idDocument`, `Service_idService`) VALUES ('1', '1');
-INSERT INTO document (`idDocument`, `Text`, `WorkedHours`, `CashTransfer_idCashTransfer`, `Client_idClient`, `WorkAcceptDate`, `WorkDoneDate`) VALUES ('0', '0', '0', '0', '0', '0', '0');
-INSERT INTO cashaccount (`idCashAccount`, `Cash`, `CardNumber`, `Person_idPerson`) VALUES ('0', '0', '0', '0');
-INSERT INTO cashtransfer (`idCashTransfer`, `Cash`, `ToCashAccount_idCashAccount`, `FromCashAccount_idCashAccount`) VALUES ('0', '0', '0', '0');
-INSERT INTO workingequipment (`idWorkingEquipment`, `Name`, `AssignmentOfUse`, `LastTimeUsed`, `Price`) VALUES ('1', 'Домкрат', 'Машину поднимать', '08.10.2022', '3000');
-INSERT INTO worker (`Salary`, `HireDate`, `UnpaidHours`, `PaidHours`, `Qualification`, `PersonalQualities`, `Person_idPerson`, `idWorker`) VALUES ('1000', '23.08.2022', '50', '550', 'Юридическое высшее', 'Норм челик', '2', '1');
-INSERT INTO client (`Person_idPerson`, `idClient`) VALUES ('1', '1');
-INSERT INTO person (`idPerson`, `FIO`, `CardNumber`, `PhoneNumber`, `MailAdres`) VALUES ('1', 'Шаргородский Игнат', '123123321321', '293555104', 'shariignat@mail.ru')
-INSERT INTO car (`idCar`, `Brand`, `Model`, `BodyStyle`, `Defects`, `RequiredComponents`, `Client_idClient`) VALUES ('1', 'Reno', 'Logan', '3', 'None', 'None', '1');
+INSERT INTO bodystyle("StyleName") VALUES ('Фургон');
+INSERT INTO brand("Name") VALUES ('Lotus');
 ......................................................................................................
 select * from person inner join client on `client`.`Person_idPerson` = `person`.`idPerson`;
 select * from person inner join worker on `worker`.`Person_idPerson` = `person`.`idPerson`;
