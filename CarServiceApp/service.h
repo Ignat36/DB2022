@@ -6,14 +6,15 @@
 class Service
 {
 public:
-    Service();
-    Service(QString _Description, int _Price, int _RequiredTimeH);
+    Service(QString _Description, double _Price, int _RequiredTimeH, QString _Name);
+    Service(int _idService, QString _Description, double _Price, int _RequiredTimeH, QString _Name);
 
-private:
+public:
     int idService;
     QString Description;
-    int Price;
+    double Price;
     int RequiredTimeH;
+    QString Name;
 };
 
 #endif // SERVICE_H

@@ -6,22 +6,14 @@
 class Transfer
 {
 public:
-    Transfer();
-    Transfer(int _ToCard,
-             int _FromCard,
-             int _Cash,
-             QString _Sender,
-             QString _Addresser);
+    Transfer(int _idTransfer, double _Cash, int _CashAccount_idCashAccount, QString _Type);
+    Transfer(double _Cash, int _CashAccount_idCashAccount, QString _Type);
 
-private:
+public:
     int idTransfer;
-    int ToCardId;
-    int FromCardId;
-    int Cash;
-    QString Sender;
-    QString Addresser;
-    int ToCashAccount_idCashAccount;
-    int FromCashAccount_idCashAccount;
+    double Cash;
+    int CashAccount_idCashAccount;
+    QString Type;
 };
 
 #endif // TRANSFER_H

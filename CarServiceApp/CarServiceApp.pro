@@ -30,7 +30,10 @@ SOURCES += \
     sparecarcomponent.cpp \
     transfer.cpp \
     worker.cpp \
-    workingequipment.cpp
+    workingequipment.cpp \
+    brand.cpp \
+    bodystyle.cpp \
+    model.cpp
 
 HEADERS += \
     car.h \
@@ -45,7 +48,10 @@ HEADERS += \
     sparecarcomponent.h \
     transfer.h \
     worker.h \
-    workingequipment.h
+    workingequipment.h \
+    brand.h \
+    bodystyle.h \
+    model.h
 
 FORMS += \
     mainwindow.ui

@@ -36,6 +36,14 @@ CREATE TABLE IF NOT EXISTS person
     MailAdres character varying(45) NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS component
+(
+    idComponent serial PRIMARY KEY,
+    Name character varying(60) NOT NULL,
+    Price real NOT NULL,
+    DateOfManufacture timestamp(0) without time zone NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS client
 (
     Person_idPerson integer PRIMARY KEY NOT NULL,
@@ -83,7 +91,6 @@ CREATE TABLE IF NOT EXISTS car
 (
     idCar serial PRIMARY KEY,
     Defects character varying(200),
-    RequiredComponents character varying(120),
     Client_Person_idPerson integer NOT NULL,
     Model_idModel integer NOT NULL,
 	
@@ -176,5 +183,19 @@ CREATE TABLE IF NOT EXISTS worker_document
 	
 	FOREIGN KEY (document_idDocument)
     	REFERENCES document (idDocument)
+    	ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS car_component
+(
+    component_idComponent integer NOT NULL,
+    car_idCar integer NOT NULL,
+	
+	FOREIGN KEY (component_idComponent)
+    	REFERENCES component (idComponent)
+    	ON DELETE CASCADE,
+	
+	FOREIGN KEY (car_idCar)
+    	REFERENCES car (idCar)
     	ON DELETE CASCADE
 );

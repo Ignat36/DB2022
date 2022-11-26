@@ -6,17 +6,15 @@
 class WorkingEquipment
 {
 public:
-    WorkingEquipment();
-    WorkingEquipment(QString _Name,
-                     QString _description,
-                     int _price);
+    WorkingEquipment(QString _Name, QString _AssignmentOfUse, QString _LastUsedDate, double _Price);
+    WorkingEquipment(int _idWorkingEquipment, QString _Name, QString _AssignmentOfUse, QString _LastUsedDate, double _Price);
 
-private:
-    int idWorkingEquipment();
+public:
+    int idWorkingEquipment;
     QString Name;
     QString AssignmentOfUse;
     QString LastUsedDate;
-    int Price;
+    double Price;
 };
 
 #endif // WORKINGEQUIPMENT_H

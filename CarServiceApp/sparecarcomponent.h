@@ -6,16 +6,14 @@
 class SpareCarComponent
 {
 public:
-    SpareCarComponent();
-    SpareCarComponent(QString _Name, QString _Date, int _BuyPrice, int _SellPrice, int _WeightKg);
+    SpareCarComponent(QString _Name, QString _Date, int _Price);
+    SpareCarComponent(int _idSpareCarComponent, QString _Name, QString _Date, int _Price);
 
-private:
+public:
     int idSpareCarComponent;
     QString Name;
     QString DateOfManufacture;
-    int SellPrice;
-    int BuyPrice;
-    int WeightKg;
+    double Price;
 };
 
 #endif // SPARECARCOMPONENT_H

@@ -6,13 +6,12 @@
 class Person
 {
 public:
-    Person();
-    Person(QString _FIO, QString _CardNumber, QString _PhoneNumber);
+    Person(QString _FIO, QString _PhoneNumber, QString _MailAdres);
+    Person(int _idPerson, QString _FIO, QString _PhoneNumber, QString _MailAdres);
 
-private:
+public:
     int idPerson;
     QString FIO;
-    QString CardNumber;
     QString PhoneNumber;
     QString MailAdres;
 };

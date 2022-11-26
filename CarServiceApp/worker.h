@@ -6,13 +6,13 @@
 class Worker : public Person
 {
 public:
-    Worker();
-    Worker(QString _FIO, QString _CardNumber, QString _PhoneNumber);
+    Worker(QString _PersonalQualities, double _Salary, int _UnpaidHours, int _PaidHours, QString _HireDate, QString _Qualification);
+    Worker(int _Person_idPerson, QString _PersonalQualities, double _Salary, int _UnpaidHours, int _PaidHours, QString _HireDate, QString _Qualification);
 
-private:
+public:
     int Person_idPerson;
     QString PersonalQualities;
-    int Salary;
+    double Salary;
     int UnpaidHours;
     int PaidHours;
     QString HireDate;

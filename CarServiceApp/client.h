@@ -6,11 +6,12 @@
 class Client : public Person
 {
 public:
-    Client();
-    Client(QString _FIO, QString _CardNumber, QString _PhoneNumber);
+    Client(QString _lastVisit);
+    Client(int _Person_idPerson, QString _lastVisit);
 
-private:
+public:
     int Person_idPerson;
+    QString LastVisit;
 };
 
 #endif // CLIENT_H

@@ -36,6 +36,14 @@ CREATE TABLE IF NOT EXISTS person
     MailAdres character varying(45) NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS component
+(
+    idComponent serial PRIMARY KEY,
+    Name character varying(60) NOT NULL,
+    Price real NOT NULL,
+    DateOfManufacture date NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS client
 (
     Person_idPerson integer PRIMARY KEY NOT NULL,
@@ -66,7 +74,7 @@ CREATE TABLE IF NOT EXISTS workingequipment
     idWorkingEquipment serial PRIMARY KEY,
     Name character varying(45) NOT NULL,
     AssignmentOfUse character varying(60) NOT NULL,
-    LastTimeUsed character varying(30) NOT NULL,
+    LastTimeUsed date NOT NULL,
     Price real NOT NULL
 );
 
@@ -83,7 +91,6 @@ CREATE TABLE IF NOT EXISTS car
 (
     idCar serial PRIMARY KEY,
     Defects character varying(200),
-    RequiredComponents character varying(120),
     Client_Person_idPerson integer NOT NULL,
     Model_idModel integer NOT NULL,
 	
@@ -123,8 +130,8 @@ CREATE TABLE IF NOT EXISTS document
     Text character varying(1000),
     WorkedHours integer NOT NULL,
     CashTransfer_idCashTransfer integer,
-    WorkAcceptDate timestamp(0) without time zone,
-    WorkDoneDate timestamp(0) without time zone,
+    WorkAcceptDate date,
+    WorkDoneDate date,
     Car_idCar integer NOT NULL,
     Price real NOT NULL,
 	
@@ -176,5 +183,19 @@ CREATE TABLE IF NOT EXISTS worker_document
 	
 	FOREIGN KEY (document_idDocument)
     	REFERENCES document (idDocument)
+    	ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS car_component
+(
+    component_idComponent integer NOT NULL,
+    car_idCar integer NOT NULL,
+	
+	FOREIGN KEY (component_idComponent)
+    	REFERENCES component (idComponent)
+    	ON DELETE CASCADE,
+	
+	FOREIGN KEY (car_idCar)
+    	REFERENCES car (idCar)
     	ON DELETE CASCADE
 );

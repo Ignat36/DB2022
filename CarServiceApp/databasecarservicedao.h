@@ -15,6 +15,7 @@
 #include "workingequipment.h"
 #include "service.h"
 
+
 class DataBaseCarServiceDAO
 {
 public:
@@ -115,23 +116,56 @@ public:
     bool UpdateDocument(Document document, bool CreateIfNotExists); // update document with document.id if not exists creates it
 
     bool DeleteDocument(int idDocument); // delete document
-    ///////////////////////////////////////////////////////////////////////////
+
+
+
+
 private:
     ///////////////////////////////////////////////////////////////////////////
     ///                                Person                               ///
     ///////////////////////////////////////////////////////////////////////////
+    Person GetPerson(int idPerson); // get person with person id
+    std::vector<Person> GetPersonFIO(std::string FIO); // get person with FIO
 
+    bool PutPerson(Person person); // insert person
+    bool UpdatePerson(Person person, bool CreateIfNotExists); // update person with person.id if not exists creates it
+
+    bool DeletePerson(int idPerson); // delete person
     ///////////////////////////////////////////////////////////////////////////
     ///                                Brand                                ///
     ///////////////////////////////////////////////////////////////////////////
+    Brand GetBrand(int idBrand); // get brand with brand id
+    std::vector<Brand> GetBrandName(std::string Name); // get brand with Name
 
+    bool PutBrand(Brand brand); // insert brand
+    bool UpdateBrand(Brand brand, bool CreateIfNotExists); // update brand with brand.id if not exists creates it
+
+    bool DeleteBrand(int idBrand); // delete brand
     ///////////////////////////////////////////////////////////////////////////
     ///                                BodyStyle                            ///
     ///////////////////////////////////////////////////////////////////////////
+    BodyStyle GetBodyStyle(int idBodyStyle); // get bodystyle with bodystyle id
+    std::vector<BodyStyle> GetBodyStyleName(std::string Name); // get bodystyle with Name
 
+    bool PutBodyStyle(BodyStyle bodystyle); // insert bodystyle
+    bool UpdateBodyStyle(BodyStyle bodystyle, bool CreateIfNotExists); // update bodystyle with bodystyle.id if not exists creates it
+
+    bool DeleteBodyStyle(int idBodyStyle); // delete bodystyle
     ///////////////////////////////////////////////////////////////////////////
     ///                                Model                                ///
     ///////////////////////////////////////////////////////////////////////////
+    Model GetModel(int idModel); // get model with model id
+    std::vector<Model> GetModelName(std::string Name); // get model with Name
+
+    bool PutModel(Model model); // insert model
+    bool UpdateModel(Model model, bool CreateIfNotExists); // update model with model.id if not exists creates it
+
+    bool DeleteModel(int idModel); // delete model
+
+
+
+
+
 public:
     ~DataBaseCarServiceDAO(); // disconnect
 };

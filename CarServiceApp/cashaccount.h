@@ -1,16 +1,18 @@
 #ifndef CASHACCOUNT_H
 #define CASHACCOUNT_H
 
+#include <QString>
 
 class CashAccount
 {
 public:
-    CashAccount();
+    CashAccount(double _Cash, QString _CardNumber, int _Person_idPerson);
+    CashAccount(int _idCashAccount, double _Cash, QString _CardNumber, int _Person_idPerson);
 
-private:
+public:
     int idCashAccount;
-    int Cash;
-    int CardNumber;
+    double Cash;
+    QString CardNumber;
     int Person_idPerson;
 };
 

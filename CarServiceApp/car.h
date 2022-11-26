@@ -4,27 +4,19 @@
 #include <QString>
 #include <vector>
 #include "sparecarcomponent.h"
+#include "model.h"
 
 class Car
 {
 public:
-    Car();
-    Car(QString _Brand, QString _Model, QString _BodyStyle);
+    Car(int _idCar, int _Model_idModel, QString _Defects, int _Client_Person_idPerson);
+    Car(int _Model_idModel, QString _Defects, int _Client_Person_idPerson);
 
 public:
-    void RequestComponent(QString Name);
-    void ReportDefect(QString defect, QString date);
-
-private:
     int idCar;
-    QString Brand;
-    QString Model;
-    QString BodyStyle;
+    int Model_idModel;
     QString Defects;
-    std::vector<SpareCarComponent> RequiredComponents;
-
-private:
-    int Client_idClint;
+    int Client_Person_idPerson;
 };
 
 #endif // CAR_H
