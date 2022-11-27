@@ -36,6 +36,7 @@ public:
     ///////////////////////////////////////////////////////////////////////////
     Car GetCar(int idCar); // get car with car id
     std::vector<Car> GetCar_Client(int Client_Person_idPerson); // get car with client id
+    std::vector<Car> GetCars(); // get all cars
 
     bool PutCar(Car car); // insert car
     bool UpdateCar(Car car, bool CreateIfNotExists); // update car with car.id if not exists creates it
@@ -45,7 +46,7 @@ public:
     ///                                Client                               ///
     ///////////////////////////////////////////////////////////////////////////
     Client GetClient(int Person_idPerson); // get client with client id
-    std::vector<Client> GetClient_FIO(std::string FIO); // get client with FIO
+    std::vector<Client> GetClient_FIO(QString FIO); // get client with FIO
 
     bool PutClient(Client client); // insert client
     bool UpdateClient(Client client, bool CreateIfNotExists); // update client with client.id if not exists creates it
@@ -55,7 +56,7 @@ public:
     ///                                Worker                               ///
     ///////////////////////////////////////////////////////////////////////////
     Worker GetWorker (int Person_idPerson); // get worker with worker id
-    std::vector<Worker> GetWorker_FIO(std::string FIO); // get worker with FIO
+    std::vector<Worker> GetWorker_FIO(QString FIO); // get worker with FIO
 
     bool PutWorker(Worker worker); // insert worker
     bool UpdateWorker(Worker worker, bool CreateIfNotExists); // update worker with worker.id if not exists creates it
@@ -65,7 +66,7 @@ public:
     ///                           WorkingEquipment                          ///
     ///////////////////////////////////////////////////////////////////////////
     WorkingEquipment GetEquipment (int idEquipment); // get equipment with equipment id
-    std::vector<WorkingEquipment> GetEquipment_Name(std::string Name); // get equipment with Name
+    std::vector<WorkingEquipment> GetEquipment_Name(QString Name); // get equipment with Name
 
     bool PutEquipment(WorkingEquipment equipment); // insert equipment
     bool UpdateEquipment(WorkingEquipment equipment, bool CreateIfNotExists); // update equipment with equipment.id if not exists creates it
@@ -75,7 +76,7 @@ public:
     ///                                Service                              ///
     ///////////////////////////////////////////////////////////////////////////
     Service GetService (int idService); // get service with service id
-    std::vector<Service> GetService_Name(std::string Name); // get service with Name
+    std::vector<Service> GetService_Name(QString Name); // get service with Name
 
     bool PutService(Service service); // insert service
     bool UpdateService(Service service, bool CreateIfNotExists); // update service with service.id if not exists creates it
@@ -125,7 +126,8 @@ private:
     ///                                Person                               ///
     ///////////////////////////////////////////////////////////////////////////
     Person GetPerson(int idPerson); // get person with person id
-    std::vector<Person> GetPersonFIO(std::string FIO); // get person with FIO
+    std::vector<Person> GetPersonFIO(QString FIO); // get person with FIO
+    std::vector<Person> GetPersons(); // get all persons
 
     bool PutPerson(Person person); // insert person
     bool UpdatePerson(Person person, bool CreateIfNotExists); // update person with person.id if not exists creates it
@@ -135,7 +137,7 @@ private:
     ///                                Brand                                ///
     ///////////////////////////////////////////////////////////////////////////
     Brand GetBrand(int idBrand); // get brand with brand id
-    std::vector<Brand> GetBrandName(std::string Name); // get brand with Name
+    std::vector<Brand> GetBrandName(QString Name); // get brand with Name
 
     bool PutBrand(Brand brand); // insert brand
     bool UpdateBrand(Brand brand, bool CreateIfNotExists); // update brand with brand.id if not exists creates it
@@ -145,7 +147,7 @@ private:
     ///                                BodyStyle                            ///
     ///////////////////////////////////////////////////////////////////////////
     BodyStyle GetBodyStyle(int idBodyStyle); // get bodystyle with bodystyle id
-    std::vector<BodyStyle> GetBodyStyleName(std::string Name); // get bodystyle with Name
+    std::vector<BodyStyle> GetBodyStyleName(QString Name); // get bodystyle with Name
 
     bool PutBodyStyle(BodyStyle bodystyle); // insert bodystyle
     bool UpdateBodyStyle(BodyStyle bodystyle, bool CreateIfNotExists); // update bodystyle with bodystyle.id if not exists creates it
@@ -155,7 +157,7 @@ private:
     ///                                Model                                ///
     ///////////////////////////////////////////////////////////////////////////
     Model GetModel(int idModel); // get model with model id
-    std::vector<Model> GetModelName(std::string Name); // get model with Name
+    std::vector<Model> GetModelName(QString Name); // get model with Name
 
     bool PutModel(Model model); // insert model
     bool UpdateModel(Model model, bool CreateIfNotExists); // update model with model.id if not exists creates it
