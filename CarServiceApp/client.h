@@ -1,17 +1,16 @@
 #ifndef CLIENT_H
 #define CLIENT_H
 
-#include "person.h"
+#include <QDate>
 
-class Client : public Person
+class Client
 {
 public:
-    Client(QString _lastVisit);
-    Client(int _Person_idPerson, QString _lastVisit);
+    Client(int _Person_idPerson, QDate _lastVisit);
 
 public:
     int Person_idPerson;
-    QString LastVisit;
+    QDate LastVisit;
 };
 
 #endif // CLIENT_H

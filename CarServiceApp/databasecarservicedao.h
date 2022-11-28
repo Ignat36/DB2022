@@ -46,7 +46,7 @@ public:
     ///                                Client                               ///
     ///////////////////////////////////////////////////////////////////////////
     Client GetClient(int Person_idPerson); // get client with client id
-    std::vector<Client> GetClient_FIO(QString FIO); // get client with FIO
+    std::vector<Client> GetClients(); // get clients
 
     bool PutClient(Client client); // insert client
     bool UpdateClient(Client client, bool CreateIfNotExists); // update client with client.id if not exists creates it
@@ -56,7 +56,7 @@ public:
     ///                                Worker                               ///
     ///////////////////////////////////////////////////////////////////////////
     Worker GetWorker (int Person_idPerson); // get worker with worker id
-    std::vector<Worker> GetWorker_FIO(QString FIO); // get worker with FIO
+    std::vector<Worker> GetWorkers(); // get workers
 
     bool PutWorker(Worker worker); // insert worker
     bool UpdateWorker(Worker worker, bool CreateIfNotExists); // update worker with worker.id if not exists creates it
@@ -67,6 +67,7 @@ public:
     ///////////////////////////////////////////////////////////////////////////
     WorkingEquipment GetEquipment (int idEquipment); // get equipment with equipment id
     std::vector<WorkingEquipment> GetEquipment_Name(QString Name); // get equipment with Name
+    std::vector<WorkingEquipment> GetEquipments(); // get all equipment
 
     bool PutEquipment(WorkingEquipment equipment); // insert equipment
     bool UpdateEquipment(WorkingEquipment equipment, bool CreateIfNotExists); // update equipment with equipment.id if not exists creates it
@@ -171,5 +172,7 @@ private:
 public:
     ~DataBaseCarServiceDAO(); // disconnect
 };
+
+
 
 #endif // DATABASECARSERVICEDAO_H

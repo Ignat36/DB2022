@@ -1,13 +1,12 @@
 #ifndef WORKER_H
 #define WORKER_H
 
-#include "person.h"
+#include <QDate>
 
-class Worker : public Person
+class Worker
 {
 public:
-    Worker(QString _PersonalQualities, double _Salary, int _UnpaidHours, int _PaidHours, QString _HireDate, QString _Qualification);
-    Worker(int _Person_idPerson, QString _PersonalQualities, double _Salary, int _UnpaidHours, int _PaidHours, QString _HireDate, QString _Qualification);
+    Worker(int _Person_idPerson, QString _PersonalQualities, double _Salary, int _UnpaidHours, int _PaidHours, QDate _HireDate, QString _Qualification);
 
 public:
     int Person_idPerson;
@@ -15,7 +14,7 @@ public:
     double Salary;
     int UnpaidHours;
     int PaidHours;
-    QString HireDate;
+    QDate HireDate;
     QString Qualification;
 };
 
