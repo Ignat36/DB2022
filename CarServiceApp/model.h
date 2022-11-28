@@ -8,7 +8,7 @@ class Model
 {
 public:
     Model(QString _Name, int idBrand, int idBodyStyle);
-    Model(int _idModel, QString _Name);
+    Model(int _idModel, QString _Name, int idBrand, int idBodyStyle);
 
 public:
     int idModel;

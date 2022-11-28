@@ -2,12 +2,13 @@
 #define DOCUMENT_H
 
 #include <QString>
+#include <QDate>
 
 class Document
 {
 public:
-    Document(QString _Text, int _WorkedHours, int _CashTransfer_idCashTransfer, int _Car_idCar, QString _AcceptDate, QString _DoneDate, double _Price);
-    Document(int _idDocument, QString _Text, int _WorkedHours, int _CashTransfer_idCashTransfer, int _Car_idCar, QString _AcceptDate, QString _DoneDate, double _Price);
+    Document(QString _Text, int _WorkedHours, int _CashTransfer_idCashTransfer, int _Car_idCar, QDate _AcceptDate, QDate _DoneDate, double _Price);
+    Document(int _idDocument, QString _Text, int _WorkedHours, int _CashTransfer_idCashTransfer, int _Car_idCar, QDate _AcceptDate, QDate _DoneDate, double _Price);
 
 public:
     int idDocument;
@@ -15,8 +16,8 @@ public:
     int WorkedHours;
     int CashTransfer_idCashTransfer;
     int Car_idCar;
-    QString AcceptDate;
-    QString DoneDate;
+    QDate AcceptDate;
+    QDate DoneDate;
     double Price;
 };
 

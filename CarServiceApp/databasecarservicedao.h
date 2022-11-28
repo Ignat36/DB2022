@@ -78,6 +78,7 @@ public:
     ///////////////////////////////////////////////////////////////////////////
     Service GetService (int idService); // get service with service id
     std::vector<Service> GetService_Name(QString Name); // get service with Name
+    std::vector<Service> GetServices(); // get all service
 
     bool PutService(Service service); // insert service
     bool UpdateService(Service service, bool CreateIfNotExists); // update service with service.id if not exists creates it
@@ -87,9 +88,10 @@ public:
     ///                              CashAccount                            ///
     ///////////////////////////////////////////////////////////////////////////
     CashAccount GetCashAccount (int idCashAccount); // get cashaccount with cashaccount id
-    CashAccount GetCashAccount_Number (int CardNumber); // get cashaccount with cashaccount card number
+    CashAccount GetCashAccount_Number (QString CardNumber); // get cashaccount with cashaccount card number
 
     std::vector<CashAccount> GetCashAccount_idPerson(int Person_idPerson); // get cashaccount with person id
+    std::vector<CashAccount> GetCashAccounts(); // get all cashaccount
 
     bool PutCashAccount(CashAccount cashaccount); // insert cashaccount
     bool UpdateCashAccount(CashAccount cashaccount, bool CreateIfNotExists); // update cashaccount with cashaccount.id if not exists creates it
@@ -101,6 +103,7 @@ public:
     Transfer GetTransfer (int idTransfer); // get transfer with transfer id
 
     std::vector<Transfer> GetTransfer_idCashAccount(int CashAccount_idCashAccount); // get transfer with cashaccount id
+    std::vector<Transfer> GetTransfers(); // get all transfer
 
     bool PutTransfer(Transfer transfer); // insert transfer
     bool UpdateTransfer(Transfer transfer, bool CreateIfNotExists); // update transfer with transfer.id if not exists creates it
@@ -113,6 +116,7 @@ public:
 
     std::vector<Document> GetDocument_idTransfer(int CashTransfer_idTransfer); // get document with transfer id
     std::vector<Document> GetDocument_idCar(int Car_idCar); // get document with car id
+    std::vector<Document> GetDocuments(); // get all documents
 
     bool PutDocument(Document document); // insert document
     bool UpdateDocument(Document document, bool CreateIfNotExists); // update document with document.id if not exists creates it
@@ -139,6 +143,7 @@ private:
     ///////////////////////////////////////////////////////////////////////////
     Brand GetBrand(int idBrand); // get brand with brand id
     std::vector<Brand> GetBrandName(QString Name); // get brand with Name
+    std::vector<Brand> GetBrands(); // get all brands
 
     bool PutBrand(Brand brand); // insert brand
     bool UpdateBrand(Brand brand, bool CreateIfNotExists); // update brand with brand.id if not exists creates it
@@ -149,6 +154,7 @@ private:
     ///////////////////////////////////////////////////////////////////////////
     BodyStyle GetBodyStyle(int idBodyStyle); // get bodystyle with bodystyle id
     std::vector<BodyStyle> GetBodyStyleName(QString Name); // get bodystyle with Name
+    std::vector<BodyStyle> GetBodyStyles(); // get all bodystyles
 
     bool PutBodyStyle(BodyStyle bodystyle); // insert bodystyle
     bool UpdateBodyStyle(BodyStyle bodystyle, bool CreateIfNotExists); // update bodystyle with bodystyle.id if not exists creates it
@@ -159,6 +165,7 @@ private:
     ///////////////////////////////////////////////////////////////////////////
     Model GetModel(int idModel); // get model with model id
     std::vector<Model> GetModelName(QString Name); // get model with Name
+    std::vector<Model> GetModels(); // get all models
 
     bool PutModel(Model model); // insert model
     bool UpdateModel(Model model, bool CreateIfNotExists); // update model with model.id if not exists creates it

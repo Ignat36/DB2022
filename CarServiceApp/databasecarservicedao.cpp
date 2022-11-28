@@ -430,6 +430,437 @@ bool DataBaseCarServiceDAO::DeleteEquipment(int idEquipment)
 }
 
 ///////////////////////////////////////////////////////////////////////////
+///                                Service                              ///
+///////////////////////////////////////////////////////////////////////////
+
+Service DataBaseCarServiceDAO::GetService(int idService) // SELECT
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM service WHERE idservice=%1").arg(idService));
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString Description = query.value(1).toString();
+        double Price = query.value(2).toDouble();
+        int ReqTimeH = query.value(3).toInt();
+        QString Name = query.value(4).toString();
+        return Service(id, Description, Price, ReqTimeH, Name);
+    }
+
+    throw std::runtime_error(QString("Incorrect id Person : %1").arg(idService).toStdString());
+}
+
+std::vector<Service> DataBaseCarServiceDAO::GetService_Name(QString Name) // SELECT many
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM service WHERE name like '%%1%'").arg(Name));
+    std::vector<Service> result;
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString Description = query.value(1).toString();
+        double Price = query.value(2).toDouble();
+        int ReqTimeH = query.value(3).toInt();
+        QString Name = query.value(4).toString();
+        result.push_back(Service(id, Description, Price, ReqTimeH, Name));
+    }
+
+    return result;
+}
+
+std::vector<Service> DataBaseCarServiceDAO::GetServices() // SELECT ALL
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM service"));
+    std::vector<Service> result;
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString Description = query.value(1).toString();
+        double Price = query.value(2).toDouble();
+        int ReqTimeH = query.value(3).toInt();
+        QString Name = query.value(4).toString();
+        result.push_back(Service(id, Description, Price, ReqTimeH, Name));
+    }
+
+    return result;
+}
+
+bool DataBaseCarServiceDAO::PutService(Service service) // INSERT
+{
+    QSqlQuery query;
+    QString str = QString("INSERT INTO service(description, price, requiredtimeh, name) VALUES ('%1', '%2', '%3', '%4')")
+            .arg(service.Description)
+            .arg(service.Price)
+            .arg(service.RequiredTimeH)
+            .arg(service.Name);
+    return query.exec(str);
+}
+
+bool DataBaseCarServiceDAO::UpdateService(Service service, bool CreateIfNotExists) // UPDATE
+{
+    if(!service.idService)
+        return false;
+
+    QSqlQuery query;
+    bool flag = query.exec(QString("UPDATE service SET description='%1', price='%2', requiredtimeh='%3', name='%4' WHERE idservice=%5")
+                           .arg(service.Description)
+                           .arg(service.Price)
+                           .arg(service.RequiredTimeH)
+                           .arg(service.Name)
+                           .arg(service.idService));
+    if ( ! flag && CreateIfNotExists)
+    {
+        return PutService(service);
+    }
+    else
+    {
+        return flag;
+    }
+}
+
+bool DataBaseCarServiceDAO::DeleteService(int idService) // DELETE
+{
+    QSqlQuery query;
+    return query.exec(QString("DELETE FROM service WHERE idservice=%1")
+                      .arg(idService));
+}
+
+///////////////////////////////////////////////////////////////////////////
+///                              CashAccount                            ///
+///////////////////////////////////////////////////////////////////////////
+
+CashAccount DataBaseCarServiceDAO::GetCashAccount(int idCashAccount) // SELECT
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM cashaccount WHERE idcashaccount=%1").arg(idCashAccount));
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString CardNumber = query.value(1).toString();
+        int Person_idPerson = query.value(2).toInt();
+        return CashAccount(id, CardNumber, Person_idPerson);
+    }
+
+    throw std::runtime_error(QString("Incorrect id Cash account : %1").arg(idCashAccount).toStdString());
+}
+
+CashAccount DataBaseCarServiceDAO::GetCashAccount_Number(QString CardNumber) // SELECT
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM cashaccount WHERE cardnumber like '%%1%'").arg(CardNumber));
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString CardNumber = query.value(1).toString();
+        int Person_idPerson = query.value(2).toInt();
+        return CashAccount(id, CardNumber, Person_idPerson);
+    }
+
+    throw std::runtime_error(QString("Incorrect card number Cash account : %1").arg(CardNumber).toStdString());
+}
+
+std::vector<CashAccount> DataBaseCarServiceDAO::GetCashAccount_idPerson(int Person_idPerson) // SELECT many
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM cashaccount WHERE person_idperson=%1").arg(Person_idPerson));
+    std::vector<CashAccount> result;
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString CardNumber = query.value(1).toString();
+        int Person_idPerson = query.value(2).toInt();
+        result.push_back(CashAccount(id, CardNumber, Person_idPerson));
+    }
+
+    return result;
+}
+
+std::vector<CashAccount> DataBaseCarServiceDAO::GetCashAccounts() // SELECT all
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM cashaccount"));
+    std::vector<CashAccount> result;
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString CardNumber = query.value(1).toString();
+        int Person_idPerson = query.value(2).toInt();
+        result.push_back(CashAccount(id, CardNumber, Person_idPerson));
+    }
+
+    return result;
+}
+
+bool DataBaseCarServiceDAO::PutCashAccount(CashAccount cashaccount) // INSERT
+{
+    QSqlQuery query;
+    QString str = QString("INSERT INTO cashaccount(cardnumber, person_idperson) VALUES ('%1', '%2')")
+            .arg(cashaccount.CardNumber)
+            .arg(cashaccount.Person_idPerson);
+    return query.exec(str);
+}
+
+bool DataBaseCarServiceDAO::UpdateCashAccount(CashAccount cashaccount, bool CreateIfNotExists) // UPDATE
+{
+    if(!cashaccount.idCashAccount)
+        return false;
+
+    QSqlQuery query;
+    bool flag = query.exec(QString("UPDATE cashaccount SET cardnumber='%1', person_idperson='%2' WHERE idcashaccount=%3")
+                           .arg(cashaccount.CardNumber)
+                           .arg(cashaccount.Person_idPerson)
+                           .arg(cashaccount.idCashAccount));
+    if ( ! flag && CreateIfNotExists)
+    {
+        return PutCashAccount(cashaccount);
+    }
+    else
+    {
+        return flag;
+    }
+}
+
+bool DataBaseCarServiceDAO::DeleteCashAccount(int idCashAccount) // DELETE
+{
+    QSqlQuery query;
+    return query.exec(QString("DELETE FROM cashaccount WHERE idcashaccount=%1")
+                      .arg(idCashAccount));
+}
+
+///////////////////////////////////////////////////////////////////////////
+///                             CashTransfer                            ///
+///////////////////////////////////////////////////////////////////////////
+
+Transfer DataBaseCarServiceDAO::GetTransfer(int idTransfer) // SELECT
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM cashtransfer WHERE idcashtransfer=%1").arg(idTransfer));
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        double Cash = query.value(1).toDouble();
+        int CashAccount_idCashAccount = query.value(2).toInt();
+        QString Type = query.value(3).toString();
+        return Transfer(id, Cash, CashAccount_idCashAccount, Type);
+    }
+
+    throw std::runtime_error(QString("Incorrect id CashTransfer : %1").arg(idTransfer).toStdString());
+}
+
+std::vector<Transfer> DataBaseCarServiceDAO::GetTransfer_idCashAccount(int CashAccount_idCashAccount) // SELECT many
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM cashtransfer WHERE cashaccount_idcashaccount=%1").arg(CashAccount_idCashAccount));
+    std::vector<Transfer> result;
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        double Cash = query.value(1).toDouble();
+        int CashAccount_idCashAccount = query.value(2).toInt();
+        QString Type = query.value(3).toString();
+        result.push_back(Transfer(id, Cash, CashAccount_idCashAccount, Type));
+    }
+
+    return result;
+}
+
+std::vector<Transfer> DataBaseCarServiceDAO::GetTransfers() // SLECT all
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM cashtransfer"));
+    std::vector<Transfer> result;
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        double Cash = query.value(1).toDouble();
+        int CashAccount_idCashAccount = query.value(2).toInt();
+        QString Type = query.value(3).toString();
+        result.push_back(Transfer(id, Cash, CashAccount_idCashAccount, Type));
+    }
+
+    return result;
+}
+
+bool DataBaseCarServiceDAO::PutTransfer(Transfer transfer) // INSERT
+{
+    QSqlQuery query;
+    QString str = QString("INSERT INTO cashtransfer(cash, cashaccount_idcashaccount, type) VALUES ('%1', '%2', '%3')")
+            .arg(transfer.Cash)
+            .arg(transfer.CashAccount_idCashAccount)
+            .arg(transfer.Type);
+    return query.exec(str);
+}
+
+bool DataBaseCarServiceDAO::UpdateTransfer(Transfer transfer, bool CreateIfNotExists) // UPDATE
+{
+    if(!transfer.idTransfer)
+        return false;
+
+    QSqlQuery query;
+    bool flag = query.exec(QString("UPDATE cashtransfer SET cash='%1', cashaccount_idcashaccount='%2', type='%3' WHERE idcashtransfer=%4")
+                           .arg(transfer.Cash)
+                           .arg(transfer.CashAccount_idCashAccount)
+                           .arg(transfer.Type)
+                           .arg(transfer.idTransfer));
+    if ( ! flag && CreateIfNotExists)
+    {
+        return PutTransfer(transfer);
+    }
+    else
+    {
+        return flag;
+    }
+}
+
+bool DataBaseCarServiceDAO::DeleteTransfer(int idTransfer) // DELETE
+{
+    QSqlQuery query;
+    return query.exec(QString("DELETE FROM cashtransfer WHERE idcashtransfer=%1")
+                      .arg(idTransfer));
+}
+
+///////////////////////////////////////////////////////////////////////////
+///                              Document                               ///
+///////////////////////////////////////////////////////////////////////////
+
+Document DataBaseCarServiceDAO::GetDocument(int idDocument) // SELECT
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM document WHERE iddocument=%1").arg(idDocument));
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString Text = query.value(1).toString();
+        int WorkedHours = query.value(2).toInt();
+        int CashTransfer_idCashTransfer = query.value(3).toInt();
+        QDate AcceptDate = query.value(4).toDate();
+        QDate DoneDate = query.value(5).toDate();
+        int Car_idCar = query.value(6).toInt();
+        double Price = query.value(7).toDouble();
+
+        return Document(id, Text, WorkedHours, CashTransfer_idCashTransfer, Car_idCar, AcceptDate, DoneDate, Price);
+    }
+
+    throw std::runtime_error(QString("Incorrect id Person : %1").arg(idDocument).toStdString());
+}
+
+std::vector<Document> DataBaseCarServiceDAO::GetDocument_idTransfer(int CashTransfer_idTransfer) // SLECT many
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM document WHERE cashtransfer_idcashtransfer=%1").arg(CashTransfer_idTransfer));
+    std::vector<Document> result;
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString Text = query.value(1).toString();
+        int WorkedHours = query.value(2).toInt();
+        int CashTransfer_idCashTransfer = query.value(3).toInt();
+        QDate AcceptDate = query.value(4).toDate();
+        QDate DoneDate = query.value(5).toDate();
+        int Car_idCar = query.value(6).toInt();
+        double Price = query.value(7).toDouble();
+
+        result.push_back( Document(id, Text, WorkedHours, CashTransfer_idCashTransfer, Car_idCar, AcceptDate, DoneDate, Price));
+    }
+
+
+    return result;
+}
+
+std::vector<Document> DataBaseCarServiceDAO::GetDocument_idCar(int Car_idCar) // SELECT many
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM document WHERE car_idcar=%1").arg(Car_idCar));
+    std::vector<Document> result;
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString Text = query.value(1).toString();
+        int WorkedHours = query.value(2).toInt();
+        int CashTransfer_idCashTransfer = query.value(3).toInt();
+        QDate AcceptDate = query.value(4).toDate();
+        QDate DoneDate = query.value(5).toDate();
+        int Car_idCar = query.value(6).toInt();
+        double Price = query.value(7).toDouble();
+
+        result.push_back( Document(id, Text, WorkedHours, CashTransfer_idCashTransfer, Car_idCar, AcceptDate, DoneDate, Price));
+    }
+
+
+    return result;
+}
+
+std::vector<Document> DataBaseCarServiceDAO::GetDocuments() // SELECT all
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM document"));
+    std::vector<Document> result;
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString Text = query.value(1).toString();
+        int WorkedHours = query.value(2).toInt();
+        int CashTransfer_idCashTransfer = query.value(3).toInt();
+        QDate AcceptDate = query.value(4).toDate();
+        QDate DoneDate = query.value(5).toDate();
+        int Car_idCar = query.value(6).toInt();
+        double Price = query.value(7).toDouble();
+
+        result.push_back( Document(id, Text, WorkedHours, CashTransfer_idCashTransfer, Car_idCar, AcceptDate, DoneDate, Price) );
+    }
+
+
+    return result;
+}
+
+bool DataBaseCarServiceDAO::PutDocument(Document document) // INSERT
+{
+    QSqlQuery query;
+    QString str = QString("INSERT INTO document(text, workedhours, cashtransfer_idcashtransfer, workacceptdate, workdonedate, car_idcar, price) VALUES ('%1', '%2', '%3', '%4', '%5', '%6', '%7')")
+            .arg(document.Text)
+            .arg(document.WorkedHours)
+            .arg(document.CashTransfer_idCashTransfer)
+            .arg(document.AcceptDate.toString())
+            .arg(document.DoneDate.toString())
+            .arg(document.Car_idCar)
+            .arg(document.Price);
+    return query.exec(str);
+}
+
+bool DataBaseCarServiceDAO::UpdateDocument(Document document, bool CreateIfNotExists) // UPDATE
+{
+    if(!document.idDocument)
+        return false;
+
+    QSqlQuery query;
+    bool flag = query.exec(QString("UPDATE document SET text='%1', workedhours='%2', cashtransfer_idcashtransfer='%3', workacceptdate='%4', workdonedate='%5', car_idcar='%6', price='%7' WHERE iddocument=%8")
+                           .arg(document.Text)
+                           .arg(document.WorkedHours)
+                           .arg(document.CashTransfer_idCashTransfer)
+                           .arg(document.AcceptDate.toString())
+                           .arg(document.DoneDate.toString())
+                           .arg(document.Car_idCar)
+                           .arg(document.Price)
+                           .arg(document.idDocument));
+    if ( ! flag && CreateIfNotExists)
+    {
+        return PutDocument(document);
+    }
+    else
+    {
+        return flag;
+    }
+}
+
+bool DataBaseCarServiceDAO::DeleteDocument(int idDocument) // DELETE
+{
+    QSqlQuery query;
+    return query.exec(QString("DELETE FROM document WHERE iddocument=%1")
+                      .arg(idDocument));
+}
+
+///////////////////////////////////////////////////////////////////////////
 ///                                Person                               ///
 ///////////////////////////////////////////////////////////////////////////
 
@@ -515,6 +946,282 @@ bool DataBaseCarServiceDAO::UpdatePerson(Person person, bool CreateIfNotExists) 
 }
 
 bool DataBaseCarServiceDAO::DeletePerson(int idPerson) // DELETE
+{
+    QSqlQuery query;
+    return query.exec(QString("DELETE FROM person WHERE idperson=%1")
+                      .arg(idPerson));
+}
+
+///////////////////////////////////////////////////////////////////////////
+///                                Brand                                ///
+///////////////////////////////////////////////////////////////////////////
+
+Brand DataBaseCarServiceDAO::GetBrand(int idBrand) // SELECT
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM person WHERE idperson=%1").arg(idPerson));
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString FIO = query.value(1).toString();
+        QString PhoneNumber = query.value(2).toString();
+        QString MailAdres = query.value(3).toString();
+        return Person(id, FIO, PhoneNumber, MailAdres);
+    }
+
+    throw std::runtime_error(QString("Incorrect id Person : %1").arg(idPerson).toStdString());
+}
+
+std::vector<Brand> DataBaseCarServiceDAO::GetBrandName(QString Name) // SLECT many
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM person WHERE fio like '%%1%'").arg(FIO));
+    std::vector<Person> result;
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString FIO = query.value(1).toString();
+        QString PhoneNumber = query.value(2).toString();
+        QString MailAdres = query.value(3).toString();
+        result.push_back(Person(id, FIO, PhoneNumber, MailAdres));
+    }
+
+    return result;
+}
+
+std::vector<Brand> DataBaseCarServiceDAO::GetBrands() // SELECT all
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM person"));
+    std::vector<Person> result;
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString FIO = query.value(1).toString();
+        QString PhoneNumber = query.value(2).toString();
+        QString MailAdres = query.value(3).toString();
+        result.push_back(Person(id, FIO, PhoneNumber, MailAdres));
+    }
+
+    return result;
+}
+
+bool DataBaseCarServiceDAO::PutBrand(Brand brand) // INSERT
+{
+    QSqlQuery query;
+    QString str = QString("INSERT INTO person(fio, phonenumber, mailadres) VALUES ('%1', '%2', '%3')")
+            .arg(person.FIO)
+            .arg(person.PhoneNumber)
+            .arg(person.MailAdres);
+    return query.exec(str);
+}
+
+bool DataBaseCarServiceDAO::UpdateBrand(Brand brand, bool CreateIfNotExists) // UPDATE
+{
+    if(!person.idPerson)
+        return false;
+
+    QSqlQuery query;
+    bool flag = query.exec(QString("UPDATE person SET fio='%1', phonenumber='%2', mailadres='%3' WHERE idperson=%4")
+                           .arg(person.FIO)
+                           .arg(person.PhoneNumber)
+                           .arg(person.MailAdres)
+                           .arg(person.idPerson));
+    if ( ! flag && CreateIfNotExists)
+    {
+        return PutPerson(person);
+    }
+    else
+    {
+        return flag;
+    }
+}
+
+bool DataBaseCarServiceDAO::DeleteBrand(int idBrand) // DELETE
+{
+    QSqlQuery query;
+    return query.exec(QString("DELETE FROM person WHERE idperson=%1")
+                      .arg(idPerson));
+}
+
+///////////////////////////////////////////////////////////////////////////
+///                                BodyStyle                            ///
+///////////////////////////////////////////////////////////////////////////
+
+BodyStyle DataBaseCarServiceDAO::GetBodyStyle(int idBodyStyle) // SELECT
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM person WHERE idperson=%1").arg(idPerson));
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString FIO = query.value(1).toString();
+        QString PhoneNumber = query.value(2).toString();
+        QString MailAdres = query.value(3).toString();
+        return Person(id, FIO, PhoneNumber, MailAdres);
+    }
+
+    throw std::runtime_error(QString("Incorrect id Person : %1").arg(idPerson).toStdString());
+}
+
+std::vector<BodyStyle> DataBaseCarServiceDAO::GetBodyStyleName(QString Name) // SELECT many
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM person WHERE fio like '%%1%'").arg(FIO));
+    std::vector<Person> result;
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString FIO = query.value(1).toString();
+        QString PhoneNumber = query.value(2).toString();
+        QString MailAdres = query.value(3).toString();
+        result.push_back(Person(id, FIO, PhoneNumber, MailAdres));
+    }
+
+    return result;
+}
+
+std::vector<BodyStyle> DataBaseCarServiceDAO::GetBodyStyles() // SELECT ALL
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM person"));
+    std::vector<Person> result;
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString FIO = query.value(1).toString();
+        QString PhoneNumber = query.value(2).toString();
+        QString MailAdres = query.value(3).toString();
+        result.push_back(Person(id, FIO, PhoneNumber, MailAdres));
+    }
+
+    return result;
+}
+
+bool DataBaseCarServiceDAO::PutBodyStyle(BodyStyle bodystyle) // INSERT
+{
+    QSqlQuery query;
+    QString str = QString("INSERT INTO person(fio, phonenumber, mailadres) VALUES ('%1', '%2', '%3')")
+            .arg(person.FIO)
+            .arg(person.PhoneNumber)
+            .arg(person.MailAdres);
+    return query.exec(str);
+}
+
+bool DataBaseCarServiceDAO::UpdateBodyStyle(BodyStyle bodystyle, bool CreateIfNotExists) // UPDATE
+{
+    if(!person.idPerson)
+        return false;
+
+    QSqlQuery query;
+    bool flag = query.exec(QString("UPDATE person SET fio='%1', phonenumber='%2', mailadres='%3' WHERE idperson=%4")
+                           .arg(person.FIO)
+                           .arg(person.PhoneNumber)
+                           .arg(person.MailAdres)
+                           .arg(person.idPerson));
+    if ( ! flag && CreateIfNotExists)
+    {
+        return PutPerson(person);
+    }
+    else
+    {
+        return flag;
+    }
+}
+
+bool DataBaseCarServiceDAO::DeleteBodyStyle(int idBodyStyle) // DELETE
+{
+    QSqlQuery query;
+    return query.exec(QString("DELETE FROM person WHERE idperson=%1")
+                      .arg(idPerson));
+}
+
+///////////////////////////////////////////////////////////////////////////
+///                                Model                                ///
+///////////////////////////////////////////////////////////////////////////
+
+Model DataBaseCarServiceDAO::GetModel(int idModel) // SELECT
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM person WHERE idperson=%1").arg(idPerson));
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString FIO = query.value(1).toString();
+        QString PhoneNumber = query.value(2).toString();
+        QString MailAdres = query.value(3).toString();
+        return Person(id, FIO, PhoneNumber, MailAdres);
+    }
+
+    throw std::runtime_error(QString("Incorrect id Person : %1").arg(idPerson).toStdString());
+}
+
+std::vector<Model> DataBaseCarServiceDAO::GetModelName(QString Name) // SELECT many
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM person WHERE fio like '%%1%'").arg(FIO));
+    std::vector<Person> result;
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString FIO = query.value(1).toString();
+        QString PhoneNumber = query.value(2).toString();
+        QString MailAdres = query.value(3).toString();
+        result.push_back(Person(id, FIO, PhoneNumber, MailAdres));
+    }
+
+    return result;
+}
+
+std::vector<Model> DataBaseCarServiceDAO::GetModels() // SELECT ALL
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM person"));
+    std::vector<Person> result;
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString FIO = query.value(1).toString();
+        QString PhoneNumber = query.value(2).toString();
+        QString MailAdres = query.value(3).toString();
+        result.push_back(Person(id, FIO, PhoneNumber, MailAdres));
+    }
+
+    return result;
+}
+
+bool DataBaseCarServiceDAO::PutModel(Model model) // INSERT
+{
+    QSqlQuery query;
+    QString str = QString("INSERT INTO person(fio, phonenumber, mailadres) VALUES ('%1', '%2', '%3')")
+            .arg(person.FIO)
+            .arg(person.PhoneNumber)
+            .arg(person.MailAdres);
+    return query.exec(str);
+}
+
+bool DataBaseCarServiceDAO::UpdateModel(Model model, bool CreateIfNotExists) // UPDATE
+{
+    if(!person.idPerson)
+        return false;
+
+    QSqlQuery query;
+    bool flag = query.exec(QString("UPDATE person SET fio='%1', phonenumber='%2', mailadres='%3' WHERE idperson=%4")
+                           .arg(person.FIO)
+                           .arg(person.PhoneNumber)
+                           .arg(person.MailAdres)
+                           .arg(person.idPerson));
+    if ( ! flag && CreateIfNotExists)
+    {
+        return PutPerson(person);
+    }
+    else
+    {
+        return flag;
+    }
+}
+
+bool DataBaseCarServiceDAO::DeleteModel(int idModel) // DELETE
 {
     QSqlQuery query;
     return query.exec(QString("DELETE FROM person WHERE idperson=%1")
