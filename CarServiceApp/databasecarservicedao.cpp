@@ -88,6 +88,98 @@ void DataBaseCarServiceDAO::test()
 }
 
 ///////////////////////////////////////////////////////////////////////////
+///                                Component                            ///
+///////////////////////////////////////////////////////////////////////////
+
+Component DataBaseCarServiceDAO::GetComponent(int idComponent)
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM component WHERE idcomponent=%1").arg(idComponent));
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString Name = query.value(1).toString();
+        double Price = query.value(2).toDouble();
+        QDate Date = query.value(3).toDate();
+        return Component(id, Name, Date, Price);
+    }
+
+    throw std::runtime_error(QString("Incorrect id component : %1").arg(idComponent).toStdString());
+}
+
+std::vector<Component> DataBaseCarServiceDAO::GetComponent_Name(QString Name)
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM component WHERE name like '%%1%'").arg(Name));
+    std::vector<Component> result;
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString Name = query.value(1).toString();
+        double Price = query.value(2).toDouble();
+        QDate Date = query.value(3).toDate();
+        result.push_back(Component(id, Name, Date, Price));
+    }
+
+    return result;
+}
+
+std::vector<Component> DataBaseCarServiceDAO::GetComponents()
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM component"));
+    std::vector<Component> result;
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString Name = query.value(1).toString();
+        double Price = query.value(2).toDouble();
+        QDate Date = query.value(3).toDate();
+        result.push_back(Component(id, Name, Date, Price));
+    }
+
+    return result;
+}
+
+bool DataBaseCarServiceDAO::PutComponent(Component component)
+{
+    QSqlQuery query;
+    QString str = QString("INSERT INTO component(name, price, dateofmanufacture) VALUES ('%1', '%2', '%3')")
+            .arg(component.Name)
+            .arg(component.Price)
+            .arg(component.DateOfManufacture.toString());
+    return query.exec(str);
+}
+
+bool DataBaseCarServiceDAO::UpdateComponent(Component component, bool CreateIfNotExists)
+{
+    if(!component.idComponent)
+        return false;
+
+    QSqlQuery query;
+    bool flag = query.exec(QString("UPDATE component SET name='%1', price='%2', dateofmanufacture='%3' WHERE idcomponent=%4")
+                           .arg(component.Name)
+                           .arg(component.Price)
+                           .arg(component.DateOfManufacture.toString())
+                           .arg(component.idComponent));
+    if ( ! flag && CreateIfNotExists)
+    {
+        return PutComponent(component);
+    }
+    else
+    {
+        return flag;
+    }
+}
+
+bool DataBaseCarServiceDAO::DeleteComponent(int idComponent)
+{
+    QSqlQuery query;
+    return query.exec(QString("DELETE FROM component WHERE idcomponent=%1")
+                      .arg(idComponent));
+}
+
+///////////////////////////////////////////////////////////////////////////
 ///                                Car                                  ///
 ///////////////////////////////////////////////////////////////////////////
 

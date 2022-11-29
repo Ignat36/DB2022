@@ -32,6 +32,17 @@ private:
 
 public:
     ///////////////////////////////////////////////////////////////////////////
+    ///                                Component                            ///
+    ///////////////////////////////////////////////////////////////////////////
+    Component GetComponent(int idComponent); // get component with component id
+    std::vector<Component> GetComponent_Name(QString Name); // get component with client id
+    std::vector<Component> GetComponents(); // get all components
+
+    bool PutComponent(Component component); // insert component
+    bool UpdateComponent(Component component, bool CreateIfNotExists); // update component with component.id if not exists creates it
+
+    bool DeleteComponent(int idComponent); // delete component
+    ///////////////////////////////////////////////////////////////////////////
     ///                                Car                                  ///
     ///////////////////////////////////////////////////////////////////////////
     Car GetCar(int idCar); // get car with car id

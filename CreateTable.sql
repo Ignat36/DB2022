@@ -7,6 +7,24 @@ CREATE TABLE IF NOT EXISTS bodystyle
     StyleName character varying(45) NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS role
+(
+    idRole serial PRIMARY KEY,
+    Name character varying(20) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS users
+(
+    idUser serial PRIMARY KEY,
+    Login character varying(45) NOT NULL,
+	Password character varying(60) NOT NULL, 
+	Role_idRole integer NOT NULL,
+	
+	FOREIGN KEY (Role_idRole)
+    	REFERENCES role (idRole)
+    	ON DELETE CASCADE
+);
+
 CREATE TABLE IF NOT EXISTS brand
 (
     idBrand serial PRIMARY KEY,

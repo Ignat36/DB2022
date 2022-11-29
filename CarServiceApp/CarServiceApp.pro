@@ -27,13 +27,13 @@ SOURCES += \
     mainwindow.cpp \
     person.cpp \
     service.cpp \
-    sparecarcomponent.cpp \
     transfer.cpp \
     worker.cpp \
     workingequipment.cpp \
     brand.cpp \
     bodystyle.cpp \
-    model.cpp
+    model.cpp \
+    component.cpp
 
 HEADERS += \
     car.h \
@@ -45,13 +45,13 @@ HEADERS += \
     mainwindow.h \
     person.h \
     service.h \
-    sparecarcomponent.h \
     transfer.h \
     worker.h \
     workingequipment.h \
     brand.h \
     bodystyle.h \
-    model.h
+    model.h \
+    component.h
 
 FORMS += \
     mainwindow.ui

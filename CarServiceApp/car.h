@@ -3,7 +3,7 @@
 
 #include <QString>
 #include <vector>
-#include "sparecarcomponent.h"
+#include "component.h"
 #include "model.h"
 
 class Car
