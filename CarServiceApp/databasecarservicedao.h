@@ -45,12 +45,12 @@ public:
     ///////////////////////////////////////////////////////////////////////////
     ///                                Role                                 ///
     ///////////////////////////////////////////////////////////////////////////
-    Role GetRole(int idRole); // get user
+    Role GetRole(int idRole); // get role
 
-    bool PutRole(Role role); // insert user
-    bool UpdateRole(Role role, bool CreateIfNotExists); // update user with user.id if not exists creates it
+    bool PutRole(Role role); // insert role
+    bool UpdateRole(Role role, bool CreateIfNotExists); // update role with role.id if not exists creates it
 
-    bool DeleteRole(int idRole); // delete user
+    bool DeleteRole(int idRole); // delete role
     ///////////////////////////////////////////////////////////////////////////
     ///                                Component                            ///
     ///////////////////////////////////////////////////////////////////////////

@@ -89,6 +89,116 @@ void DataBaseCarServiceDAO::test()
 }
 
 ///////////////////////////////////////////////////////////////////////////
+///                                User                                 ///
+///////////////////////////////////////////////////////////////////////////
+
+User DataBaseCarServiceDAO::GetUser(QString Login, QString Password)
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM users WHERE login='%1' AND password='%2'").arg(Login).arg(Password));
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString Log = query.value(1).toString();
+        QString Pas = query.value(2).toString();
+        int Role_idRole = query.value(3).toInt();
+        return User(id, Log, Pas, Role_idRole);
+    }
+
+    throw std::runtime_error(QString("Incorrect user : %1 : %2").arg(Login).arg(Password).toStdString());
+}
+
+bool DataBaseCarServiceDAO::PutUser(User user)
+{
+    QSqlQuery query;
+    QString str = QString("INSERT INTO users(login, password, role_idrole) VALUES ('%1','%2', '%3')")
+            .arg(user.Login)
+            .arg(user.Password)
+            .arg(user.Role_idRole);
+    return query.exec(str);
+}
+
+bool DataBaseCarServiceDAO::UpdateUser(User user, bool CreateIfNotExists)
+{
+    if(!user.idUser)
+        return false;
+
+    QSqlQuery query;
+    bool flag = query.exec(QString("UPDATE users SET login='%1', password='%2', role_idrole='%3' WHERE iduser=%4")
+                           .arg(user.Login)
+                           .arg(user.Password)
+                           .arg(user.Role_idRole)
+                           .arg(user.idUser));
+    if ( ! flag && CreateIfNotExists)
+    {
+        return PutUser(user);
+    }
+    else
+    {
+        return flag;
+    }
+}
+
+bool DataBaseCarServiceDAO::DeleteUser(int idUser)
+{
+    QSqlQuery query;
+    return query.exec(QString("DELETE FROM users WHERE iduser=%1")
+                      .arg(idUser));
+}
+
+///////////////////////////////////////////////////////////////////////////
+///                                Role                                 ///
+///////////////////////////////////////////////////////////////////////////
+
+Role DataBaseCarServiceDAO::GetRole(int idRole)
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT * FROM role WHERE idrole=%1").arg(idRole));
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QString Name = query.value(1).toString();
+        return Role(id, Name);
+    }
+
+    throw std::runtime_error(QString("Incorrect id role : %1").arg(idRole).toStdString());
+}
+
+bool DataBaseCarServiceDAO::PutRole(Role role)
+{
+    QSqlQuery query;
+    QString str = QString("INSERT INTO role(name) VALUES ('%1')")
+            .arg(role.Name);
+    return query.exec(str);
+}
+
+bool DataBaseCarServiceDAO::UpdateRole(Role role, bool CreateIfNotExists)
+{
+    if(!role.idRole)
+        return false;
+
+    QSqlQuery query;
+    bool flag = query.exec(QString("UPDATE role SET name='%1' WHERE idrole=%2")
+                           .arg(role.Name)
+                           .arg(role.idRole));
+    if ( ! flag && CreateIfNotExists)
+    {
+        return PutRole(role);
+    }
+    else
+    {
+        return flag;
+    }
+}
+
+bool DataBaseCarServiceDAO::DeleteRole(int idRole)
+{
+    QSqlQuery query;
+    return query.exec(QString("DELETE FROM role WHERE idrole=%1")
+                      .arg(idRole));
+}
+
+///////////////////////////////////////////////////////////////////////////
 ///                                Component                            ///
 ///////////////////////////////////////////////////////////////////////////
 
