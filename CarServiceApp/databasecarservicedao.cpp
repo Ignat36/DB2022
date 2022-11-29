@@ -5,6 +5,7 @@
 #include <QSqlError>
 #include <exception>
 #include <QDebug>
+#include <QString>
 
 // Create connection
 DataBaseCarServiceDAO::DataBaseCarServiceDAO() : isConnected(false)

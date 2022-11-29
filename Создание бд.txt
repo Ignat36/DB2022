@@ -7,6 +7,24 @@ CREATE TABLE IF NOT EXISTS bodystyle
     StyleName character varying(45) NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS role
+(
+    idRole serial PRIMARY KEY,
+    Name character varying(20) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS users
+(
+    idUser serial PRIMARY KEY,
+    Login character varying(45) NOT NULL,
+	Password character varying(60) NOT NULL, 
+	Role_idRole integer NOT NULL,
+	
+	FOREIGN KEY (Role_idRole)
+    	REFERENCES role (idRole)
+    	ON DELETE CASCADE
+);
+
 CREATE TABLE IF NOT EXISTS brand
 (
     idBrand serial PRIMARY KEY,
@@ -41,7 +59,7 @@ CREATE TABLE IF NOT EXISTS component
     idComponent serial PRIMARY KEY,
     Name character varying(60) NOT NULL,
     Price real NOT NULL,
-    DateOfManufacture timestamp(0) without time zone NOT NULL
+    DateOfManufacture date NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS client
@@ -74,7 +92,7 @@ CREATE TABLE IF NOT EXISTS workingequipment
     idWorkingEquipment serial PRIMARY KEY,
     Name character varying(45) NOT NULL,
     AssignmentOfUse character varying(60) NOT NULL,
-    LastTimeUsed character varying(30) NOT NULL,
+    LastTimeUsed date NOT NULL,
     Price real NOT NULL
 );
 
@@ -130,8 +148,8 @@ CREATE TABLE IF NOT EXISTS document
     Text character varying(1000),
     WorkedHours integer NOT NULL,
     CashTransfer_idCashTransfer integer,
-    WorkAcceptDate timestamp(0) without time zone,
-    WorkDoneDate timestamp(0) without time zone,
+    WorkAcceptDate date,
+    WorkDoneDate date,
     Car_idCar integer NOT NULL,
     Price real NOT NULL,
 	
