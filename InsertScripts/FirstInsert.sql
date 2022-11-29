@@ -142,28 +142,6 @@ INSERT INTO role(name) VALUES ('Админ');
 INSERT INTO role(name) VALUES ('Менеджер');
 INSERT INTO role(name) VALUES ('Рабочий');
 	
-INSERT INTO users(login, password, role_idrole) 
-	VALUES 
-	(
-		'admin', 
-		'admin',
-		1
-	);		
-INSERT INTO users(login, password, role_idrole) 
-	VALUES 
-	(
-		'manager', 
-		'manager',
-		2
-	);
-INSERT INTO users(login, password, role_idrole) 
-	VALUES 
-	(
-		'worker', 
-		'worker',
-		3
-	);
-	
 INSERT INTO workingequipment(name, assignmentofuse, lasttimeused, price)
 	VALUES 
 	(
@@ -300,36 +278,40 @@ INSERT INTO service(description, price, requiredtimeh, name)
 		'50',
 		'48',
 		'Антизапотеватель'
+	);	
+	
+INSERT INTO component(name, price, dateofmanufacture)
+	VALUES 
+	(
+		'Двигатель', 
+		'500', 
+		'2015-01-01'
+	);	
+INSERT INTO component(name, price, dateofmanufacture)
+	VALUES 
+	(
+		'Лобовое стекло', 
+		'200', 
+		'2015-01-01'
+	);	
+INSERT INTO component(name, price, dateofmanufacture)
+	VALUES 
+	(
+		'Аккумулятор', 
+		'150', 
+		'2015-01-01'
+	);	
+INSERT INTO component(name, price, dateofmanufacture)
+	VALUES 
+	(
+		'Крышка поршня', 
+		'20', 
+		'2015-01-01'
+	);	
+INSERT INTO component(name, price, dateofmanufacture)
+	VALUES 
+	(
+		'Краска', 
+		'100', 
+		'2015-01-01'
 	);
-	
-INSERT INTO public.model(
-	name, brand_idbrand, bodystyle_idbodystyle)
-	VALUES (?, ?, ?, ?);
-	
-INSERT INTO public.cashaccount(
-	cardnumber, person_idperson)
-	VALUES (?, ?, ?);
-	
-INSERT INTO public.cashtransfer(
-	cash, cashaccount_idcashaccount, type)
-	VALUES (?, ?, ?, ?);
-	
-INSERT INTO public.client(
-	person_idperson, lastvisit)
-	VALUES (?, ?);
-	
-INSERT INTO public.worker(
-	salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson)
-	VALUES (?, ?, ?, ?, ?, ?, ?);
-	
-INSERT INTO public.document(
-	text, workedhours, cashtransfer_idcashtransfer, workacceptdate, workdonedate, car_idcar, price)
-	VALUES (?, ?, ?, ?, ?, ?, ?, ?);
-	
-INSERT INTO public.car(
-	defects, client_person_idperson, model_idmodel)
-	VALUES (?, ?, ?, ?);
-	
-INSERT INTO public.component(
-	name, price, dateofmanufacture)
-	VALUES (?, ?, ?, ?);

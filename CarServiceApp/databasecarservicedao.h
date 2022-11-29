@@ -14,6 +14,8 @@
 #include "worker.h"
 #include "workingequipment.h"
 #include "service.h"
+#include "user.h"
+#include "role.h"
 
 
 class DataBaseCarServiceDAO
@@ -31,6 +33,24 @@ private:
     QSqlDatabase DataBase;
 
 public:
+    ///////////////////////////////////////////////////////////////////////////
+    ///                                User                                 ///
+    ///////////////////////////////////////////////////////////////////////////
+    User GetUser(QString Login, QString Password); // get user
+
+    bool PutUser(User user); // insert user
+    bool UpdateUser(User user, bool CreateIfNotExists); // update user with user.id if not exists creates it
+
+    bool DeleteUser(int idUser); // delete user
+    ///////////////////////////////////////////////////////////////////////////
+    ///                                Role                                 ///
+    ///////////////////////////////////////////////////////////////////////////
+    Role GetRole(int idRole); // get user
+
+    bool PutRole(Role role); // insert user
+    bool UpdateRole(Role role, bool CreateIfNotExists); // update user with user.id if not exists creates it
+
+    bool DeleteRole(int idRole); // delete user
     ///////////////////////////////////////////////////////////////////////////
     ///                                Component                            ///
     ///////////////////////////////////////////////////////////////////////////

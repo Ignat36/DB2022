@@ -33,7 +33,9 @@ SOURCES += \
     brand.cpp \
     bodystyle.cpp \
     model.cpp \
-    component.cpp
+    component.cpp \
+    role.cpp \
+    user.cpp
 
 HEADERS += \
     car.h \
@@ -51,7 +53,9 @@ HEADERS += \
     brand.h \
     bodystyle.h \
     model.h \
-    component.h
+    component.h \
+    role.h \
+    user.h
 
 FORMS += \
     mainwindow.ui
