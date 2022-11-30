@@ -22,16 +22,22 @@ INNER JOIN model ON model.idmodel = car.model_idmodel
 INNER JOIN brand ON brand.idbrand = model.brand_idbrand
 INNER JOIN bodystyle ON bodystyle.idbodystyle = model.bodystyle_idbodystyle;
 
+SELECT * 
+FROM client
+INNER JOIN person ON person.idperson = client.person_idperson
+WHERE client.lastvisit = (SELECT MIN(lastvisit) FROM client);
+
 SELECT document.text, document.workedhours, document.workacceptdate, document.workdonedate, document.price,
-		brand.name, model.name, bodystyle.stylename, person.fio
+		brand.name, model.name, bodystyle.stylename, person.fio, cashaccount.cardnumber, cashtransfer.cash
 FROM document
 INNER JOIN car ON car.idcar = document.car_idcar
 INNER JOIN person ON person.idperson = car.client_person_idperson
 INNER JOIN model ON model.idmodel = car.model_idmodel
 INNER JOIN brand ON brand.idbrand = model.brand_idbrand
-INNER JOIN bodystyle ON bodystyle.idbodystyle = model.bodystyle_idbodystyle;
+INNER JOIN bodystyle ON bodystyle.idbodystyle = model.bodystyle_idbodystyle
+LEFT JOIN cashtransfer ON cashtransfer.idcashtransfer = document.cashtransfer_idcashtransfer
+LEFT JOIN cashaccount ON cashaccount.idcashaccount = cashtransfer.cashaccount_idcashaccount;
 
-SELECT * 
-FROM client
-INNER JOIN person ON person.idperson = client.person_idperson
-WHERE client.lastvisit = (SELECT MAX(lastvisit) FROM client);
+SELECT type, SUM(cash) 
+FROM cashtransfer
+GROUP BY type;

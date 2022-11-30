@@ -1,0 +1,38 @@
+-- drop procedure insertModel;
+CREATE OR REPLACE PROCEDURE insertModel(
+	BrandName character varying,
+	BodyStyleName character varying,
+	ModelName character varying
+) 
+language plpgsql
+as $$
+	DECLARE
+	bid integer := 0;
+	bsid integer := 0;
+	rec record;
+	recs record;
+BEGIN
+	insert into brand(name) 
+	select BrandName
+	where not exists (select * from brand where name = BrandName);
+	
+	insert into bodystyle(stylename) 
+	select BodyStyleName
+	where not exists (select * from bodystyle where name = BodyStyleName);
+	
+	for rec in (select * from brand where name = BrandName)
+	loop
+		bid := rec.idbrand;
+	end loop;
+	
+	for recs in (select * from bodystyle where stylename = BodyStyleName)
+	loop
+		bsid := recs.idbodystyle;
+	end loop;
+	
+	
+	insert into model(name, brand_idbrand, bodystyle_idbodystyle) 
+	select ModelName, bid, bsid
+	where not exists (select * from model where name = ModelName AND brand_idbrand = bid AND bodystyle_idbodystyle = bsid);
+
+END; $$
