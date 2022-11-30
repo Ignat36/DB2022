@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page_authorize">
      <widget class="QPushButton" name="SignIn_button">
@@ -355,10 +355,10 @@ p, li { white-space: pre-wrap; }
        <item>
         <widget class="QLineEdit" name="search_car_comp_line_edit">
          <property name="enabled">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
          <property name="text">
-          <string>НЕДОСТУПНО</string>
+          <string/>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -385,12 +385,12 @@ p, li { white-space: pre-wrap; }
       </property>
       <layout class="QFormLayout" name="search_transfer_grid_layout">
        <item row="0" column="0">
-        <widget class="QLabel" name="search_by_sender_lable_read_only">
+        <widget class="QLabel" name="search_by_fior_lable_read_only">
          <property name="enabled">
           <bool>false</bool>
          </property>
          <property name="text">
-          <string>Sender</string>
+          <string>FIO</string>
          </property>
         </widget>
        </item>
@@ -398,17 +398,17 @@ p, li { white-space: pre-wrap; }
         <widget class="QLineEdit" name="search_by_sender_line_edit"/>
        </item>
        <item row="1" column="0">
-        <widget class="QLabel" name="search_by_addresser_lable_read_only">
+        <widget class="QLabel" name="search_by_type_lable_read_only">
          <property name="enabled">
           <bool>false</bool>
          </property>
          <property name="text">
-          <string>Addresser</string>
+          <string>Type</string>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLineEdit" name="search_by_addresser_line_edit"/>
+        <widget class="QComboBox" name="transfer_search_ytpe_comboBox"/>
        </item>
       </layout>
      </widget>

@@ -19,6 +19,7 @@ public:
 
 private:
     void setDisplaiedText(std::vector<QString> strings);
+    void BindComboBox();
 
 private slots:
     void resetWarning();
@@ -37,5 +38,6 @@ private:
 private:
 
     void setWarning(const QString& warning, int time = 5);
+    QString serviceAccountNumber = "65028609986509006138";
 };
 #endif // MAINWINDOW_H

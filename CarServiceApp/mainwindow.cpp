@@ -8,11 +8,27 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     connect(timer, SIGNAL(timeout()), this, SLOT(resetWarning()));
+
+    BindComboBox();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::BindComboBox()
+{
+    ui->transfer_search_ytpe_comboBox->addItem("Оплата работ");
+    ui->transfer_search_ytpe_comboBox->addItem("Зарплата работникам");
+
+    ui->transfer_search_ytpe_comboBox->setEditable(true);
+    ui->transfer_search_ytpe_comboBox->lineEdit()->setReadOnly(true);
+    ui->transfer_search_ytpe_comboBox->lineEdit()->setAlignment(Qt::AlignCenter);
+
+    for (int i = 0 ; i < ui->transfer_search_ytpe_comboBox->count() ; ++i) {
+        ui->transfer_search_ytpe_comboBox->setItemData(i, Qt::AlignCenter, Qt::TextAlignmentRole);
+    }
 }
 
 void MainWindow::on_SignIn_button_clicked()
