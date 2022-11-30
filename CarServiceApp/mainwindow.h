@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTimer>
 #include "databasecarservicedao.h"
 
 QT_BEGIN_NAMESPACE
@@ -20,6 +21,8 @@ private:
     void setDisplaiedText(std::vector<QString> strings);
 
 private slots:
+    void resetWarning();
+
     void on_SignIn_button_clicked();
 
     void on_workers_search_button_clicked();
@@ -27,7 +30,12 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
-private:
+    QTimer *timer = new QTimer();
+
     DataBaseCarServiceDAO dao;
+
+private:
+
+    void setWarning(const QString& warning, int time = 5);
 };
 #endif // MAINWINDOW_H

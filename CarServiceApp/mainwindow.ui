@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1008</width>
-    <height>647</height>
+    <width>1013</width>
+    <height>677</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,12 +19,12 @@
      <rect>
       <x>9</x>
       <y>9</y>
-      <width>991</width>
-      <height>611</height>
+      <width>1001</width>
+      <height>641</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page_authorize">
      <widget class="QPushButton" name="SignIn_button">
@@ -98,14 +98,20 @@
      <widget class="QLabel" name="warning_message_label">
       <property name="geometry">
        <rect>
-        <x>400</x>
+        <x>150</x>
         <y>180</y>
-        <width>161</width>
+        <width>661</width>
         <height>31</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color : #FF0000</string>
+      </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>
@@ -219,14 +225,14 @@ p, li { white-space: pre-wrap; }
       </property>
       <layout class="QHBoxLayout" name="bottom_action_bar">
        <item>
-        <widget class="QPushButton" name="pushButton_6">
+        <widget class="QPushButton" name="workingequipment_button">
          <property name="text">
           <string>Wokring equipment</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_5">
+        <widget class="QPushButton" name="cashtransfer_button">
          <property name="text">
           <string>Cash transfers</string>
          </property>
@@ -534,6 +540,67 @@ p, li { white-space: pre-wrap; }
        <string>Search</string>
       </property>
      </widget>
+     <widget class="QWidget" name="horizontalLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>590</y>
+        <width>981</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="bottom_action_bar_3">
+       <item>
+        <widget class="QPushButton" name="components_button">
+         <property name="text">
+          <string>Components</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="workers_button">
+         <property name="text">
+          <string>Workers</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="services_button">
+         <property name="text">
+          <string>Services</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="cashtransfers_button">
+         <property name="text">
+          <string>Cashtransfers</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="cashaccounts_button">
+         <property name="text">
+          <string>Cash accounts</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="givesalary_button">
+         <property name="text">
+          <string>Give salary</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="hire_button">
+         <property name="text">
+          <string>Hire worker</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_register"/>
    </widget>
@@ -543,7 +610,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1008</width>
+     <width>1013</width>
      <height>20</height>
     </rect>
    </property>

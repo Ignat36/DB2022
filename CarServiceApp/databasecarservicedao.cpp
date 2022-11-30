@@ -11,7 +11,7 @@
 DataBaseCarServiceDAO::DataBaseCarServiceDAO() : isConnected(false)
 {
     CreateConnection();
-    test();
+   // test();
 }
 
 
@@ -36,14 +36,13 @@ bool DataBaseCarServiceDAO::CreateConnection()
 
     if(!DataBase.open())
     {
-        QMessageBox::critical(0,"Cannot open database",
-                                      "Unable to establish a database connection.",QMessageBox::Cancel);// вывести ошибку
+        //QMessageBox::critical(0,"Cannot open database", "Unable to establish a database connection.",QMessageBox::Cancel);// вывести ошибку
         qDebug()<<DataBase.lastError().text();// Вывод сообщения об ошибке
 
         return false;
     }
 
-    QMessageBox::information(0,"Successfully","Establish a database connection",QMessageBox::Ok);// быстрый успех
+    //QMessageBox::information(0,"Successfully","Establish a database connection",QMessageBox::Ok);// быстрый успех
     isConnected = true;
     return true;
 }
@@ -61,31 +60,31 @@ void DataBaseCarServiceDAO::CloseConnection()
 
 void DataBaseCarServiceDAO::test()
 {
-    if (!PutPerson(Person("ignat shar", "1", "none")))
-        qDebug()<<"error\n";
-    if (!PutPerson(Person("egor penis", "2", "none")))
-        qDebug()<<"error\n";
-    if (!PutPerson(Person("vanya kar", "3", "none")))
-        qDebug()<<"error\n";
-    if (!PutPerson(Person("roma kez", "4", "none")))
-        qDebug()<<"error\n";
-    if (!PutPerson(Person("igor anal", "5", "none")))
-        qDebug()<<"error\n";
-    if (!PutPerson(Person("lexa akusher", "6", "none")))
-        qDebug()<<"error\n";
+//    if (!PutPerson(Person("ignat shar", "1", "none")))
+//        qDebug()<<"error\n";
+//    if (!PutPerson(Person("egor penis", "2", "none")))
+//        qDebug()<<"error\n";
+//    if (!PutPerson(Person("vanya kar", "3", "none")))
+//        qDebug()<<"error\n";
+//    if (!PutPerson(Person("roma kez", "4", "none")))
+//        qDebug()<<"error\n";
+//    if (!PutPerson(Person("igor anal", "5", "none")))
+//        qDebug()<<"error\n";
+//    if (!PutPerson(Person("lexa akusher", "6", "none")))
+//        qDebug()<<"error\n";
 
-    std::vector<Person> cl_one = GetPersonFIO("a");
-    std::vector<Person> cl_two = GetPersonFIO("g");
-    std::vector<Person> cl_fore = GetPersonFIO("ig");
+//    std::vector<Person> cl_one = GetPersonFIO("a");
+//    std::vector<Person> cl_two = GetPersonFIO("g");
+//    std::vector<Person> cl_fore = GetPersonFIO("ig");
 
-    Person one = GetPerson(cl_one.front().idPerson);
-    one.PhoneNumber = "+375293555104";
-    UpdatePerson(one, false);
+//    Person one = GetPerson(cl_one.front().idPerson);
+//    one.PhoneNumber = "+375293555104";
+//    UpdatePerson(one, false);
 
-    std::vector<Person> all = GetPersons();
+//    std::vector<Person> all = GetPersons();
 
-    for(auto i: all)
-        DeletePerson(i.idPerson);
+//    for(auto i: all)
+//        DeletePerson(i.idPerson);
 }
 
 ///////////////////////////////////////////////////////////////////////////

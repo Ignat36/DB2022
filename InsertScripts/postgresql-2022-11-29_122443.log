@@ -1,0 +1,3313 @@
+2022-11-29 12:24:43.857 +03 [5388] ���������:  ����������� PostgreSQL 14.5, compiled by Visual C++ build 1914, 64-bit
+2022-11-29 12:24:43.861 +03 [5388] ���������:  ��� ����� ����������� �� ������ IPv6 "::" ������ ���� 5432
+2022-11-29 12:24:43.861 +03 [5388] ���������:  ��� ����� ����������� �� ������ IPv4 "0.0.0.0" ������ ���� 5432
+2022-11-29 12:24:44.116 +03 [5808] �����:  ������� ��� ������ �����������
+2022-11-29 12:24:44.123 +03 [5800] ���������:  ������ ������� �� ���� ��������; ��������� ������ ������: 2022-11-29 11:58:57 +03
+2022-11-29 12:24:45.372 +03 [5800] ���������:  ������� �� ���� ����������� ��������; ������������ �������������� ��������������
+2022-11-29 12:24:45.380 +03 [5800] ���������:  ������ REDO ���������� �� �������� 0/24116E0
+2022-11-29 12:24:45.380 +03 [5800] ���������:  �������� ����� ������ �� �������� 0/24117C8: ��������� 24, �������� 0
+2022-11-29 12:24:45.380 +03 [5800] ���������:  ������ REDO ���������� �� �������� 0/2411790, �������� �������: CPU: �������.: 0.00 �, �������: 0.00 �, ������: 0.00 �
+2022-11-29 12:24:45.451 +03 [5388] ���������:  ������� �� ������ ��������� �����������
+2022-11-29 13:42:49.805 +03 [9232] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 13:42:49.805 +03 [8652] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 13:42:49.805 +03 [12524] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 13:42:49.805 +03 [11096] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 13:42:49.806 +03 [8056] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 13:42:49.807 +03 [3044] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 13:42:49.808 +03 [4692] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 13:42:49.810 +03 [14164] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 13:42:49.811 +03 [8432] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 13:42:49.812 +03 [9160] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 13:42:49.813 +03 [4536] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 13:42:49.813 +03 [11636] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 13:42:49.813 +03 [11308] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 13:42:49.826 +03 [2288] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 13:42:49.832 +03 [13044] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 16:17:08.369 +03 [1388] ОШИБКА:  ошибка синтаксиса (примерное положение: "cashtransfer") (символ 1)
+2022-11-29 16:17:08.369 +03 [1388] ОПЕРАТОР:  cashtransfer
+2022-11-29 17:04:54.552 +03 [8844] ОШИБКА:  выполнение оператора отменено по запросу пользователя
+2022-11-29 17:04:54.552 +03 [8844] ОПЕРАТОР:  SELECT upper(word) as word FROM pg_get_keywords()
+	
+2022-11-29 17:41:56.185 +03 [9520] ОШИБКА:  отношение "carcashaccount" не существует (символ 10449)
+2022-11-29 17:41:56.185 +03 [9520] ОПЕРАТОР:  INSERT INTO bodystyle(stylename) VALUES ('Седан');
+	INSERT INTO bodystyle(stylename) VALUES ('Универсал');
+	INSERT INTO bodystyle(stylename) VALUES ('Хэтчбек');
+	INSERT INTO bodystyle(stylename) VALUES ('Лифтбек');
+	INSERT INTO bodystyle(stylename) VALUES ('Купе');
+	INSERT INTO bodystyle(stylename) VALUES ('Лимузин');
+	INSERT INTO bodystyle(stylename) VALUES ('Кабриолет');
+	INSERT INTO bodystyle(stylename) VALUES ('Внедорожник');
+	INSERT INTO bodystyle(stylename) VALUES ('Микроавтобус');
+	INSERT INTO bodystyle(stylename) VALUES ('Минивэн');
+	INSERT INTO bodystyle(stylename) VALUES ('Родстер');
+	INSERT INTO bodystyle(stylename) VALUES ('Пикап');
+	INSERT INTO bodystyle(stylename) VALUES ('Фургон');
+		
+	INSERT INTO brand(name) VALUES ('Acura');
+	INSERT INTO brand(name) VALUES ('Alfa Romeo');
+	INSERT INTO brand(name) VALUES ('Alpine');
+	INSERT INTO brand(name) VALUES ('Land Rover');
+	INSERT INTO brand(name) VALUES ('Lexus');
+	INSERT INTO brand(name) VALUES ('Lifan');
+	INSERT INTO brand(name) VALUES ('Aston Martin');
+	INSERT INTO brand(name) VALUES ('Audi');
+	INSERT INTO brand(name) VALUES ('Bentley');
+	INSERT INTO brand(name) VALUES ('BMW');
+	INSERT INTO brand(name) VALUES ('Bugatti');
+	INSERT INTO brand(name) VALUES ('Cadillac');
+	INSERT INTO brand(name) VALUES ('Chevrolet');
+	INSERT INTO brand(name) VALUES ('Chrysler');
+	INSERT INTO brand(name) VALUES ('Citroen');
+	INSERT INTO brand(name) VALUES ('Dodge');
+	INSERT INTO brand(name) VALUES ('Ferrari');
+	INSERT INTO brand(name) VALUES ('Fiat');
+	INSERT INTO brand(name) VALUES ('Ford');
+	INSERT INTO brand(name) VALUES ('Geely');
+	INSERT INTO brand(name) VALUES ('Honda');
+	INSERT INTO brand(name) VALUES ('Hyundai');
+	INSERT INTO brand(name) VALUES ('Infiniti');
+	INSERT INTO brand(name) VALUES ('Jaguar');
+	INSERT INTO brand(name) VALUES ('Jeep');
+	INSERT INTO brand(name) VALUES ('KIA');
+	INSERT INTO brand(name) VALUES ('Koenigsegg');
+	INSERT INTO brand(name) VALUES ('Lada');
+	INSERT INTO brand(name) VALUES ('Lamborghini');
+	INSERT INTO brand(name) VALUES ('УАЗ');
+	INSERT INTO brand(name) VALUES ('ВАЗ');
+	INSERT INTO brand(name) VALUES ('Volvo');
+	INSERT INTO brand(name) VALUES ('Volkswagen');
+	INSERT INTO brand(name) VALUES ('Toyota');
+	INSERT INTO brand(name) VALUES ('Tesla');
+	INSERT INTO brand(name) VALUES ('Suzuki');
+	INSERT INTO brand(name) VALUES ('Subaru');
+	INSERT INTO brand(name) VALUES ('smart');
+	INSERT INTO brand(name) VALUES ('Skoda');
+	INSERT INTO brand(name) VALUES ('SEAT');
+	INSERT INTO brand(name) VALUES ('Rolls-Royce');
+	INSERT INTO brand(name) VALUES ('Renault');
+	INSERT INTO brand(name) VALUES ('Range Rover');
+	INSERT INTO brand(name) VALUES ('Porsche');
+	INSERT INTO brand(name) VALUES ('Opel');
+	INSERT INTO brand(name) VALUES ('Nissan');
+	INSERT INTO brand(name) VALUES ('Mitsubishi');
+	INSERT INTO brand(name) VALUES ('Mercedes-Benz');
+	INSERT INTO brand(name) VALUES ('MCLaren');
+	INSERT INTO brand(name) VALUES ('Mazda');
+	INSERT INTO brand(name) VALUES ('Maybach');
+	INSERT INTO brand(name) VALUES ('Maserati');
+	INSERT INTO brand(name) VALUES ('Lotus');
+		
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Леонов Александр Михайлович', 
+			'+375298608283',
+			'PunchBubbaFalling@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Фролов Пётр Ярославович', 
+			'+375296142155',
+			'CrackedGlow@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Кулешов Роман Егорович', 
+			'+375295469723',
+			'GermCliffTwig@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Кузнецова Злата Макаровна', 
+			'+375292562129',
+			'SadColt@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Николаев Всеволод Кириллович', 
+			'+375298329036',
+			'YarnReady@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Петрова Дария Борисовна', 
+			'+375295359150',
+			'MagnumCrowdEcho@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Коновалова Арина Мироновна', 
+			'+375293243738',
+			'CultistSelection@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Петров Кирилл Матвеевич', 
+			'+375293594264',
+			'EraserGunGame@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Павлов Всеволод Владиславович', 
+			'+375296654715',
+			'GeoTouch@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Аксенов Данила Русланович', 
+			'+375295808266',
+			'GirlHawkCamel@gmail.com'
+		);
+	
+		
+	INSERT INTO role(name) VALUES ('Админ');
+	INSERT INTO role(name) VALUES ('Менеджер');
+	INSERT INTO role(name) VALUES ('Рабочий');
+		
+	INSERT INTO users(login, password, role_idrole) 
+		VALUES 
+		(
+			'admin', 
+			'admin',
+			1
+		);		
+	INSERT INTO users(login, password, role_idrole) 
+		VALUES 
+		(
+			'manager', 
+			'manager',
+			2
+		);
+	INSERT INTO users(login, password, role_idrole) 
+		VALUES 
+		(
+			'worker', 
+			'worker',
+			3
+		);
+		
+	INSERT INTO workingequipment(name, assignmentofuse, lasttimeused, price)
+		VALUES 
+		(
+			'Домкрат', 
+			'Машину поднимать',
+			'2022-10-08',
+			'30'
+		);	
+	INSERT INTO workingequipment(name, assignmentofuse, lasttimeused, price)
+		VALUES 
+		(
+			'Подъемник', 
+			'Машину поднимать',
+			'2022-10-08',
+			'15000'
+		);	
+	INSERT INTO workingequipment(name, assignmentofuse, lasttimeused, price)
+		VALUES 
+		(
+			'Распылитель', 
+			'Что-то красить',
+			'2022-10-08',
+			'20'
+		);	
+	INSERT INTO workingequipment(name, assignmentofuse, lasttimeused, price)
+		VALUES 
+		(
+			'Балгарка', 
+			'Что-то пилить',
+			'2022-10-08',
+			'5000'
+		);	
+	INSERT INTO workingequipment(name, assignmentofuse, lasttimeused, price)
+		VALUES 
+		(
+			'Сварочный аппарат', 
+			'Что-то варить',
+			'2022-10-08',
+			'1500'
+		);	
+	INSERT INTO workingequipment(name, assignmentofuse, lasttimeused, price)
+		VALUES 
+		(
+			'Набор инструментов', 
+			'Что-то откручивать\закручивать',
+			'2022-10-08',
+			'20'
+		);
+		
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Данный вид слесарного ремонта рассчитан на диагностику и, в случае выявления мелких неполадок, их устранение. При таком подходе выполняют замену поршневых колец, элементов системы амортизации, деталей тормозной системы и прочее.',
+			'1000',
+			'100',
+			'Текущий слесарный ремонт'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'При таком ремонте автомобиль разбирается и определяется степень износа каждой детали. Комплектующие, имеющие степень износа выше рекомендованной производителем, подлежат замене.',
+			'2000',
+			'300',
+			'Капитальный слесарный ремонт'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Появление незначительных вмятин исправляется даже без покрасочных работ при условии, что лакокрасочное покрытие не разрушено. Для этого используют резиновый молоток в легкодоступных местах или специальные крючки, рычаги и клюшки на труднодоступных участках кузова.',
+			'500',
+			'100',
+			'Удаление вмятин и рихтовка'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Нарушение целостности кузова исправляется посредством сварочных работ. Для этого используются два типа оборудования: электродный сварочный аппарат и плазменная резка. При использовании этих приборов, вдоль сварочного шва железо не деформируется.',
+			'600',
+			'200',
+			'Сварочные работы'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Под покраской подразумевается несколько этапов: работа с кузовом на специальном посте подготовки; обработка лакокрасочным материалом в покрасочной камере; сушка в сушильной камере. В покрасочной камере создаются такие условия, где даже в воздухе отсутствуют загрязнения.',
+			'300',
+			'100',
+			'Покраска'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Речь идет не только об автосигнализации, но и о механической защите. Данная услуга может быть как бюджетной, что характеризуется простой установкой иммобилайзера, так и дорогой, когда создается комплексная защита автомобиля.',
+			'700',
+			'100',
+			'Установка охранных систем'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Заводские сетки радиатора изготавливаются из пластика с минимальным расстоянием между ребрами в 2 сантиметра. Чтобы исключить попадание в радиатор постороннего мусора, имеющего меньший размер, рекомендуется установка защитной сетки.',
+			'50',
+			'24',
+			'Сетка для защиты радиатора'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'После проведения мероприятий по шумоизоляции, заметно снижается уровень шума, поступающего в салон автомобиля с улицы. Кроме того, такие явления, как дребезжание отдельных элементов кузова, посторонние скрипы и стуки полностью устраняются.',
+			'500',
+			'100',
+			'Шумоизоляция авто'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Данное предложение автосервисов подразумевает нанесение на лобовое стекло тончайшего покрытия с высокими водоотталкивающими свойствами. Благодаря такому покрытию, на скорости свыше 60 км/ч дождевая вода будет эффективнее стекать по стеклу, практически без помощи дворников. ',
+			'100',
+			'48',
+			'Антидождь'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Благодаря тонировочной пленке можно не только улучшить внешний вид экстерьера автомобиля, но и сделать пребывание в салоне более комфортным. Это обусловлено поглощением части солнечных лучей пленкой. Чем она темнее, тем больше световых лучей поглощается.',
+			'200',
+			'100',
+			'Тонировка стекол'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Установка данного приспособления позволяет предотвратить запотевание лобового стекла в салоне, а потому видимость не ухудшается при разности температур внешней и внутренней стороны стекла. Эксплуатационный срок антизапотевателя составляет примерно 4 месяца.',
+			'50',
+			'48',
+			'Антизапотеватель'
+		);
+		
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'M8 Coupe',
+			10,
+			5
+		);	
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'E34',
+			10,
+			1
+		);	
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'Vesta',
+			28,
+			1
+		);	
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'Granta',
+			28,
+			1
+		);	
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'Rio',
+			26,
+			1
+		);
+		
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'17409488245517115276',
+			1
+		);	
+	INSERT INTO carcashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'31233411387427793198',
+			3
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'14232216857618927954',
+			2
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'65028602486509006138',
+			4
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'93446066184963788291',
+			5
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'35984076361542097372',
+			6
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'60165754120014607177',
+			7
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'77335998182660380125',
+			8
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'09478351201640618984',
+			9
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'14398808778383710734',
+			10
+		);
+		
+	INSERT INTO cashtransfer(cash, cashaccount_idcashaccount, type)
+		VALUES 
+		(
+			'1000',
+			6, 
+			'Client'
+		);	
+	INSERT INTO cashtransfer(cash, cashaccount_idcashaccount, type)
+		VALUES 
+		(
+			'1500',
+			7, 
+			'Client'
+		);	
+	INSERT INTO cashtransfer(cash, cashaccount_idcashaccount, type)
+		VALUES 
+		(
+			'50',
+			8, 
+			'Client'
+		);	
+	INSERT INTO cashtransfer(cash, cashaccount_idcashaccount, type)
+		VALUES 
+		(
+			'100',
+			9, 
+			'Client'
+		);	
+	INSERT INTO cashtransfer(cash, cashaccount_idcashaccount, type)
+		VALUES 
+		(
+			'2900',
+			10, 
+			'Client'
+		);
+		
+	INSERT INTO client(person_idperson, lastvisit)
+		VALUES 
+		(
+			6,
+			'2022-06-23'
+		);	
+	INSERT INTO client(person_idperson, lastvisit)
+		VALUES 
+		(
+			7,
+			'2022-01-10'
+		);	
+	INSERT INTO client(person_idperson, lastvisit)
+		VALUES 
+		(
+			8,
+			'2022-09-01'
+		);	
+	INSERT INTO client(person_idperson, lastvisit)
+		VALUES 
+		(
+			9,
+			'2022-10-19'
+		);	
+	INSERT INTO client(person_idperson, lastvisit)
+		VALUES 
+		(
+			10,
+			'2022-11-21'
+		);
+		
+	INSERT INTO worker(salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson)
+		VALUES 
+		(
+			'15', 
+			'2016-06-23', 
+			'0', 
+			'19545', 
+			'Автослесарь', 
+			'Норм чел', 
+			'1'
+		);	
+	INSERT INTO worker(salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson)
+		VALUES 
+		(
+			'14', 
+			'2017-06-23', 
+			'0', 
+			'16545', 
+			'Автослесарь', 
+			'Норм чел, играет в доту', 
+			'2'
+		);	
+	INSERT INTO worker(salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson)
+		VALUES 
+		(
+			'20', 
+			'2018-06-23', 
+			'0', 
+			'13545', 
+			'Автослесарь', 
+			'Характер не оч. но свое дело знает.', 
+			'3'
+		);	
+	INSERT INTO worker(salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson)
+		VALUES 
+		(
+			'10', 
+			'2020-06-23', 
+			'10', 
+			'4545', 
+			'Автослесарь', 
+			'Душа коллектива', 
+			'4'
+		);	
+	INSERT INTO worker(salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson)
+		VALUES 
+		(
+			'9', 
+			'2021-06-23', 
+			'10', 
+			'1545', 
+			'Автослесарь', 
+			'Тихий, спокойный', 
+			'5'
+		);
+		
+	INSERT INTO car(
+		defects, client_person_idperson, model_idmodel)
+		VALUES 
+		( 
+			'',
+			'6', 
+			'1'
+		);	
+	INSERT INTO car(
+		defects, client_person_idperson, model_idmodel)
+		VALUES 
+		( 
+			'',
+			'7', 
+			'2'
+		);	
+	INSERT INTO car(
+		defects, client_person_idperson, model_idmodel)
+		VALUES 
+		( 
+			'',
+			'8', 
+			'3'
+		);	
+	INSERT INTO car(
+		defects, client_person_idperson, model_idmodel)
+		VALUES 
+		( 
+			'',
+			'9', 
+			'4'
+		);	
+	INSERT INTO car(
+		defects, client_person_idperson, model_idmodel)
+		VALUES 
+		( 
+			'',
+			'10', 
+			'5'
+		);
+		
+	INSERT INTO document(
+		text, workedhours, cashtransfer_idcashtransfer, workacceptdate, workdonedate, car_idcar, price)
+		VALUES 
+		(
+			'', 
+			'100', 
+			'1', 
+			'2022-01-01', 
+			'2022-06-23', 
+			'1', 
+			'1000'
+		);	
+	INSERT INTO document(
+		text, workedhours, cashtransfer_idcashtransfer, workacceptdate, workdonedate, car_idcar, price)
+		VALUES 
+		(
+			'', 
+			'200', 
+			'2', 
+			'2022-01-01', 
+			'2022-01-10', 
+			'2', 
+			'1500'
+		);	
+	INSERT INTO document(
+		text, workedhours, cashtransfer_idcashtransfer, workacceptdate, workdonedate, car_idcar, price)
+		VALUES 
+		(
+			'', 
+			'24', 
+			'3', 
+			'2022-01-01', 
+			'2022-09-01', 
+			'3', 
+			'50'
+		);	
+	INSERT INTO document(
+		text, workedhours, cashtransfer_idcashtransfer, workacceptdate, workdonedate, car_idcar, price)
+		VALUES 
+		(
+			'', 
+			'72', 
+			'4', 
+			'2022-01-01', 
+			'2022-10-19', 
+			'4', 
+			'100'
+		);	
+	INSERT INTO document(
+		text, workedhours, cashtransfer_idcashtransfer, workacceptdate, workdonedate, car_idcar, price)
+		VALUES 
+		(
+			'', 
+			'600', 
+			'5', 
+			'2022-01-01', 
+			'2022-11-21', 
+			'5', 
+			'2900'
+		);
+		
+		
+	INSERT INTO component(name, price, dateofmanufacture)
+		VALUES 
+		(
+			'Двигатель', 
+			'500', 
+			'2015-01-01'
+		);	
+	INSERT INTO component(name, price, dateofmanufacture)
+		VALUES 
+		(
+			'Лобовое стекло', 
+			'200', 
+			'2015-01-01'
+		);	
+	INSERT INTO component(name, price, dateofmanufacture)
+		VALUES 
+		(
+			'Аккумулятор', 
+			'150', 
+			'2015-01-01'
+		);	
+	INSERT INTO component(name, price, dateofmanufacture)
+		VALUES 
+		(
+			'Крышка поршня', 
+			'20', 
+			'2015-01-01'
+		);	
+	INSERT INTO component(name, price, dateofmanufacture)
+		VALUES 
+		(
+			'Краска', 
+			'100', 
+			'2015-01-01'
+		);
+		
+	INSERT INTO car_component(component_idcomponent, car_idcar)
+		VALUES 
+		(
+			1,
+			1
+		);	
+	INSERT INTO car_component(component_idcomponent, car_idcar)
+		VALUES 
+		(
+			2,
+			2
+		);	
+	INSERT INTO car_component(component_idcomponent, car_idcar)
+		VALUES 
+		(
+			3,
+			3
+		);	
+	INSERT INTO car_component(component_idcomponent, car_idcar)
+		VALUES 
+		(
+			4,
+			4
+		);	
+	INSERT INTO car_component(component_idcomponent, car_idcar)
+		VALUES 
+		(
+			5,
+			5
+		);
+		
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			1, 
+			1
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			2, 
+			1
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			2, 
+			3
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			3, 
+			7
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			4, 
+			7
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			4, 
+			11
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			5, 
+			2
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			5, 
+			5
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			5, 
+			4
+		);
+		
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			1, 
+			1
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			1, 
+			2
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			2, 
+			3
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			2, 
+			4
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			3, 
+			4
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			3, 
+			1
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			4, 
+			1
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			4, 
+			2
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			4, 
+			4
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			4, 
+			5
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			5, 
+			5
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			5, 
+			4
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			5, 
+			3
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			5, 
+			2
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			5, 
+			1
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			1, 
+			5
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			2, 
+			5
+		);
+		
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (1, 2);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (1, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (2, 2);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (1, 1);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (2, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (3, 1);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (3, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (4, 2);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (4, 5);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (4, 6);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (4, 3);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (5, 3);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (6, 2);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (6, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (7, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (8, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (8, 2);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (9, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (11, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (12, 4);
+2022-11-29 17:42:33.979 +03 [9520] ОШИБКА:  INSERT или UPDATE в таблице "users" нарушает ограничение внешнего ключа "users_role_idrole_fkey"
+2022-11-29 17:42:33.979 +03 [9520] ПОДРОБНОСТИ:  Ключ (role_idrole)=(1) отсутствует в таблице "role".
+2022-11-29 17:42:33.979 +03 [9520] ОПЕРАТОР:  INSERT INTO bodystyle(stylename) VALUES ('Седан');
+	INSERT INTO bodystyle(stylename) VALUES ('Универсал');
+	INSERT INTO bodystyle(stylename) VALUES ('Хэтчбек');
+	INSERT INTO bodystyle(stylename) VALUES ('Лифтбек');
+	INSERT INTO bodystyle(stylename) VALUES ('Купе');
+	INSERT INTO bodystyle(stylename) VALUES ('Лимузин');
+	INSERT INTO bodystyle(stylename) VALUES ('Кабриолет');
+	INSERT INTO bodystyle(stylename) VALUES ('Внедорожник');
+	INSERT INTO bodystyle(stylename) VALUES ('Микроавтобус');
+	INSERT INTO bodystyle(stylename) VALUES ('Минивэн');
+	INSERT INTO bodystyle(stylename) VALUES ('Родстер');
+	INSERT INTO bodystyle(stylename) VALUES ('Пикап');
+	INSERT INTO bodystyle(stylename) VALUES ('Фургон');
+		
+	INSERT INTO brand(name) VALUES ('Acura');
+	INSERT INTO brand(name) VALUES ('Alfa Romeo');
+	INSERT INTO brand(name) VALUES ('Alpine');
+	INSERT INTO brand(name) VALUES ('Land Rover');
+	INSERT INTO brand(name) VALUES ('Lexus');
+	INSERT INTO brand(name) VALUES ('Lifan');
+	INSERT INTO brand(name) VALUES ('Aston Martin');
+	INSERT INTO brand(name) VALUES ('Audi');
+	INSERT INTO brand(name) VALUES ('Bentley');
+	INSERT INTO brand(name) VALUES ('BMW');
+	INSERT INTO brand(name) VALUES ('Bugatti');
+	INSERT INTO brand(name) VALUES ('Cadillac');
+	INSERT INTO brand(name) VALUES ('Chevrolet');
+	INSERT INTO brand(name) VALUES ('Chrysler');
+	INSERT INTO brand(name) VALUES ('Citroen');
+	INSERT INTO brand(name) VALUES ('Dodge');
+	INSERT INTO brand(name) VALUES ('Ferrari');
+	INSERT INTO brand(name) VALUES ('Fiat');
+	INSERT INTO brand(name) VALUES ('Ford');
+	INSERT INTO brand(name) VALUES ('Geely');
+	INSERT INTO brand(name) VALUES ('Honda');
+	INSERT INTO brand(name) VALUES ('Hyundai');
+	INSERT INTO brand(name) VALUES ('Infiniti');
+	INSERT INTO brand(name) VALUES ('Jaguar');
+	INSERT INTO brand(name) VALUES ('Jeep');
+	INSERT INTO brand(name) VALUES ('KIA');
+	INSERT INTO brand(name) VALUES ('Koenigsegg');
+	INSERT INTO brand(name) VALUES ('Lada');
+	INSERT INTO brand(name) VALUES ('Lamborghini');
+	INSERT INTO brand(name) VALUES ('УАЗ');
+	INSERT INTO brand(name) VALUES ('ВАЗ');
+	INSERT INTO brand(name) VALUES ('Volvo');
+	INSERT INTO brand(name) VALUES ('Volkswagen');
+	INSERT INTO brand(name) VALUES ('Toyota');
+	INSERT INTO brand(name) VALUES ('Tesla');
+	INSERT INTO brand(name) VALUES ('Suzuki');
+	INSERT INTO brand(name) VALUES ('Subaru');
+	INSERT INTO brand(name) VALUES ('smart');
+	INSERT INTO brand(name) VALUES ('Skoda');
+	INSERT INTO brand(name) VALUES ('SEAT');
+	INSERT INTO brand(name) VALUES ('Rolls-Royce');
+	INSERT INTO brand(name) VALUES ('Renault');
+	INSERT INTO brand(name) VALUES ('Range Rover');
+	INSERT INTO brand(name) VALUES ('Porsche');
+	INSERT INTO brand(name) VALUES ('Opel');
+	INSERT INTO brand(name) VALUES ('Nissan');
+	INSERT INTO brand(name) VALUES ('Mitsubishi');
+	INSERT INTO brand(name) VALUES ('Mercedes-Benz');
+	INSERT INTO brand(name) VALUES ('MCLaren');
+	INSERT INTO brand(name) VALUES ('Mazda');
+	INSERT INTO brand(name) VALUES ('Maybach');
+	INSERT INTO brand(name) VALUES ('Maserati');
+	INSERT INTO brand(name) VALUES ('Lotus');
+		
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Леонов Александр Михайлович', 
+			'+375298608283',
+			'PunchBubbaFalling@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Фролов Пётр Ярославович', 
+			'+375296142155',
+			'CrackedGlow@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Кулешов Роман Егорович', 
+			'+375295469723',
+			'GermCliffTwig@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Кузнецова Злата Макаровна', 
+			'+375292562129',
+			'SadColt@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Николаев Всеволод Кириллович', 
+			'+375298329036',
+			'YarnReady@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Петрова Дария Борисовна', 
+			'+375295359150',
+			'MagnumCrowdEcho@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Коновалова Арина Мироновна', 
+			'+375293243738',
+			'CultistSelection@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Петров Кирилл Матвеевич', 
+			'+375293594264',
+			'EraserGunGame@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Павлов Всеволод Владиславович', 
+			'+375296654715',
+			'GeoTouch@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Аксенов Данила Русланович', 
+			'+375295808266',
+			'GirlHawkCamel@gmail.com'
+		);
+	
+		
+	INSERT INTO role(name) VALUES ('Админ');
+	INSERT INTO role(name) VALUES ('Менеджер');
+	INSERT INTO role(name) VALUES ('Рабочий');
+		
+	INSERT INTO users(login, password, role_idrole) 
+		VALUES 
+		(
+			'admin', 
+			'admin',
+			1
+		);		
+	INSERT INTO users(login, password, role_idrole) 
+		VALUES 
+		(
+			'manager', 
+			'manager',
+			2
+		);
+	INSERT INTO users(login, password, role_idrole) 
+		VALUES 
+		(
+			'worker', 
+			'worker',
+			3
+		);
+		
+	INSERT INTO workingequipment(name, assignmentofuse, lasttimeused, price)
+		VALUES 
+		(
+			'Домкрат', 
+			'Машину поднимать',
+			'2022-10-08',
+			'30'
+		);	
+	INSERT INTO workingequipment(name, assignmentofuse, lasttimeused, price)
+		VALUES 
+		(
+			'Подъемник', 
+			'Машину поднимать',
+			'2022-10-08',
+			'15000'
+		);	
+	INSERT INTO workingequipment(name, assignmentofuse, lasttimeused, price)
+		VALUES 
+		(
+			'Распылитель', 
+			'Что-то красить',
+			'2022-10-08',
+			'20'
+		);	
+	INSERT INTO workingequipment(name, assignmentofuse, lasttimeused, price)
+		VALUES 
+		(
+			'Балгарка', 
+			'Что-то пилить',
+			'2022-10-08',
+			'5000'
+		);	
+	INSERT INTO workingequipment(name, assignmentofuse, lasttimeused, price)
+		VALUES 
+		(
+			'Сварочный аппарат', 
+			'Что-то варить',
+			'2022-10-08',
+			'1500'
+		);	
+	INSERT INTO workingequipment(name, assignmentofuse, lasttimeused, price)
+		VALUES 
+		(
+			'Набор инструментов', 
+			'Что-то откручивать\закручивать',
+			'2022-10-08',
+			'20'
+		);
+		
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Данный вид слесарного ремонта рассчитан на диагностику и, в случае выявления мелких неполадок, их устранение. При таком подходе выполняют замену поршневых колец, элементов системы амортизации, деталей тормозной системы и прочее.',
+			'1000',
+			'100',
+			'Текущий слесарный ремонт'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'При таком ремонте автомобиль разбирается и определяется степень износа каждой детали. Комплектующие, имеющие степень износа выше рекомендованной производителем, подлежат замене.',
+			'2000',
+			'300',
+			'Капитальный слесарный ремонт'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Появление незначительных вмятин исправляется даже без покрасочных работ при условии, что лакокрасочное покрытие не разрушено. Для этого используют резиновый молоток в легкодоступных местах или специальные крючки, рычаги и клюшки на труднодоступных участках кузова.',
+			'500',
+			'100',
+			'Удаление вмятин и рихтовка'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Нарушение целостности кузова исправляется посредством сварочных работ. Для этого используются два типа оборудования: электродный сварочный аппарат и плазменная резка. При использовании этих приборов, вдоль сварочного шва железо не деформируется.',
+			'600',
+			'200',
+			'Сварочные работы'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Под покраской подразумевается несколько этапов: работа с кузовом на специальном посте подготовки; обработка лакокрасочным материалом в покрасочной камере; сушка в сушильной камере. В покрасочной камере создаются такие условия, где даже в воздухе отсутствуют загрязнения.',
+			'300',
+			'100',
+			'Покраска'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Речь идет не только об автосигнализации, но и о механической защите. Данная услуга может быть как бюджетной, что характеризуется простой установкой иммобилайзера, так и дорогой, когда создается комплексная защита автомобиля.',
+			'700',
+			'100',
+			'Установка охранных систем'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Заводские сетки радиатора изготавливаются из пластика с минимальным расстоянием между ребрами в 2 сантиметра. Чтобы исключить попадание в радиатор постороннего мусора, имеющего меньший размер, рекомендуется установка защитной сетки.',
+			'50',
+			'24',
+			'Сетка для защиты радиатора'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'После проведения мероприятий по шумоизоляции, заметно снижается уровень шума, поступающего в салон автомобиля с улицы. Кроме того, такие явления, как дребезжание отдельных элементов кузова, посторонние скрипы и стуки полностью устраняются.',
+			'500',
+			'100',
+			'Шумоизоляция авто'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Данное предложение автосервисов подразумевает нанесение на лобовое стекло тончайшего покрытия с высокими водоотталкивающими свойствами. Благодаря такому покрытию, на скорости свыше 60 км/ч дождевая вода будет эффективнее стекать по стеклу, практически без помощи дворников. ',
+			'100',
+			'48',
+			'Антидождь'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Благодаря тонировочной пленке можно не только улучшить внешний вид экстерьера автомобиля, но и сделать пребывание в салоне более комфортным. Это обусловлено поглощением части солнечных лучей пленкой. Чем она темнее, тем больше световых лучей поглощается.',
+			'200',
+			'100',
+			'Тонировка стекол'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Установка данного приспособления позволяет предотвратить запотевание лобового стекла в салоне, а потому видимость не ухудшается при разности температур внешней и внутренней стороны стекла. Эксплуатационный срок антизапотевателя составляет примерно 4 месяца.',
+			'50',
+			'48',
+			'Антизапотеватель'
+		);
+		
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'M8 Coupe',
+			10,
+			5
+		);	
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'E34',
+			10,
+			1
+		);	
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'Vesta',
+			28,
+			1
+		);	
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'Granta',
+			28,
+			1
+		);	
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'Rio',
+			26,
+			1
+		);
+		
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'17409488245517115276',
+			1
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'31233411387427793198',
+			3
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'14232216857618927954',
+			2
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'65028602486509006138',
+			4
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'93446066184963788291',
+			5
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'35984076361542097372',
+			6
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'60165754120014607177',
+			7
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'77335998182660380125',
+			8
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'09478351201640618984',
+			9
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'14398808778383710734',
+			10
+		);
+		
+	INSERT INTO cashtransfer(cash, cashaccount_idcashaccount, type)
+		VALUES 
+		(
+			'1000',
+			6, 
+			'Client'
+		);	
+	INSERT INTO cashtransfer(cash, cashaccount_idcashaccount, type)
+		VALUES 
+		(
+			'1500',
+			7, 
+			'Client'
+		);	
+	INSERT INTO cashtransfer(cash, cashaccount_idcashaccount, type)
+		VALUES 
+		(
+			'50',
+			8, 
+			'Client'
+		);	
+	INSERT INTO cashtransfer(cash, cashaccount_idcashaccount, type)
+		VALUES 
+		(
+			'100',
+			9, 
+			'Client'
+		);	
+	INSERT INTO cashtransfer(cash, cashaccount_idcashaccount, type)
+		VALUES 
+		(
+			'2900',
+			10, 
+			'Client'
+		);
+		
+	INSERT INTO client(person_idperson, lastvisit)
+		VALUES 
+		(
+			6,
+			'2022-06-23'
+		);	
+	INSERT INTO client(person_idperson, lastvisit)
+		VALUES 
+		(
+			7,
+			'2022-01-10'
+		);	
+	INSERT INTO client(person_idperson, lastvisit)
+		VALUES 
+		(
+			8,
+			'2022-09-01'
+		);	
+	INSERT INTO client(person_idperson, lastvisit)
+		VALUES 
+		(
+			9,
+			'2022-10-19'
+		);	
+	INSERT INTO client(person_idperson, lastvisit)
+		VALUES 
+		(
+			10,
+			'2022-11-21'
+		);
+		
+	INSERT INTO worker(salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson)
+		VALUES 
+		(
+			'15', 
+			'2016-06-23', 
+			'0', 
+			'19545', 
+			'Автослесарь', 
+			'Норм чел', 
+			'1'
+		);	
+	INSERT INTO worker(salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson)
+		VALUES 
+		(
+			'14', 
+			'2017-06-23', 
+			'0', 
+			'16545', 
+			'Автослесарь', 
+			'Норм чел, играет в доту', 
+			'2'
+		);	
+	INSERT INTO worker(salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson)
+		VALUES 
+		(
+			'20', 
+			'2018-06-23', 
+			'0', 
+			'13545', 
+			'Автослесарь', 
+			'Характер не оч. но свое дело знает.', 
+			'3'
+		);	
+	INSERT INTO worker(salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson)
+		VALUES 
+		(
+			'10', 
+			'2020-06-23', 
+			'10', 
+			'4545', 
+			'Автослесарь', 
+			'Душа коллектива', 
+			'4'
+		);	
+	INSERT INTO worker(salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson)
+		VALUES 
+		(
+			'9', 
+			'2021-06-23', 
+			'10', 
+			'1545', 
+			'Автослесарь', 
+			'Тихий, спокойный', 
+			'5'
+		);
+		
+	INSERT INTO car(
+		defects, client_person_idperson, model_idmodel)
+		VALUES 
+		( 
+			'',
+			'6', 
+			'1'
+		);	
+	INSERT INTO car(
+		defects, client_person_idperson, model_idmodel)
+		VALUES 
+		( 
+			'',
+			'7', 
+			'2'
+		);	
+	INSERT INTO car(
+		defects, client_person_idperson, model_idmodel)
+		VALUES 
+		( 
+			'',
+			'8', 
+			'3'
+		);	
+	INSERT INTO car(
+		defects, client_person_idperson, model_idmodel)
+		VALUES 
+		( 
+			'',
+			'9', 
+			'4'
+		);	
+	INSERT INTO car(
+		defects, client_person_idperson, model_idmodel)
+		VALUES 
+		( 
+			'',
+			'10', 
+			'5'
+		);
+		
+	INSERT INTO document(
+		text, workedhours, cashtransfer_idcashtransfer, workacceptdate, workdonedate, car_idcar, price)
+		VALUES 
+		(
+			'', 
+			'100', 
+			'1', 
+			'2022-01-01', 
+			'2022-06-23', 
+			'1', 
+			'1000'
+		);	
+	INSERT INTO document(
+		text, workedhours, cashtransfer_idcashtransfer, workacceptdate, workdonedate, car_idcar, price)
+		VALUES 
+		(
+			'', 
+			'200', 
+			'2', 
+			'2022-01-01', 
+			'2022-01-10', 
+			'2', 
+			'1500'
+		);	
+	INSERT INTO document(
+		text, workedhours, cashtransfer_idcashtransfer, workacceptdate, workdonedate, car_idcar, price)
+		VALUES 
+		(
+			'', 
+			'24', 
+			'3', 
+			'2022-01-01', 
+			'2022-09-01', 
+			'3', 
+			'50'
+		);	
+	INSERT INTO document(
+		text, workedhours, cashtransfer_idcashtransfer, workacceptdate, workdonedate, car_idcar, price)
+		VALUES 
+		(
+			'', 
+			'72', 
+			'4', 
+			'2022-01-01', 
+			'2022-10-19', 
+			'4', 
+			'100'
+		);	
+	INSERT INTO document(
+		text, workedhours, cashtransfer_idcashtransfer, workacceptdate, workdonedate, car_idcar, price)
+		VALUES 
+		(
+			'', 
+			'600', 
+			'5', 
+			'2022-01-01', 
+			'2022-11-21', 
+			'5', 
+			'2900'
+		);
+		
+		
+	INSERT INTO component(name, price, dateofmanufacture)
+		VALUES 
+		(
+			'Двигатель', 
+			'500', 
+			'2015-01-01'
+		);	
+	INSERT INTO component(name, price, dateofmanufacture)
+		VALUES 
+		(
+			'Лобовое стекло', 
+			'200', 
+			'2015-01-01'
+		);	
+	INSERT INTO component(name, price, dateofmanufacture)
+		VALUES 
+		(
+			'Аккумулятор', 
+			'150', 
+			'2015-01-01'
+		);	
+	INSERT INTO component(name, price, dateofmanufacture)
+		VALUES 
+		(
+			'Крышка поршня', 
+			'20', 
+			'2015-01-01'
+		);	
+	INSERT INTO component(name, price, dateofmanufacture)
+		VALUES 
+		(
+			'Краска', 
+			'100', 
+			'2015-01-01'
+		);
+		
+	INSERT INTO car_component(component_idcomponent, car_idcar)
+		VALUES 
+		(
+			1,
+			1
+		);	
+	INSERT INTO car_component(component_idcomponent, car_idcar)
+		VALUES 
+		(
+			2,
+			2
+		);	
+	INSERT INTO car_component(component_idcomponent, car_idcar)
+		VALUES 
+		(
+			3,
+			3
+		);	
+	INSERT INTO car_component(component_idcomponent, car_idcar)
+		VALUES 
+		(
+			4,
+			4
+		);	
+	INSERT INTO car_component(component_idcomponent, car_idcar)
+		VALUES 
+		(
+			5,
+			5
+		);
+		
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			1, 
+			1
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			2, 
+			1
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			2, 
+			3
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			3, 
+			7
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			4, 
+			7
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			4, 
+			11
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			5, 
+			2
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			5, 
+			5
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			5, 
+			4
+		);
+		
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			1, 
+			1
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			1, 
+			2
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			2, 
+			3
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			2, 
+			4
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			3, 
+			4
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			3, 
+			1
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			4, 
+			1
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			4, 
+			2
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			4, 
+			4
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			4, 
+			5
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			5, 
+			5
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			5, 
+			4
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			5, 
+			3
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			5, 
+			2
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			5, 
+			1
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			1, 
+			5
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			2, 
+			5
+		);
+		
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (1, 2);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (1, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (2, 2);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (1, 1);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (2, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (3, 1);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (3, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (4, 2);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (4, 5);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (4, 6);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (4, 3);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (5, 3);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (6, 2);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (6, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (7, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (8, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (8, 2);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (9, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (11, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (12, 4);
+2022-11-29 17:46:51.014 +03 [9520] ОШИБКА:  INSERT или UPDATE в таблице "users" нарушает ограничение внешнего ключа "users_role_idrole_fkey"
+2022-11-29 17:46:51.014 +03 [9520] ПОДРОБНОСТИ:  Ключ (role_idrole)=(1) отсутствует в таблице "role".
+2022-11-29 17:46:51.014 +03 [9520] ОПЕРАТОР:  INSERT INTO bodystyle(stylename) VALUES ('Седан');
+	INSERT INTO bodystyle(stylename) VALUES ('Универсал');
+	INSERT INTO bodystyle(stylename) VALUES ('Хэтчбек');
+	INSERT INTO bodystyle(stylename) VALUES ('Лифтбек');
+	INSERT INTO bodystyle(stylename) VALUES ('Купе');
+	INSERT INTO bodystyle(stylename) VALUES ('Лимузин');
+	INSERT INTO bodystyle(stylename) VALUES ('Кабриолет');
+	INSERT INTO bodystyle(stylename) VALUES ('Внедорожник');
+	INSERT INTO bodystyle(stylename) VALUES ('Микроавтобус');
+	INSERT INTO bodystyle(stylename) VALUES ('Минивэн');
+	INSERT INTO bodystyle(stylename) VALUES ('Родстер');
+	INSERT INTO bodystyle(stylename) VALUES ('Пикап');
+	INSERT INTO bodystyle(stylename) VALUES ('Фургон');
+		
+	INSERT INTO brand(name) VALUES ('Acura');
+	INSERT INTO brand(name) VALUES ('Alfa Romeo');
+	INSERT INTO brand(name) VALUES ('Alpine');
+	INSERT INTO brand(name) VALUES ('Land Rover');
+	INSERT INTO brand(name) VALUES ('Lexus');
+	INSERT INTO brand(name) VALUES ('Lifan');
+	INSERT INTO brand(name) VALUES ('Aston Martin');
+	INSERT INTO brand(name) VALUES ('Audi');
+	INSERT INTO brand(name) VALUES ('Bentley');
+	INSERT INTO brand(name) VALUES ('BMW');
+	INSERT INTO brand(name) VALUES ('Bugatti');
+	INSERT INTO brand(name) VALUES ('Cadillac');
+	INSERT INTO brand(name) VALUES ('Chevrolet');
+	INSERT INTO brand(name) VALUES ('Chrysler');
+	INSERT INTO brand(name) VALUES ('Citroen');
+	INSERT INTO brand(name) VALUES ('Dodge');
+	INSERT INTO brand(name) VALUES ('Ferrari');
+	INSERT INTO brand(name) VALUES ('Fiat');
+	INSERT INTO brand(name) VALUES ('Ford');
+	INSERT INTO brand(name) VALUES ('Geely');
+	INSERT INTO brand(name) VALUES ('Honda');
+	INSERT INTO brand(name) VALUES ('Hyundai');
+	INSERT INTO brand(name) VALUES ('Infiniti');
+	INSERT INTO brand(name) VALUES ('Jaguar');
+	INSERT INTO brand(name) VALUES ('Jeep');
+	INSERT INTO brand(name) VALUES ('KIA');
+	INSERT INTO brand(name) VALUES ('Koenigsegg');
+	INSERT INTO brand(name) VALUES ('Lada');
+	INSERT INTO brand(name) VALUES ('Lamborghini');
+	INSERT INTO brand(name) VALUES ('УАЗ');
+	INSERT INTO brand(name) VALUES ('ВАЗ');
+	INSERT INTO brand(name) VALUES ('Volvo');
+	INSERT INTO brand(name) VALUES ('Volkswagen');
+	INSERT INTO brand(name) VALUES ('Toyota');
+	INSERT INTO brand(name) VALUES ('Tesla');
+	INSERT INTO brand(name) VALUES ('Suzuki');
+	INSERT INTO brand(name) VALUES ('Subaru');
+	INSERT INTO brand(name) VALUES ('smart');
+	INSERT INTO brand(name) VALUES ('Skoda');
+	INSERT INTO brand(name) VALUES ('SEAT');
+	INSERT INTO brand(name) VALUES ('Rolls-Royce');
+	INSERT INTO brand(name) VALUES ('Renault');
+	INSERT INTO brand(name) VALUES ('Range Rover');
+	INSERT INTO brand(name) VALUES ('Porsche');
+	INSERT INTO brand(name) VALUES ('Opel');
+	INSERT INTO brand(name) VALUES ('Nissan');
+	INSERT INTO brand(name) VALUES ('Mitsubishi');
+	INSERT INTO brand(name) VALUES ('Mercedes-Benz');
+	INSERT INTO brand(name) VALUES ('MCLaren');
+	INSERT INTO brand(name) VALUES ('Mazda');
+	INSERT INTO brand(name) VALUES ('Maybach');
+	INSERT INTO brand(name) VALUES ('Maserati');
+	INSERT INTO brand(name) VALUES ('Lotus');
+		
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Леонов Александр Михайлович', 
+			'+375298608283',
+			'PunchBubbaFalling@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Фролов Пётр Ярославович', 
+			'+375296142155',
+			'CrackedGlow@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Кулешов Роман Егорович', 
+			'+375295469723',
+			'GermCliffTwig@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Кузнецова Злата Макаровна', 
+			'+375292562129',
+			'SadColt@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Николаев Всеволод Кириллович', 
+			'+375298329036',
+			'YarnReady@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Петрова Дария Борисовна', 
+			'+375295359150',
+			'MagnumCrowdEcho@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Коновалова Арина Мироновна', 
+			'+375293243738',
+			'CultistSelection@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Петров Кирилл Матвеевич', 
+			'+375293594264',
+			'EraserGunGame@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Павлов Всеволод Владиславович', 
+			'+375296654715',
+			'GeoTouch@gmail.com'
+		);
+	INSERT INTO person(fio, phonenumber, mailadres)
+		VALUES 
+		(
+			'Аксенов Данила Русланович', 
+			'+375295808266',
+			'GirlHawkCamel@gmail.com'
+		);
+	
+		
+	INSERT INTO role(name) VALUES ('Админ');
+	INSERT INTO role(name) VALUES ('Менеджер');
+	INSERT INTO role(name) VALUES ('Рабочий');
+		
+	INSERT INTO users(login, password, role_idrole) 
+		VALUES 
+		(
+			'admin', 
+			'admin',
+			1
+		);		
+	INSERT INTO users(login, password, role_idrole) 
+		VALUES 
+		(
+			'manager', 
+			'manager',
+			2
+		);
+	INSERT INTO users(login, password, role_idrole) 
+		VALUES 
+		(
+			'worker', 
+			'worker',
+			3
+		);
+		
+	INSERT INTO workingequipment(name, assignmentofuse, lasttimeused, price)
+		VALUES 
+		(
+			'Домкрат', 
+			'Машину поднимать',
+			'2022-10-08',
+			'30'
+		);	
+	INSERT INTO workingequipment(name, assignmentofuse, lasttimeused, price)
+		VALUES 
+		(
+			'Подъемник', 
+			'Машину поднимать',
+			'2022-10-08',
+			'15000'
+		);	
+	INSERT INTO workingequipment(name, assignmentofuse, lasttimeused, price)
+		VALUES 
+		(
+			'Распылитель', 
+			'Что-то красить',
+			'2022-10-08',
+			'20'
+		);	
+	INSERT INTO workingequipment(name, assignmentofuse, lasttimeused, price)
+		VALUES 
+		(
+			'Балгарка', 
+			'Что-то пилить',
+			'2022-10-08',
+			'5000'
+		);	
+	INSERT INTO workingequipment(name, assignmentofuse, lasttimeused, price)
+		VALUES 
+		(
+			'Сварочный аппарат', 
+			'Что-то варить',
+			'2022-10-08',
+			'1500'
+		);	
+	INSERT INTO workingequipment(name, assignmentofuse, lasttimeused, price)
+		VALUES 
+		(
+			'Набор инструментов', 
+			'Что-то откручивать\закручивать',
+			'2022-10-08',
+			'20'
+		);
+		
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Данный вид слесарного ремонта рассчитан на диагностику и, в случае выявления мелких неполадок, их устранение. При таком подходе выполняют замену поршневых колец, элементов системы амортизации, деталей тормозной системы и прочее.',
+			'1000',
+			'100',
+			'Текущий слесарный ремонт'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'При таком ремонте автомобиль разбирается и определяется степень износа каждой детали. Комплектующие, имеющие степень износа выше рекомендованной производителем, подлежат замене.',
+			'2000',
+			'300',
+			'Капитальный слесарный ремонт'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Появление незначительных вмятин исправляется даже без покрасочных работ при условии, что лакокрасочное покрытие не разрушено. Для этого используют резиновый молоток в легкодоступных местах или специальные крючки, рычаги и клюшки на труднодоступных участках кузова.',
+			'500',
+			'100',
+			'Удаление вмятин и рихтовка'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Нарушение целостности кузова исправляется посредством сварочных работ. Для этого используются два типа оборудования: электродный сварочный аппарат и плазменная резка. При использовании этих приборов, вдоль сварочного шва железо не деформируется.',
+			'600',
+			'200',
+			'Сварочные работы'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Под покраской подразумевается несколько этапов: работа с кузовом на специальном посте подготовки; обработка лакокрасочным материалом в покрасочной камере; сушка в сушильной камере. В покрасочной камере создаются такие условия, где даже в воздухе отсутствуют загрязнения.',
+			'300',
+			'100',
+			'Покраска'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Речь идет не только об автосигнализации, но и о механической защите. Данная услуга может быть как бюджетной, что характеризуется простой установкой иммобилайзера, так и дорогой, когда создается комплексная защита автомобиля.',
+			'700',
+			'100',
+			'Установка охранных систем'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Заводские сетки радиатора изготавливаются из пластика с минимальным расстоянием между ребрами в 2 сантиметра. Чтобы исключить попадание в радиатор постороннего мусора, имеющего меньший размер, рекомендуется установка защитной сетки.',
+			'50',
+			'24',
+			'Сетка для защиты радиатора'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'После проведения мероприятий по шумоизоляции, заметно снижается уровень шума, поступающего в салон автомобиля с улицы. Кроме того, такие явления, как дребезжание отдельных элементов кузова, посторонние скрипы и стуки полностью устраняются.',
+			'500',
+			'100',
+			'Шумоизоляция авто'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Данное предложение автосервисов подразумевает нанесение на лобовое стекло тончайшего покрытия с высокими водоотталкивающими свойствами. Благодаря такому покрытию, на скорости свыше 60 км/ч дождевая вода будет эффективнее стекать по стеклу, практически без помощи дворников. ',
+			'100',
+			'48',
+			'Антидождь'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Благодаря тонировочной пленке можно не только улучшить внешний вид экстерьера автомобиля, но и сделать пребывание в салоне более комфортным. Это обусловлено поглощением части солнечных лучей пленкой. Чем она темнее, тем больше световых лучей поглощается.',
+			'200',
+			'100',
+			'Тонировка стекол'
+		);	
+	INSERT INTO service(description, price, requiredtimeh, name)
+		VALUES 
+		(
+			'Установка данного приспособления позволяет предотвратить запотевание лобового стекла в салоне, а потому видимость не ухудшается при разности температур внешней и внутренней стороны стекла. Эксплуатационный срок антизапотевателя составляет примерно 4 месяца.',
+			'50',
+			'48',
+			'Антизапотеватель'
+		);
+		
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'M8 Coupe',
+			10,
+			5
+		);	
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'E34',
+			10,
+			1
+		);	
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'Vesta',
+			28,
+			1
+		);	
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'Granta',
+			28,
+			1
+		);	
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'Rio',
+			26,
+			1
+		);
+		
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'17409488245517115276',
+			1
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'31233411387427793198',
+			3
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'14232216857618927954',
+			2
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'65028602486509006138',
+			4
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'93446066184963788291',
+			5
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'35984076361542097372',
+			6
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'60165754120014607177',
+			7
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'77335998182660380125',
+			8
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'09478351201640618984',
+			9
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'14398808778383710734',
+			10
+		);
+		
+	INSERT INTO cashtransfer(cash, cashaccount_idcashaccount, type)
+		VALUES 
+		(
+			'1000',
+			6, 
+			'Client'
+		);	
+	INSERT INTO cashtransfer(cash, cashaccount_idcashaccount, type)
+		VALUES 
+		(
+			'1500',
+			7, 
+			'Client'
+		);	
+	INSERT INTO cashtransfer(cash, cashaccount_idcashaccount, type)
+		VALUES 
+		(
+			'50',
+			8, 
+			'Client'
+		);	
+	INSERT INTO cashtransfer(cash, cashaccount_idcashaccount, type)
+		VALUES 
+		(
+			'100',
+			9, 
+			'Client'
+		);	
+	INSERT INTO cashtransfer(cash, cashaccount_idcashaccount, type)
+		VALUES 
+		(
+			'2900',
+			10, 
+			'Client'
+		);
+		
+	INSERT INTO client(person_idperson, lastvisit)
+		VALUES 
+		(
+			6,
+			'2022-06-23'
+		);	
+	INSERT INTO client(person_idperson, lastvisit)
+		VALUES 
+		(
+			7,
+			'2022-01-10'
+		);	
+	INSERT INTO client(person_idperson, lastvisit)
+		VALUES 
+		(
+			8,
+			'2022-09-01'
+		);	
+	INSERT INTO client(person_idperson, lastvisit)
+		VALUES 
+		(
+			9,
+			'2022-10-19'
+		);	
+	INSERT INTO client(person_idperson, lastvisit)
+		VALUES 
+		(
+			10,
+			'2022-11-21'
+		);
+		
+	INSERT INTO worker(salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson)
+		VALUES 
+		(
+			'15', 
+			'2016-06-23', 
+			'0', 
+			'19545', 
+			'Автослесарь', 
+			'Норм чел', 
+			'1'
+		);	
+	INSERT INTO worker(salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson)
+		VALUES 
+		(
+			'14', 
+			'2017-06-23', 
+			'0', 
+			'16545', 
+			'Автослесарь', 
+			'Норм чел, играет в доту', 
+			'2'
+		);	
+	INSERT INTO worker(salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson)
+		VALUES 
+		(
+			'20', 
+			'2018-06-23', 
+			'0', 
+			'13545', 
+			'Автослесарь', 
+			'Характер не оч. но свое дело знает.', 
+			'3'
+		);	
+	INSERT INTO worker(salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson)
+		VALUES 
+		(
+			'10', 
+			'2020-06-23', 
+			'10', 
+			'4545', 
+			'Автослесарь', 
+			'Душа коллектива', 
+			'4'
+		);	
+	INSERT INTO worker(salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson)
+		VALUES 
+		(
+			'9', 
+			'2021-06-23', 
+			'10', 
+			'1545', 
+			'Автослесарь', 
+			'Тихий, спокойный', 
+			'5'
+		);
+		
+	INSERT INTO car(
+		defects, client_person_idperson, model_idmodel)
+		VALUES 
+		( 
+			'',
+			'6', 
+			'1'
+		);	
+	INSERT INTO car(
+		defects, client_person_idperson, model_idmodel)
+		VALUES 
+		( 
+			'',
+			'7', 
+			'2'
+		);	
+	INSERT INTO car(
+		defects, client_person_idperson, model_idmodel)
+		VALUES 
+		( 
+			'',
+			'8', 
+			'3'
+		);	
+	INSERT INTO car(
+		defects, client_person_idperson, model_idmodel)
+		VALUES 
+		( 
+			'',
+			'9', 
+			'4'
+		);	
+	INSERT INTO car(
+		defects, client_person_idperson, model_idmodel)
+		VALUES 
+		( 
+			'',
+			'10', 
+			'5'
+		);
+		
+	INSERT INTO document(
+		text, workedhours, cashtransfer_idcashtransfer, workacceptdate, workdonedate, car_idcar, price)
+		VALUES 
+		(
+			'', 
+			'100', 
+			'1', 
+			'2022-01-01', 
+			'2022-06-23', 
+			'1', 
+			'1000'
+		);	
+	INSERT INTO document(
+		text, workedhours, cashtransfer_idcashtransfer, workacceptdate, workdonedate, car_idcar, price)
+		VALUES 
+		(
+			'', 
+			'200', 
+			'2', 
+			'2022-01-01', 
+			'2022-01-10', 
+			'2', 
+			'1500'
+		);	
+	INSERT INTO document(
+		text, workedhours, cashtransfer_idcashtransfer, workacceptdate, workdonedate, car_idcar, price)
+		VALUES 
+		(
+			'', 
+			'24', 
+			'3', 
+			'2022-01-01', 
+			'2022-09-01', 
+			'3', 
+			'50'
+		);	
+	INSERT INTO document(
+		text, workedhours, cashtransfer_idcashtransfer, workacceptdate, workdonedate, car_idcar, price)
+		VALUES 
+		(
+			'', 
+			'72', 
+			'4', 
+			'2022-01-01', 
+			'2022-10-19', 
+			'4', 
+			'100'
+		);	
+	INSERT INTO document(
+		text, workedhours, cashtransfer_idcashtransfer, workacceptdate, workdonedate, car_idcar, price)
+		VALUES 
+		(
+			'', 
+			'600', 
+			'5', 
+			'2022-01-01', 
+			'2022-11-21', 
+			'5', 
+			'2900'
+		);
+		
+		
+	INSERT INTO component(name, price, dateofmanufacture)
+		VALUES 
+		(
+			'Двигатель', 
+			'500', 
+			'2015-01-01'
+		);	
+	INSERT INTO component(name, price, dateofmanufacture)
+		VALUES 
+		(
+			'Лобовое стекло', 
+			'200', 
+			'2015-01-01'
+		);	
+	INSERT INTO component(name, price, dateofmanufacture)
+		VALUES 
+		(
+			'Аккумулятор', 
+			'150', 
+			'2015-01-01'
+		);	
+	INSERT INTO component(name, price, dateofmanufacture)
+		VALUES 
+		(
+			'Крышка поршня', 
+			'20', 
+			'2015-01-01'
+		);	
+	INSERT INTO component(name, price, dateofmanufacture)
+		VALUES 
+		(
+			'Краска', 
+			'100', 
+			'2015-01-01'
+		);
+		
+	INSERT INTO car_component(component_idcomponent, car_idcar)
+		VALUES 
+		(
+			1,
+			1
+		);	
+	INSERT INTO car_component(component_idcomponent, car_idcar)
+		VALUES 
+		(
+			2,
+			2
+		);	
+	INSERT INTO car_component(component_idcomponent, car_idcar)
+		VALUES 
+		(
+			3,
+			3
+		);	
+	INSERT INTO car_component(component_idcomponent, car_idcar)
+		VALUES 
+		(
+			4,
+			4
+		);	
+	INSERT INTO car_component(component_idcomponent, car_idcar)
+		VALUES 
+		(
+			5,
+			5
+		);
+		
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			1, 
+			1
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			2, 
+			1
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			2, 
+			3
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			3, 
+			7
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			4, 
+			7
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			4, 
+			11
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			5, 
+			2
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			5, 
+			5
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			5, 
+			4
+		);
+		
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			1, 
+			1
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			1, 
+			2
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			2, 
+			3
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			2, 
+			4
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			3, 
+			4
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			3, 
+			1
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			4, 
+			1
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			4, 
+			2
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			4, 
+			4
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			4, 
+			5
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			5, 
+			5
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			5, 
+			4
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			5, 
+			3
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			5, 
+			2
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			5, 
+			1
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			1, 
+			5
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			2, 
+			5
+		);
+		
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (1, 2);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (1, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (2, 2);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (1, 1);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (2, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (3, 1);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (3, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (4, 2);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (4, 5);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (4, 6);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (4, 3);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (5, 3);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (6, 2);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (6, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (7, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (8, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (8, 2);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (9, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (11, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (12, 4);
+2022-11-29 17:47:23.807 +03 [13468] ОШИБКА:  INSERT или UPDATE в таблице "users" нарушает ограничение внешнего ключа "users_role_idrole_fkey"
+2022-11-29 17:47:23.807 +03 [13468] ПОДРОБНОСТИ:  Ключ (role_idrole)=(1) отсутствует в таблице "role".
+2022-11-29 17:47:23.807 +03 [13468] ОПЕРАТОР:  INSERT INTO users(login, password, role_idrole) 
+		VALUES 
+		(
+			'admin', 
+			'admin',
+			1
+		);		
+	INSERT INTO users(login, password, role_idrole) 
+		VALUES 
+		(
+			'manager', 
+			'manager',
+			2
+		);
+	INSERT INTO users(login, password, role_idrole) 
+		VALUES 
+		(
+			'worker', 
+			'worker',
+			3
+		);
+		
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'M8 Coupe',
+			10,
+			5
+		);	
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'E34',
+			10,
+			1
+		);	
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'Vesta',
+			28,
+			1
+		);	
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'Granta',
+			28,
+			1
+		);	
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'Rio',
+			26,
+			1
+		);
+		
+	
+		
+	
+2022-11-29 17:53:39.460 +03 [13468] ОШИБКА:  INSERT или UPDATE в таблице "users" нарушает ограничение внешнего ключа "users_role_idrole_fkey"
+2022-11-29 17:53:39.460 +03 [13468] ПОДРОБНОСТИ:  Ключ (role_idrole)=(1) отсутствует в таблице "role".
+2022-11-29 17:53:39.460 +03 [13468] ОПЕРАТОР:  INSERT INTO users(login, password, role_idrole) 
+		VALUES 
+		(
+			'admin', 
+			'admin',
+			1
+		);		
+	INSERT INTO users(login, password, role_idrole) 
+		VALUES 
+		(
+			'manager', 
+			'manager',
+			2
+		);
+	INSERT INTO users(login, password, role_idrole) 
+		VALUES 
+		(
+			'worker', 
+			'worker',
+			3
+		);
+		
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'M8 Coupe',
+			10,
+			5
+		);	
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'E34',
+			10,
+			1
+		);	
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'Vesta',
+			28,
+			1
+		);	
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'Granta',
+			28,
+			1
+		);	
+	INSERT INTO model(name, brand_idbrand, bodystyle_idbodystyle)
+		VALUES 
+		(
+			'Rio',
+			26,
+			1
+		);
+		
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'17409488245517115276',
+			1
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'31233411387427793198',
+			3
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'14232216857618927954',
+			2
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'65028602486509006138',
+			4
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'93446066184963788291',
+			5
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'35984076361542097372',
+			6
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'60165754120014607177',
+			7
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'77335998182660380125',
+			8
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'09478351201640618984',
+			9
+		);	
+	INSERT INTO cashaccount(cardnumber, person_idperson)
+		VALUES 
+		(
+			'14398808778383710734',
+			10
+		);
+	
+		
+	INSERT INTO client(person_idperson, lastvisit)
+		VALUES 
+		(
+			6,
+			'2022-06-23'
+		);	
+	INSERT INTO client(person_idperson, lastvisit)
+		VALUES 
+		(
+			7,
+			'2022-01-10'
+		);	
+	INSERT INTO client(person_idperson, lastvisit)
+		VALUES 
+		(
+			8,
+			'2022-09-01'
+		);	
+	INSERT INTO client(person_idperson, lastvisit)
+		VALUES 
+		(
+			9,
+			'2022-10-19'
+		);	
+	INSERT INTO client(person_idperson, lastvisit)
+		VALUES 
+		(
+			10,
+			'2022-11-21'
+		);
+		
+	INSERT INTO worker(salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson)
+		VALUES 
+		(
+			'15', 
+			'2016-06-23', 
+			'0', 
+			'19545', 
+			'Автослесарь', 
+			'Норм чел', 
+			'1'
+		);	
+	INSERT INTO worker(salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson)
+		VALUES 
+		(
+			'14', 
+			'2017-06-23', 
+			'0', 
+			'16545', 
+			'Автослесарь', 
+			'Норм чел, играет в доту', 
+			'2'
+		);	
+	INSERT INTO worker(salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson)
+		VALUES 
+		(
+			'20', 
+			'2018-06-23', 
+			'0', 
+			'13545', 
+			'Автослесарь', 
+			'Характер не оч. но свое дело знает.', 
+			'3'
+		);	
+	INSERT INTO worker(salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson)
+		VALUES 
+		(
+			'10', 
+			'2020-06-23', 
+			'10', 
+			'4545', 
+			'Автослесарь', 
+			'Душа коллектива', 
+			'4'
+		);	
+	INSERT INTO worker(salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson)
+		VALUES 
+		(
+			'9', 
+			'2021-06-23', 
+			'10', 
+			'1545', 
+			'Автослесарь', 
+			'Тихий, спокойный', 
+			'5'
+		);
+		
+	
+2022-11-29 17:58:22.376 +03 [4920] ОШИБКА:  INSERT или UPDATE в таблице "service_workingequipment" нарушает ограничение внешнего ключа "service_workingequipment_service_idservice_fkey"
+2022-11-29 17:58:22.376 +03 [4920] ПОДРОБНОСТИ:  Ключ (service_idservice)=(12) отсутствует в таблице "service".
+2022-11-29 17:58:22.376 +03 [4920] ОПЕРАТОР:  INSERT INTO car_component(component_idcomponent, car_idcar)
+		VALUES 
+		(
+			1,
+			1
+		);	
+	INSERT INTO car_component(component_idcomponent, car_idcar)
+		VALUES 
+		(
+			2,
+			2
+		);	
+	INSERT INTO car_component(component_idcomponent, car_idcar)
+		VALUES 
+		(
+			3,
+			3
+		);	
+	INSERT INTO car_component(component_idcomponent, car_idcar)
+		VALUES 
+		(
+			4,
+			4
+		);	
+	INSERT INTO car_component(component_idcomponent, car_idcar)
+		VALUES 
+		(
+			5,
+			5
+		);
+		
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			1, 
+			1
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			2, 
+			1
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			2, 
+			3
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			3, 
+			7
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			4, 
+			7
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			4, 
+			11
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			5, 
+			2
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			5, 
+			5
+		);	
+	INSERT INTO document_service(
+		document_iddocument, service_idservice)
+		VALUES 
+		(
+			5, 
+			4
+		);
+		
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			1, 
+			1
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			1, 
+			2
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			2, 
+			3
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			2, 
+			4
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			3, 
+			4
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			3, 
+			1
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			4, 
+			1
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			4, 
+			2
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			4, 
+			4
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			4, 
+			5
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			5, 
+			5
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			5, 
+			4
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			5, 
+			3
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			5, 
+			2
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			5, 
+			1
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			1, 
+			5
+		);	
+	INSERT INTO worker_document(worker_person_idperson, document_iddocument)
+		VALUES 
+		(
+			2, 
+			5
+		);
+		
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (1, 2);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (1, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (2, 2);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (1, 1);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (2, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (3, 1);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (3, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (4, 2);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (4, 5);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (4, 6);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (4, 3);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (5, 3);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (6, 2);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (6, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (7, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (8, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (8, 2);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (9, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (11, 4);	
+	INSERT INTO service_workingequipment(service_idservice, workingequipment_idworkingequipment)
+		VALUES (12, 4);
+2022-11-29 18:00:10.177 +03 [12340] ОШИБКА:  отношение "workinqequipment" не существует (символ 15)
+2022-11-29 18:00:10.177 +03 [12340] ОПЕРАТОР:  select * from workinqequipment
+	
+2022-11-29 18:20:42.892 +03 [6548] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 18:20:42.892 +03 [15116] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 18:20:42.892 +03 [1236] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 18:20:42.893 +03 [10788] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 18:20:42.895 +03 [13468] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 18:20:42.896 +03 [14672] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 18:20:42.897 +03 [9460] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 18:20:42.897 +03 [1388] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 18:20:42.898 +03 [12340] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 18:20:42.898 +03 [7808] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 18:20:42.899 +03 [4036] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 18:20:42.899 +03 [32] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 18:20:42.900 +03 [5512] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 18:20:42.900 +03 [1972] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 18:20:42.901 +03 [11844] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 18:20:42.902 +03 [9420] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 18:20:42.904 +03 [9520] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 18:20:42.904 +03 [9560] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 18:20:42.904 +03 [11828] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-29 18:20:42.904 +03 [5088] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-30 11:56:02.917 +03 [11108] СООБЩЕНИЕ:  не удалось получить данные от клиента: An existing connection was forcibly closed by the remote host.
+	
+2022-11-30 12:14:56.348 +03 [12332] ОШИБКА:  ошибка синтаксиса (примерное положение: "log_statement") (символ 1)
+2022-11-30 12:14:56.348 +03 [12332] ОПЕРАТОР:  log_statement = all
