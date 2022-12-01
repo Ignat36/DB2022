@@ -20,7 +20,6 @@ SOURCES += \
     car.cpp \
     cashaccount.cpp \
     client.cpp \
-    controller.cpp \
     databasecarservicedao.cpp \
     document.cpp \
     main.cpp \
@@ -41,7 +40,6 @@ HEADERS += \
     car.h \
     cashaccount.h \
     client.h \
-    controller.h \
     databasecarservicedao.h \
     document.h \
     mainwindow.h \
