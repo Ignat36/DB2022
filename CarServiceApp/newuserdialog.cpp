@@ -19,7 +19,7 @@ NewUserDialog::~NewUserDialog()
 
 void NewUserDialog::on_buttonBox_accepted()
 {
-    roleid = ui->new_user_role_comboBox->currentIndex();
+    roleid = ui->new_user_role_comboBox->currentIndex() + 1;
     login = ui->new_user_login_lineEdit->text();
     password = ui->new_user_password_lineEdit->text();
     this->close();

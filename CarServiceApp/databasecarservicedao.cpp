@@ -116,7 +116,7 @@ bool DataBaseCarServiceDAO::NewClient(QString FIO, QString Phone, QString Mail, 
                       .arg(Date)
                       .arg(Brand)
                       .arg(Style)
-                      .arg(Model));
+                      .arg(Style));
 }
 
 ///////////////////////////////////////////////////////////////////////////
