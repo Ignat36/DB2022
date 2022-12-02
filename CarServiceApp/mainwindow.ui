@@ -488,10 +488,34 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QLineEdit" name="serach_start_date_line_edit"/>
+        <widget class="QDateEdit" name="search_repair_begin_date_dateEdit">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="displayFormat">
+          <string>yyyy-MM-dd</string>
+         </property>
+        </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QLineEdit" name="search_end_date_line_edit"/>
+        <widget class="QDateEdit" name="search_repair_end_date_dateEdit">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="dateTime">
+          <datetime>
+           <hour>0</hour>
+           <minute>0</minute>
+           <second>0</second>
+           <year>2023</year>
+           <month>1</month>
+           <day>1</day>
+          </datetime>
+         </property>
+         <property name="displayFormat">
+          <string>yyyy-MM-dd</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -612,6 +636,19 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="text">
        <string>Выход</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="search_is_ended_checkBox">
+      <property name="geometry">
+       <rect>
+        <x>920</x>
+        <y>510</y>
+        <width>72</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Окончена</string>
       </property>
      </widget>
     </widget>

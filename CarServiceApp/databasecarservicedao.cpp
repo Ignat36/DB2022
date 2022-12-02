@@ -84,7 +84,39 @@ void DataBaseCarServiceDAO::test()
 //    std::vector<Person> all = GetPersons();
 
 //    for(auto i: all)
-//        DeletePerson(i.idPerson);
+    //        DeletePerson(i.idPerson);
+}
+
+bool DataBaseCarServiceDAO::GiveSalary()
+{
+    QSqlQuery query;
+    return query.exec(QString("call paysalary()"));
+}
+
+bool DataBaseCarServiceDAO::HireWorker(QString FIO, QString Phone, QString Mail, QString Date, double salary, QString Qualification)
+{
+    QSqlQuery query;
+    return query.exec(QString("call hireworker('%1', '%2', '%3', '%4', '%5', '%6')")
+                      .arg(FIO)
+                      .arg(Phone)
+                      .arg(Mail)
+                      .arg(Date)
+                      .arg(salary)
+                      .arg(Qualification));
+}
+
+bool DataBaseCarServiceDAO::NewClient(QString FIO, QString Phone, QString Mail, QString Date, QString Brand, QString Style, QString Model)
+{
+   // newclient(pfio, phone, mail, curdate, brandname, bodystylename, modelname)
+    QSqlQuery query;
+    return query.exec(QString("call newclient('%1', '%2', '%3', '%4', '%5', '%6', '%7')")
+                      .arg(FIO)
+                      .arg(Phone)
+                      .arg(Mail)
+                      .arg(Date)
+                      .arg(Brand)
+                      .arg(Style)
+                      .arg(Model));
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -210,7 +242,7 @@ Component DataBaseCarServiceDAO::GetComponent(int idComponent)
         int id = query.value(0).toInt();
         QString Name = query.value(1).toString();
         double Price = query.value(2).toDouble();
-        QDate Date = query.value(3).toDate();
+        QString Date = query.value(3).toString();
         return Component(id, Name, Date, Price);
     }
 
@@ -227,7 +259,7 @@ std::vector<Component> DataBaseCarServiceDAO::GetComponent_Name(QString Name)
         int id = query.value(0).toInt();
         QString Name = query.value(1).toString();
         double Price = query.value(2).toDouble();
-        QDate Date = query.value(3).toDate();
+        QString Date = query.value(3).toString();
         result.push_back(Component(id, Name, Date, Price));
     }
 
@@ -244,7 +276,7 @@ std::vector<Component> DataBaseCarServiceDAO::GetComponents()
         int id = query.value(0).toInt();
         QString Name = query.value(1).toString();
         double Price = query.value(2).toDouble();
-        QDate Date = query.value(3).toDate();
+        QString Date = query.value(3).toString();
         result.push_back(Component(id, Name, Date, Price));
     }
 
@@ -257,7 +289,7 @@ bool DataBaseCarServiceDAO::PutComponent(Component component)
     QString str = QString("INSERT INTO component(name, price, dateofmanufacture) VALUES ('%1', '%2', '%3')")
             .arg(component.Name)
             .arg(component.Price)
-            .arg(component.DateOfManufacture.toString());
+            .arg(component.DateOfManufacture);
     return query.exec(str);
 }
 
@@ -270,7 +302,7 @@ bool DataBaseCarServiceDAO::UpdateComponent(Component component, bool CreateIfNo
     bool flag = query.exec(QString("UPDATE component SET name='%1', price='%2', dateofmanufacture='%3' WHERE idcomponent=%4")
                            .arg(component.Name)
                            .arg(component.Price)
-                           .arg(component.DateOfManufacture.toString())
+                           .arg(component.DateOfManufacture)
                            .arg(component.idComponent));
     if ( ! flag && CreateIfNotExists)
     {
@@ -392,7 +424,7 @@ Client DataBaseCarServiceDAO::GetClient(int Person_idPerson) // SELECT
 
     while (query.next()) {
         int id = query.value(0).toInt();
-        QDate LastVisit = query.value(1).toDate();
+        QString LastVisit = query.value(1).toString();
         return Client(id, LastVisit);
     }
 
@@ -408,7 +440,7 @@ std::vector<QString> DataBaseCarServiceDAO::GetClientsStr(QString Name)
 
     while (query.next()) {
         int id = query.value(0).toInt();
-        QDate LastVisit = query.value(1).toDate();
+        QString LastVisit = query.value(1).toString();
         QString FIO = query.value(2).toString();
         QString PhoneNumber = query.value(3).toString();
         QString MailAdres = query.value(4).toString();
@@ -420,14 +452,14 @@ std::vector<QString> DataBaseCarServiceDAO::GetClientsStr(QString Name)
         QString pers =    QString("\nИмя заказчика   : ") + FIO
                         + QString("\nТелефон         : ") + PhoneNumber
                         + QString("\nEmail           : ") + MailAdres
-                        + QString("\nПоследний визит : ") + LastVisit.toString();
+                        + QString("\nПоследний визит : ") + LastVisit;
 
         result.push_back(pers);
 
         while (q.next())
         {
-            QDate acceptDate = q.value(0).toDate();
-            QDate doneDate = q.value(1).toDate();
+            QString acceptDate = q.value(0).toString();
+            QString doneDate = q.value(1).toString();
             double price = q.value(2).toDouble();
             QString Brand = q.value(3).toString();
             QString Model = q.value(4).toString();
@@ -435,8 +467,8 @@ std::vector<QString> DataBaseCarServiceDAO::GetClientsStr(QString Name)
             QString FIO = q.value(6).toString();
 
             QString record =  QString("   ----------------------------------------------------->")
-                            + QString("\n       Дата начала работ    : ") + acceptDate.toString()
-                            + QString("\n       Дата окончания работ : ") + doneDate.toString()
+                            + QString("\n       Дата начала работ    : ") + acceptDate
+                            + QString("\n       Дата окончания работ : ") + doneDate
                             + QString("\n       Цена работ           : ") + QString::number(price)
                             + QString("\n       Марка машины         : ") + Brand
                             + QString("\n       Модель машины        : ") + Model
@@ -458,7 +490,7 @@ std::vector<Client> DataBaseCarServiceDAO::GetClients() // SELECT ALL
 
     while (query.next()) {
         int id = query.value(0).toInt();
-        QDate LastVisit = query.value(1).toDate();
+        QString LastVisit = query.value(1).toString();
         result.push_back(Client(id, LastVisit));
     }
 
@@ -470,7 +502,7 @@ bool DataBaseCarServiceDAO::PutClient(Client client) // INSERT
     QSqlQuery query;
     QString str = QString("INSERT INTO client(person_idperson, lastvisit) VALUES (%1, '%2')")
             .arg(client.Person_idPerson)
-            .arg(client.LastVisit.toString());
+            .arg(client.LastVisit);
     return query.exec(str);
 }
 
@@ -478,7 +510,7 @@ bool DataBaseCarServiceDAO::UpdateClient(Client client, bool CreateIfNotExists) 
 {
     QSqlQuery query;
     bool flag = query.exec(QString("UPDATE client SET lastvisit='%1' WHERE person_idperson=%2")
-                           .arg(client.LastVisit.toString())
+                           .arg(client.LastVisit)
                            .arg(client.Person_idPerson));
 
     if ( ! flag && CreateIfNotExists)
@@ -510,7 +542,7 @@ Worker DataBaseCarServiceDAO::GetWorker(int Person_idPerson) // SELECT
     while (query.next()) {
 
         double Salary = query.value(0).toDouble();
-        QDate HireDate = query.value(1).toDate();
+        QString HireDate = query.value(1).toString();
         int UnpaidHours = query.value(2).toInt();
         int PaidHours = query.value(3).toInt();
         QString Qualification = query.value(4).toString();
@@ -537,7 +569,7 @@ std::vector<QString> DataBaseCarServiceDAO::GetWorkersStr(QString Name)
         double salary = query.value(4).toDouble();
         int paidh = query.value(5).toInt();
         int unpaidh = query.value(6).toInt();
-        QDate hireDate = query.value(7).toDate();
+        QString hireDate = query.value(7).toString();
         QString Qualification = query.value(8).toString();
         QString PersonalQalities = query.value(9).toString();
 
@@ -548,7 +580,7 @@ std::vector<QString> DataBaseCarServiceDAO::GetWorkersStr(QString Name)
                         + QString("\n       Зарплата             : ") + QString::number(salary)
                         + QString("\n       Оплаченые часы       : ") + QString::number(paidh)
                         + QString("\n       Не оплаченые часы    : ") + QString::number(unpaidh)
-                        + QString("\n       Дата начала работ    : ") + hireDate.toString()
+                        + QString("\n       Дата начала работ    : ") + hireDate
                         + QString("\n       Квалификация         : ") + Qualification
                         + QString("\n       Персональные качества: ") + PersonalQalities
                         + QString("\n   ----------------------------------------------------->") ;
@@ -567,7 +599,7 @@ std::vector<Worker> DataBaseCarServiceDAO::GetWorkers() // SELECT ALL
 
     while (query.next()) {
         double Salary = query.value(0).toDouble();
-        QDate HireDate = query.value(1).toDate();
+        QString HireDate = query.value(1).toString();
         int UnpaidHours = query.value(2).toInt();
         int PaidHours = query.value(3).toInt();
         QString Qualification = query.value(4).toString();
@@ -584,7 +616,7 @@ bool DataBaseCarServiceDAO::PutWorker(Worker worker) // INSERT
     QSqlQuery query;
     QString str = QString("INSERT INTO worker(salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson) VALUES ('%1', '%2', '%3', '%4', '%5', '%6', '%7')")
             .arg(worker.Salary)
-            .arg(worker.HireDate.toString())
+            .arg(worker.HireDate)
             .arg(worker.UnpaidHours)
             .arg(worker.PaidHours)
             .arg(worker.Qualification)
@@ -598,7 +630,7 @@ bool DataBaseCarServiceDAO::UpdateWorker(Worker worker, bool CreateIfNotExists) 
     QSqlQuery query;
     bool flag = query.exec(QString("UPDATE worker SET salary='%1', hiredate='%2', unpaidhours='%3', paidhours='%4', qualification='%5', personalqualities='%6' WHERE person_idperson=%2")
                            .arg(worker.Salary)
-                           .arg(worker.HireDate.toString())
+                           .arg(worker.HireDate)
                            .arg(worker.UnpaidHours)
                            .arg(worker.PaidHours)
                            .arg(worker.Qualification)
@@ -635,7 +667,7 @@ WorkingEquipment DataBaseCarServiceDAO::GetEquipment(int idEquipment)
         int id = query.value(0).toInt();
         QString Name = query.value(1).toString();
         QString AssignmentOfUse = query.value(2).toString();
-        QDate LastUsedDate = query.value(3).toDate();
+        QString LastUsedDate = query.value(3).toString();
         double Price = query.value(4).toDouble();
         return WorkingEquipment(id, Name, AssignmentOfUse, LastUsedDate, Price);
     }
@@ -653,7 +685,7 @@ std::vector<WorkingEquipment> DataBaseCarServiceDAO::GetEquipment_Name(QString N
         int id = query.value(0).toInt();
         QString Name = query.value(1).toString();
         QString AssignmentOfUse = query.value(2).toString();
-        QDate LastUsedDate = query.value(3).toDate();
+        QString LastUsedDate = query.value(3).toString();
         double Price = query.value(4).toDouble();
         result.push_back(WorkingEquipment(id, Name, AssignmentOfUse, LastUsedDate, Price));
     }
@@ -671,7 +703,7 @@ std::vector<WorkingEquipment> DataBaseCarServiceDAO::GetEquipments()
         int id = query.value(0).toInt();
         QString Name = query.value(1).toString();
         QString AssignmentOfUse = query.value(2).toString();
-        QDate LastUsedDate = query.value(3).toDate();
+        QString LastUsedDate = query.value(3).toString();
         double Price = query.value(4).toDouble();
         result.push_back(WorkingEquipment(id, Name, AssignmentOfUse, LastUsedDate, Price));
     }
@@ -685,7 +717,7 @@ bool DataBaseCarServiceDAO::PutEquipment(WorkingEquipment equipment)
     QString str = QString("INSERT INTO workingequipment(name, assignmentofuse, lasttimeused, price) VALUES ('%1', '%2', '%3', '%4')")
             .arg(equipment.Name)
             .arg(equipment.AssignmentOfUse)
-            .arg(equipment.LastUsedDate.toJulianDay())
+            .arg(equipment.LastUsedDate)
             .arg(equipment.Price);
     return query.exec(str);
 }
@@ -699,7 +731,7 @@ bool DataBaseCarServiceDAO::UpdateEquipment(WorkingEquipment equipment, bool Cre
     bool flag = query.exec(QString("UPDATE workingequipment SET name='%1', assignmentofuse='%2', lasttimeused='%3', price='%4' WHERE idworkingequipment=%5")
                            .arg(equipment.Name)
                            .arg(equipment.AssignmentOfUse)
-                           .arg(equipment.LastUsedDate.toJulianDay())
+                           .arg(equipment.LastUsedDate)
                            .arg(equipment.Price)
                            .arg(equipment.idWorkingEquipment));
     if ( ! flag && CreateIfNotExists)
@@ -1096,8 +1128,8 @@ Document DataBaseCarServiceDAO::GetDocument(int idDocument) // SELECT
         QString Text = query.value(1).toString();
         int WorkedHours = query.value(2).toInt();
         int CashTransfer_idCashTransfer = query.value(3).toInt();
-        QDate AcceptDate = query.value(4).toDate();
-        QDate DoneDate = query.value(5).toDate();
+        QString AcceptDate = query.value(4).toString();
+        QString DoneDate = query.value(5).toString();
         int Car_idCar = query.value(6).toInt();
         double Price = query.value(7).toDouble();
 
@@ -1118,8 +1150,8 @@ std::vector<Document> DataBaseCarServiceDAO::GetDocument_idTransfer(int CashTran
         QString Text = query.value(1).toString();
         int WorkedHours = query.value(2).toInt();
         int CashTransfer_idCashTransfer = query.value(3).toInt();
-        QDate AcceptDate = query.value(4).toDate();
-        QDate DoneDate = query.value(5).toDate();
+        QString AcceptDate = query.value(4).toString();
+        QString DoneDate = query.value(5).toString();
         int Car_idCar = query.value(6).toInt();
         double Price = query.value(7).toDouble();
 
@@ -1141,8 +1173,8 @@ std::vector<Document> DataBaseCarServiceDAO::GetDocument_idCar(int Car_idCar) //
         QString Text = query.value(1).toString();
         int WorkedHours = query.value(2).toInt();
         int CashTransfer_idCashTransfer = query.value(3).toInt();
-        QDate AcceptDate = query.value(4).toDate();
-        QDate DoneDate = query.value(5).toDate();
+        QString AcceptDate = query.value(4).toString();
+        QString DoneDate = query.value(5).toString();
         int Car_idCar = query.value(6).toInt();
         double Price = query.value(7).toDouble();
 
@@ -1164,8 +1196,8 @@ std::vector<Document> DataBaseCarServiceDAO::GetDocuments() // SELECT all
         QString Text = query.value(1).toString();
         int WorkedHours = query.value(2).toInt();
         int CashTransfer_idCashTransfer = query.value(3).toInt();
-        QDate AcceptDate = query.value(4).toDate();
-        QDate DoneDate = query.value(5).toDate();
+        QString AcceptDate = query.value(4).toString();
+        QString DoneDate = query.value(5).toString();
         int Car_idCar = query.value(6).toInt();
         double Price = query.value(7).toDouble();
 
@@ -1181,24 +1213,27 @@ std::vector<QString> DataBaseCarServiceDAO::GetDocumentsStr(QString FIO, QString
     QSqlQuery query;
 
     if (endDate == "")
-        query.exec(QString("SELECT document.workacceptdate, document.workdonedate, document.price, brand.name, model.name, bodystyle.stylename, person.fio FROM document INNER JOIN car ON car.idcar = document.car_idcar INNER JOIN person ON person.idperson = car.client_person_idperson INNER JOIN model ON model.idmodel = car.model_idmodel INNER JOIN brand ON brand.idbrand = model.brand_idbrand INNER JOIN bodystyle ON bodystyle.idbodystyle = model.bodystyle_idbodystyle where person.fio ilike '%%1%' AND (model.name ilike '%%2%' OR brand.name ilike '%%3%' OR bodystyle.stylename ilike '%%4%') AND  document.workdonedate is NULL")
+        query.exec(QString("SELECT document.workacceptdate, document.workdonedate, document.price, brand.name, model.name, bodystyle.stylename, person.fio FROM document INNER JOIN car ON car.idcar = document.car_idcar INNER JOIN person ON person.idperson = car.client_person_idperson INNER JOIN model ON model.idmodel = car.model_idmodel INNER JOIN brand ON brand.idbrand = model.brand_idbrand INNER JOIN bodystyle ON bodystyle.idbodystyle = model.bodystyle_idbodystyle where person.fio ilike '%%1%' AND (model.name ilike '%%2%' OR brand.name ilike '%%3%' OR bodystyle.stylename ilike '%%4%') AND document.workacceptdate >= '%5' AND  document.workdonedate is NULL")
                    .arg(FIO)
                    .arg(car)
                    .arg(car)
-                   .arg(car));
+                   .arg(car)
+                   .arg(begDate));
     else
-        query.exec(QString("SELECT document.workacceptdate, document.workdonedate, document.price, brand.name, model.name, bodystyle.stylename, person.fio FROM document INNER JOIN car ON car.idcar = document.car_idcar INNER JOIN person ON person.idperson = car.client_person_idperson INNER JOIN model ON model.idmodel = car.model_idmodel INNER JOIN brand ON brand.idbrand = model.brand_idbrand INNER JOIN bodystyle ON bodystyle.idbodystyle = model.bodystyle_idbodystyle where person.fio ilike '%%1%' AND (model.name ilike '%%2%' OR brand.name ilike '%%3%' OR bodystyle.stylename ilike '%%4%')")
+        query.exec(QString("SELECT document.workacceptdate, document.workdonedate, document.price, brand.name, model.name, bodystyle.stylename, person.fio FROM document INNER JOIN car ON car.idcar = document.car_idcar INNER JOIN person ON person.idperson = car.client_person_idperson INNER JOIN model ON model.idmodel = car.model_idmodel INNER JOIN brand ON brand.idbrand = model.brand_idbrand INNER JOIN bodystyle ON bodystyle.idbodystyle = model.bodystyle_idbodystyle where person.fio ilike '%%1%' AND (model.name ilike '%%2%' OR brand.name ilike '%%3%' OR bodystyle.stylename ilike '%%4%') AND document.workacceptdate >= '%5' AND document.workdonedate <= '%6'")
                     .arg(FIO)
                     .arg(car)
                     .arg(car)
-                    .arg(car));
+                    .arg(car)
+                    .arg(begDate)
+                    .arg(endDate));
 
 
     std::vector<QString> result;
 
     while (query.next()) {
-        QDate AcceptDate = query.value(0).toDate();
-        QDate DoneDate = query.value(1).toDate();
+        QString AcceptDate = query.value(0).toString();
+        QString DoneDate = query.value(1).toString();
         double price = query.value(2).toDouble();
         QString Brand = query.value(3).toString();
         QString Model = query.value(4).toString();
@@ -1207,8 +1242,42 @@ std::vector<QString> DataBaseCarServiceDAO::GetDocumentsStr(QString FIO, QString
 
         QString pers =    QString("   ----------------------------------------------------->")
                         + QString("\n       ФИО                  : ") + FIO
-                        + QString("\n       Дата начала работ    : ") + AcceptDate.toString()
-                        + QString("\n       Дата окончания работ : ") + DoneDate.toString()
+                        + QString("\n       Дата начала работ    : ") + AcceptDate
+                        + QString("\n       Дата окончания работ : ") + DoneDate
+                        + QString("\n       Цена                 : ") + QString::number(price)
+                        + QString("\n       Марка машины         : ") + Brand
+                        + QString("\n       Модель машины        : ") + Model
+                        + QString("\n       Тип кузова           : ") + BodyStyle
+                        + QString("\n   ----------------------------------------------------->") ;
+
+        result.push_back(pers);
+    }
+
+    return result;
+}
+
+std::vector<QString> DataBaseCarServiceDAO::GetAllDocumentsStr()
+{
+    QSqlQuery query;
+
+    query.exec(QString("SELECT document.workacceptdate, document.workdonedate, document.price, brand.name, model.name, bodystyle.stylename, person.fio FROM document INNER JOIN car ON car.idcar = document.car_idcar INNER JOIN person ON person.idperson = car.client_person_idperson INNER JOIN model ON model.idmodel = car.model_idmodel INNER JOIN brand ON brand.idbrand = model.brand_idbrand INNER JOIN bodystyle ON bodystyle.idbodystyle = model.bodystyle_idbodystyle"));
+
+
+    std::vector<QString> result;
+
+    while (query.next()) {
+        QString AcceptDate = query.value(0).toString();
+        QString DoneDate = query.value(1).toString();
+        double price = query.value(2).toDouble();
+        QString Brand = query.value(3).toString();
+        QString Model = query.value(4).toString();
+        QString BodyStyle = query.value(5).toString();
+        QString FIO = query.value(6).toString();
+
+        QString pers =    QString("   ----------------------------------------------------->")
+                        + QString("\n       ФИО                  : ") + FIO
+                        + QString("\n       Дата начала работ    : ") + AcceptDate
+                        + QString("\n       Дата окончания работ : ") + DoneDate
                         + QString("\n       Цена                 : ") + QString::number(price)
                         + QString("\n       Марка машины         : ") + Brand
                         + QString("\n       Модель машины        : ") + Model
@@ -1228,8 +1297,8 @@ bool DataBaseCarServiceDAO::PutDocument(Document document) // INSERT
             .arg(document.Text)
             .arg(document.WorkedHours)
             .arg(document.CashTransfer_idCashTransfer)
-            .arg(document.AcceptDate.toString())
-            .arg(document.DoneDate.toString())
+            .arg(document.AcceptDate)
+            .arg(document.DoneDate)
             .arg(document.Car_idCar)
             .arg(document.Price);
     return query.exec(str);
@@ -1245,8 +1314,8 @@ bool DataBaseCarServiceDAO::UpdateDocument(Document document, bool CreateIfNotEx
                            .arg(document.Text)
                            .arg(document.WorkedHours)
                            .arg(document.CashTransfer_idCashTransfer)
-                           .arg(document.AcceptDate.toString())
-                           .arg(document.DoneDate.toString())
+                           .arg(document.AcceptDate)
+                           .arg(document.DoneDate)
                            .arg(document.Car_idCar)
                            .arg(document.Price)
                            .arg(document.idDocument));

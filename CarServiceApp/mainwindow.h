@@ -51,6 +51,24 @@ private slots:
 
     void on_search_repair_works_button_clicked();
 
+    void on_search_is_ended_checkBox_stateChanged(int arg1);
+
+    void on_hire_button_clicked();
+
+    void on_register_button_clicked();
+
+    void on_delet_user_button_clicked();
+
+    void on_givesalary_button_clicked();
+
+    void on_car_components_button_clicked();
+
+    void on_new_equipment_button_clicked();
+
+    void on_new_component_button_clicked();
+
+    void on_new_cashtransfer_button_clicked();
+
 private:
     Ui::MainWindow *ui;
 

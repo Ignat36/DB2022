@@ -5,6 +5,11 @@
 #include "newcomponentdialog.h"
 #include "newdocumentdialog.h"
 #include "newworkerdialog.h"
+#include "newequipmentdialog.h"
+#include "newtransferdialog.h"
+#include "deleteuserdialog.h"
+#include "QDebug"
+#include <QDate>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -141,7 +146,7 @@ void MainWindow::on_services_button_clicked()
 
 void MainWindow::on_work_in_action_button_clicked()
 {
-    setDisplaiedText(dao.GetDocumentsStr("", "", "", "1"));
+    setDisplaiedText(dao.GetAllDocumentsStr());
 }
 
 void MainWindow::on_cashaccounts_button_clicked()
@@ -173,8 +178,98 @@ void MainWindow::on_search_repair_works_button_clicked()
 {
     QString fio = ui->search_repair_by_client_line_edit->text();
     QString car = ui->search_repair_by_car_line_edit->text();
-    QString ad = ui->serach_start_date_line_edit->text();
-    QString ed = ui->search_end_date_line_edit->text();
+    QString ad = ui->search_repair_begin_date_dateEdit->text();
+    QString ed = ui->search_repair_end_date_dateEdit->isEnabled() ? ui->search_repair_end_date_dateEdit->text() : "";
 
     setDisplaiedText(dao.GetDocumentsStr(fio, car, ad, ed));
+}
+
+void MainWindow::on_search_is_ended_checkBox_stateChanged(int arg1)
+{
+    // qDebug() << arg1;
+
+    if (arg1)
+    {
+        ui->search_repair_end_date_dateEdit->setEnabled(false);
+    }
+    else
+    {
+        ui->search_repair_end_date_dateEdit->setEnabled(true);
+    }
+}
+
+void MainWindow::on_hire_button_clicked()
+{
+    NewWorkerDialog dialog;
+    dialog.setModal(true);
+    dialog.exec();
+
+    if (dialog.FIO != "")
+        dao.HireWorker(dialog.FIO, dialog.phone, dialog.mail, "2022-12-02", dialog.salary, dialog.Qualification);
+}
+
+void MainWindow::on_register_button_clicked()
+{
+    NewUserDialog dialog;
+    dialog.setModal(true);
+    dialog.exec();
+
+    if (dialog.login != "")
+        dao.PutUser(User(dialog.login, dialog.password, dialog.roleid));
+}
+
+void MainWindow::on_delet_user_button_clicked()
+{
+    DeleteUserDialog dialog;
+
+    dialog.setModal(true);
+    dialog.exec();
+
+    if (dialog.login != "")
+        dao.DeleteUser(dao.GetUser(dialog.login, dialog.password).idUser);
+}
+
+void MainWindow::on_givesalary_button_clicked()
+{
+    dao.GiveSalary();
+}
+
+void MainWindow::on_car_components_button_clicked() // new document
+{
+    NewDocumentDialog dialog;
+    dialog.setModal(true);
+    dialog.exec();
+
+    if (dialog.FIO != "")
+        dao.NewClient(dialog.FIO, dialog.Phone, dialog.Mail, "2022-12-02", dialog.Brand, dialog.Style, dialog.Model);
+}
+
+void MainWindow::on_new_equipment_button_clicked()
+{
+    NewEquipmentDialog dialog;
+    dialog.setModal(true);
+    dialog.exec();
+
+    if (dialog.Name != "")
+        dao.PutEquipment(WorkingEquipment(dialog.Name, dialog.Description, "2000-01-01", dialog.Price));
+}
+
+void MainWindow::on_new_component_button_clicked()
+{
+    NewComponentDialog dialog;
+    dialog.setModal(true);
+    dialog.exec();
+
+    if (dialog.Name != "")
+        dao.PutComponent(Component(dialog.Name, "2000-01-01", dialog.Price));
+}
+
+void MainWindow::on_new_cashtransfer_button_clicked()
+{
+    NewTransferDialog dialog;
+    dialog.setModal(true);
+    dialog.exec();
+
+    if (dialog.type != "")
+        dao.PutTransfer(Transfer(dialog.cash, dao.GetCashAccount_Number(dialog.cardNumber).idCashAccount, dialog.type));
 }

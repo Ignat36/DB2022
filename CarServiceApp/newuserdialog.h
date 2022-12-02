@@ -15,6 +15,15 @@ public:
     explicit NewUserDialog(QWidget *parent = nullptr);
     ~NewUserDialog();
 
+    int roleid;
+    QString login;
+    QString password;
+
+private slots:
+    void on_buttonBox_accepted();
+
+    void on_buttonBox_rejected();
+
 private:
     Ui::NewUserDialog *ui;
 };

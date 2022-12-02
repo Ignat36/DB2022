@@ -33,6 +33,11 @@ private:
     QSqlDatabase DataBase;
 
 public:
+    bool GiveSalary();
+    bool HireWorker(QString FIO, QString Phone, QString Mail, QString Date, double salary, QString Qualification);
+    bool NewClient(QString FIO, QString Phone, QString Mail, QString Date, QString Brand, QString Style, QString Model);
+
+public:
     ///////////////////////////////////////////////////////////////////////////
     ///                                User                                 ///
     ///////////////////////////////////////////////////////////////////////////
@@ -153,7 +158,8 @@ public:
     std::vector<Document> GetDocument_idTransfer(int CashTransfer_idTransfer); // get document with transfer id
     std::vector<Document> GetDocument_idCar(int Car_idCar); // get document with car id
     std::vector<Document> GetDocuments(); // get all documents
-    std::vector<QString> GetDocumentsStr(QString FIO = "", QString car = "", QString begDate = "", QString endDate = ""); // get all documents
+    std::vector<QString> GetDocumentsStr(QString FIO = "", QString car = "", QString begDate = "", QString endDate = ""); // get documents
+    std::vector<QString> GetAllDocumentsStr(); // get documents
 
     bool PutDocument(Document document); // insert document
     bool UpdateDocument(Document document, bool CreateIfNotExists); // update document with document.id if not exists creates it

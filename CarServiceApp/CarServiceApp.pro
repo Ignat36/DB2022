@@ -38,7 +38,10 @@ SOURCES += \
     newuserdialog.cpp \
     newdocumentdialog.cpp \
     newworkerdialog.cpp \
-    newcomponentdialog.cpp
+    newcomponentdialog.cpp \
+    newequipmentdialog.cpp \
+    deleteuserdialog.cpp \
+    newtransferdialog.cpp
 
 HEADERS += \
     car.h \
@@ -61,14 +64,20 @@ HEADERS += \
     newuserdialog.h \
     newdocumentdialog.h \
     newworkerdialog.h \
-    newcomponentdialog.h
+    newcomponentdialog.h \
+    newequipmentdialog.h \
+    deleteuserdialog.h \
+    newtransferdialog.h
 
 FORMS += \
     mainwindow.ui \
     newuserdialog.ui \
     newdocumentdialog.ui \
     newworkerdialog.ui \
-    newcomponentdialog.ui
+    newcomponentdialog.ui \
+    newequipmentdialog.ui \
+    deleteuserdialog.ui \
+    newtransferdialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

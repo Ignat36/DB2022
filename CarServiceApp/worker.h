@@ -6,7 +6,7 @@
 class Worker
 {
 public:
-    Worker(int _Person_idPerson, QString _PersonalQualities, double _Salary, int _UnpaidHours, int _PaidHours, QDate _HireDate, QString _Qualification);
+    Worker(int _Person_idPerson, QString _PersonalQualities, double _Salary, int _UnpaidHours, int _PaidHours, QString _HireDate, QString _Qualification);
 
 public:
     int Person_idPerson;
@@ -14,7 +14,7 @@ public:
     double Salary;
     int UnpaidHours;
     int PaidHours;
-    QDate HireDate;
+    QString HireDate;
     QString Qualification;
 };
 

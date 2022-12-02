@@ -15,6 +15,17 @@ public:
     explicit NewWorkerDialog(QWidget *parent = nullptr);
     ~NewWorkerDialog();
 
+    QString FIO;
+    QString mail;
+    QString phone;
+    QString Qualification;
+    double salary;
+
+private slots:
+    void on_buttonBox_accepted();
+
+    void on_buttonBox_rejected();
+
 private:
     Ui::NewWorkerDialog *ui;
 };

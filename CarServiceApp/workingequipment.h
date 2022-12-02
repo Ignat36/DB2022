@@ -7,8 +7,8 @@
 class WorkingEquipment
 {
 public:
-    WorkingEquipment(QString _Name, QString _AssignmentOfUse, QDate _LastUsedDate, double _Price);
-    WorkingEquipment(int _idWorkingEquipment, QString _Name, QString _AssignmentOfUse, QDate _LastUsedDate, double _Price);
+    WorkingEquipment(QString _Name, QString _AssignmentOfUse, QString _LastUsedDate, double _Price);
+    WorkingEquipment(int _idWorkingEquipment, QString _Name, QString _AssignmentOfUse, QString _LastUsedDate, double _Price);
 
     QString toString();
 
@@ -16,7 +16,7 @@ public:
     int idWorkingEquipment;
     QString Name;
     QString AssignmentOfUse;
-    QDate LastUsedDate;
+    QString LastUsedDate;
     double Price;
 };
 

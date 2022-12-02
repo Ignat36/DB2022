@@ -7,15 +7,15 @@
 class Component
 {
 public:
-    Component(QString _Name, QDate _Date, double _Price);
-    Component(int _idComponent, QString _Name, QDate _Date, double _Price);
+    Component(QString _Name, QString _Date, double _Price);
+    Component(int _idComponent, QString _Name, QString _Date, double _Price);
 
     QString toString();
 
 public:
     int idComponent;
     QString Name;
-    QDate DateOfManufacture;
+    QString DateOfManufacture;
     double Price;
 };
 

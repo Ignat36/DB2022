@@ -12,3 +12,13 @@ NewWorkerDialog::~NewWorkerDialog()
 {
     delete ui;
 }
+
+void NewWorkerDialog::on_buttonBox_accepted()
+{
+
+}
+
+void NewWorkerDialog::on_buttonBox_rejected()
+{
+
+}

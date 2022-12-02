@@ -6,11 +6,11 @@
 class Client
 {
 public:
-    Client(int _Person_idPerson, QDate _lastVisit);
+    Client(int _Person_idPerson, QString _lastVisit);
 
 public:
     int Person_idPerson;
-    QDate LastVisit;
+    QString LastVisit;
 };
 
 #endif // CLIENT_H
