@@ -9,6 +9,8 @@ public:
     CashAccount(QString _CardNumber, int _Person_idPerson);
     CashAccount(int _idCashAccount, QString _CardNumber, int _Person_idPerson);
 
+    QString toString();
+
 public:
     int idCashAccount;
     QString CardNumber;

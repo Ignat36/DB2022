@@ -37,6 +37,20 @@ private slots:
 
     void on_exit_pushButton_clicked();
 
+    void on_cashtransfer_button_clicked();
+
+    void on_services_button_clicked();
+
+    void on_work_in_action_button_clicked();
+
+    void on_cashaccounts_button_clicked();
+
+    void on_search_car_comp_button_clicked();
+
+    void on_search_transfer_button_clicked();
+
+    void on_search_repair_works_button_clicked();
+
 private:
     Ui::MainWindow *ui;
 

@@ -34,7 +34,7 @@ BEGIN
 	select ModelName, bid, bsid
 	where not exists (select * from model where name = ModelName AND brand_idbrand = bid AND bodystyle_idbodystyle = bsid);
 
-END; $$
+END; $$;
 
 CREATE OR REPLACE PROCEDURE newClient(
 	pFIO character varying(60),
@@ -82,7 +82,7 @@ BEGIN
 	insert into document(text, workedhours, workacceptdate, car_idcar, price) 
 	values ('', 0, curdate, cid, 0);
 
-END; $$
+END; $$;
 
 CREATE OR REPLACE PROCEDURE hireWorker(
 	pFIO character varying(60),
@@ -109,7 +109,7 @@ BEGIN
 	insert into worker(salary, hiredate, unpaidhours, paidhours, qualification, personalqualities, person_idperson) 
 	values (Wsalary, curdate, 0, 0, qualif, '', pid);
 
-END; $$
+END; $$;
 
 CREATE OR REPLACE PROCEDURE paySalary() 
 language plpgsql
@@ -143,4 +143,4 @@ BEGIN
 		
 	end loop;
 	
-END; $$
+END; $$;

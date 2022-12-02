@@ -12,3 +12,12 @@ Service::Service(int _idService, QString _Description, double _Price, int _Requi
 {
 
 }
+
+QString Service::toString()
+{
+    return    QString("   ----------------------------------------------------->")
+            + QString("\n       Название        : ") + Name
+            + QString("\n       Цена            : ") + QString::number(Price)
+            + QString("\n       Примерное время : ") + QString::number(RequiredTimeH)
+            + QString("\n       Описание        : ") + Description;
+}

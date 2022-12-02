@@ -10,6 +10,8 @@ public:
     Component(QString _Name, QDate _Date, double _Price);
     Component(int _idComponent, QString _Name, QDate _Date, double _Price);
 
+    QString toString();
+
 public:
     int idComponent;
     QString Name;

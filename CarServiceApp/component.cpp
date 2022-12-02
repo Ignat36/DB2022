@@ -12,3 +12,10 @@ Component::Component(int _idComponent, QString _Name, QDate _Date, double _Price
 {
 
 }
+
+QString Component::toString()
+{
+    return    QString("   ----------------------------------------------------->")
+            + QString("\n       Название       : ") + Name
+            + QString("\n       Цена           : ") + QString::number(Price) ;
+}

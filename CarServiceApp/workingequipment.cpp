@@ -11,3 +11,11 @@ WorkingEquipment::WorkingEquipment(int _idWorkingEquipment, QString _Name, QStri
     idWorkingEquipment(_idWorkingEquipment), Name(_Name), AssignmentOfUse(_AssignmentOfUse), LastUsedDate(_LastUsedDate), Price(_Price)
 {
 }
+
+QString WorkingEquipment::toString()
+{
+    return    QString("   ----------------------------------------------------->")
+            + QString("\n       Название       : ") + Name
+            + QString("\n       Цена           : ") + QString::number(Price)
+            + QString("\n       Назначение     : ") + AssignmentOfUse;
+}

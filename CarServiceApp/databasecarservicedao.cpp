@@ -220,7 +220,7 @@ Component DataBaseCarServiceDAO::GetComponent(int idComponent)
 std::vector<Component> DataBaseCarServiceDAO::GetComponent_Name(QString Name)
 {
     QSqlQuery query;
-    query.exec(QString("SELECT * FROM component WHERE name like '%%1%'").arg(Name));
+    query.exec(QString("SELECT * FROM component WHERE name ilike '%%1%'").arg(Name));
     std::vector<Component> result;
 
     while (query.next()) {
@@ -646,7 +646,7 @@ WorkingEquipment DataBaseCarServiceDAO::GetEquipment(int idEquipment)
 std::vector<WorkingEquipment> DataBaseCarServiceDAO::GetEquipment_Name(QString Name)
 {
     QSqlQuery query;
-    query.exec(QString("SELECT * FROM workingequipment WHERE name like '%%1%'").arg(Name));
+    query.exec(QString("SELECT * FROM workingequipment WHERE name ilike '%%1%'").arg(Name));
     std::vector<WorkingEquipment> result;
 
     while (query.next()) {
@@ -743,7 +743,7 @@ Service DataBaseCarServiceDAO::GetService(int idService) // SELECT
 std::vector<Service> DataBaseCarServiceDAO::GetService_Name(QString Name) // SELECT many
 {
     QSqlQuery query;
-    query.exec(QString("SELECT * FROM service WHERE name like '%%1%'").arg(Name));
+    query.exec(QString("SELECT * FROM service WHERE name ilike '%%1%'").arg(Name));
     std::vector<Service> result;
 
     while (query.next()) {
@@ -838,7 +838,7 @@ CashAccount DataBaseCarServiceDAO::GetCashAccount(int idCashAccount) // SELECT
 CashAccount DataBaseCarServiceDAO::GetCashAccount_Number(QString CardNumber) // SELECT
 {
     QSqlQuery query;
-    query.exec(QString("SELECT * FROM cashaccount WHERE cardnumber like '%%1%'").arg(CardNumber));
+    query.exec(QString("SELECT * FROM cashaccount WHERE cardnumber ilike '%%1%'").arg(CardNumber));
 
     while (query.next()) {
         int id = query.value(0).toInt();
@@ -880,6 +880,29 @@ std::vector<CashAccount> DataBaseCarServiceDAO::GetCashAccounts() // SELECT all
     }
 
     return result;
+}
+
+std::vector<QString> DataBaseCarServiceDAO::GetCashAccountsStr(QString Name)
+{
+        QSqlQuery query;
+        query.exec(QString("select cashaccount.cardnumber, person.fio from cashaccount inner join person ON person.idperson = cashaccount.person_idperson where person.fio ilike '%%1%'")
+                   .arg(Name));
+        std::vector<QString> result;
+
+        while (query.next()) {
+            QString CardNumber = query.value(0).toString();
+            QString FIO = query.value(1).toString();
+
+
+            QString record =  QString("   ----------------------------------------------------->")
+                            + QString("\n       Номер счета      : ") + CardNumber
+                            + QString("\n       ФИО              : ") + FIO
+                            + QString("\n   ----------------------------------------------------->") ;
+
+            result.push_back(record);
+        }
+
+        return result;
 }
 
 bool DataBaseCarServiceDAO::PutCashAccount(CashAccount cashaccount) // INSERT
@@ -967,6 +990,55 @@ std::vector<Transfer> DataBaseCarServiceDAO::GetTransfers() // SLECT all
         int CashAccount_idCashAccount = query.value(2).toInt();
         QString Type = query.value(3).toString();
         result.push_back(Transfer(id, Cash, CashAccount_idCashAccount, Type));
+    }
+
+    return result;
+}
+
+std::vector<QString> DataBaseCarServiceDAO::GetTransfersStr(QString FIO)
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT cashtransfer.cash, cashaccount.cardnumber, person.fio FROM cashtransfer INNER JOIN cashaccount ON cashaccount.idcashaccount = cashtransfer.cashaccount_idcashaccount INNER JOIN person ON person.idperson = cashaccount.person_idperson WHERE person.fio ILIKE '%%1%'")
+               .arg(FIO));
+    std::vector<QString> result;
+
+    while (query.next()) {
+        double sum = query.value(0).toDouble();
+        QString CrandNumber = query.value(1).toString();
+        QString FIO = query.value(2).toString();
+
+        QString record =  QString("   ----------------------------------------------------->")
+                        + QString("\n       ФИО                  : ") + FIO
+                        + QString("\n       Номер счета          : ") + CrandNumber
+                        + QString("\n       Сумма перевода       : ") + QString::number(sum)
+                        + QString("\n   ----------------------------------------------------->") ;
+
+        result.push_back(record);
+    }
+
+    return result;
+}
+
+std::vector<QString> DataBaseCarServiceDAO::GetTransfersStr(QString FIO, QString type)
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT cashtransfer.cash, cashaccount.cardnumber, person.fio FROM cashtransfer INNER JOIN cashaccount ON cashaccount.idcashaccount = cashtransfer.cashaccount_idcashaccount INNER JOIN person ON person.idperson = cashaccount.person_idperson WHERE cashtransfer.type = '%1' AND person.fio ILIKE '%%2%'")
+               .arg(type)
+               .arg(FIO));
+    std::vector<QString> result;
+
+    while (query.next()) {
+        double sum = query.value(0).toDouble();
+        QString CrandNumber = query.value(1).toString();
+        QString FIO = query.value(2).toString();
+
+        QString record =  QString("   ----------------------------------------------------->")
+                        + QString("\n       ФИО                  : ") + FIO
+                        + QString("\n       Номер счета          : ") + CrandNumber
+                        + QString("\n       Сумма перевода       : ") + QString::number(sum)
+                        + QString("\n   ----------------------------------------------------->") ;
+
+        result.push_back(record);
     }
 
     return result;
@@ -1104,6 +1176,51 @@ std::vector<Document> DataBaseCarServiceDAO::GetDocuments() // SELECT all
     return result;
 }
 
+std::vector<QString> DataBaseCarServiceDAO::GetDocumentsStr(QString FIO, QString car, QString begDate, QString endDate)
+{
+    QSqlQuery query;
+
+    if (endDate == "")
+        query.exec(QString("SELECT document.workacceptdate, document.workdonedate, document.price, brand.name, model.name, bodystyle.stylename, person.fio FROM document INNER JOIN car ON car.idcar = document.car_idcar INNER JOIN person ON person.idperson = car.client_person_idperson INNER JOIN model ON model.idmodel = car.model_idmodel INNER JOIN brand ON brand.idbrand = model.brand_idbrand INNER JOIN bodystyle ON bodystyle.idbodystyle = model.bodystyle_idbodystyle where person.fio ilike '%%1%' AND (model.name ilike '%%2%' OR brand.name ilike '%%3%' OR bodystyle.stylename ilike '%%4%') AND  document.workdonedate is NULL")
+                   .arg(FIO)
+                   .arg(car)
+                   .arg(car)
+                   .arg(car));
+    else
+        query.exec(QString("SELECT document.workacceptdate, document.workdonedate, document.price, brand.name, model.name, bodystyle.stylename, person.fio FROM document INNER JOIN car ON car.idcar = document.car_idcar INNER JOIN person ON person.idperson = car.client_person_idperson INNER JOIN model ON model.idmodel = car.model_idmodel INNER JOIN brand ON brand.idbrand = model.brand_idbrand INNER JOIN bodystyle ON bodystyle.idbodystyle = model.bodystyle_idbodystyle where person.fio ilike '%%1%' AND (model.name ilike '%%2%' OR brand.name ilike '%%3%' OR bodystyle.stylename ilike '%%4%')")
+                    .arg(FIO)
+                    .arg(car)
+                    .arg(car)
+                    .arg(car));
+
+
+    std::vector<QString> result;
+
+    while (query.next()) {
+        QDate AcceptDate = query.value(0).toDate();
+        QDate DoneDate = query.value(1).toDate();
+        double price = query.value(2).toDouble();
+        QString Brand = query.value(3).toString();
+        QString Model = query.value(4).toString();
+        QString BodyStyle = query.value(5).toString();
+        QString FIO = query.value(6).toString();
+
+        QString pers =    QString("   ----------------------------------------------------->")
+                        + QString("\n       ФИО                  : ") + FIO
+                        + QString("\n       Дата начала работ    : ") + AcceptDate.toString()
+                        + QString("\n       Дата окончания работ : ") + DoneDate.toString()
+                        + QString("\n       Цена                 : ") + QString::number(price)
+                        + QString("\n       Марка машины         : ") + Brand
+                        + QString("\n       Модель машины        : ") + Model
+                        + QString("\n       Тип кузова           : ") + BodyStyle
+                        + QString("\n   ----------------------------------------------------->") ;
+
+        result.push_back(pers);
+    }
+
+    return result;
+}
+
 bool DataBaseCarServiceDAO::PutDocument(Document document) // INSERT
 {
     QSqlQuery query;
@@ -1173,7 +1290,7 @@ Person DataBaseCarServiceDAO::GetPerson(int idPerson) // SELECT
 std::vector<Person> DataBaseCarServiceDAO::GetPersonFIO(QString FIO) // SELECT many
 {
     QSqlQuery query;
-    query.exec(QString("SELECT * FROM person WHERE fio like '%%1%'").arg(FIO));
+    query.exec(QString("SELECT * FROM person WHERE fio ilike '%%1%'").arg(FIO));
     std::vector<Person> result;
 
     while (query.next()) {
@@ -1263,7 +1380,7 @@ Brand DataBaseCarServiceDAO::GetBrand(int idBrand) // SELECT
 std::vector<Brand> DataBaseCarServiceDAO::GetBrandName(QString Name) // SLECT many
 {
     QSqlQuery query;
-    query.exec(QString("SELECT * FROM brand WHERE name like '%%1%'").arg(Name));
+    query.exec(QString("SELECT * FROM brand WHERE name ilike '%%1%'").arg(Name));
     std::vector<Brand> result;
 
     while (query.next()) {
@@ -1345,7 +1462,7 @@ BodyStyle DataBaseCarServiceDAO::GetBodyStyle(int idBodyStyle) // SELECT
 std::vector<BodyStyle> DataBaseCarServiceDAO::GetBodyStyleName(QString Name) // SELECT many
 {
     QSqlQuery query;
-    query.exec(QString("SELECT * FROM bodystyle WHERE stylename like '%%1%'").arg(Name));
+    query.exec(QString("SELECT * FROM bodystyle WHERE stylename ilike '%%1%'").arg(Name));
     std::vector<BodyStyle> result;
 
     while (query.next()) {
@@ -1429,7 +1546,7 @@ Model DataBaseCarServiceDAO::GetModel(int idModel) // SELECT
 std::vector<Model> DataBaseCarServiceDAO::GetModelName(QString Name) // SELECT many
 {
     QSqlQuery query;
-    query.exec(QString("SELECT * FROM model WHERE naem like '%%1%'").arg(Name));
+    query.exec(QString("SELECT * FROM model WHERE naem ilike '%%1%'").arg(Name));
     std::vector<Model> result;
 
     while (query.next()) {

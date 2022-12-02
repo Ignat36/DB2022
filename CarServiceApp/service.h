@@ -9,6 +9,8 @@ public:
     Service(QString _Description, double _Price, int _RequiredTimeH, QString _Name);
     Service(int _idService, QString _Description, double _Price, int _RequiredTimeH, QString _Name);
 
+    QString toString();
+
 public:
     int idService;
     QString Description;

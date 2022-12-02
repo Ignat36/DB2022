@@ -248,7 +248,7 @@ p, li { white-space: pre-wrap; }
        <item>
         <widget class="QPushButton" name="work_in_action_button">
          <property name="text">
-          <string>Work in action</string>
+          <string>All works</string>
          </property>
         </widget>
        </item>
@@ -572,9 +572,9 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="cashtransfers_button">
+        <widget class="QPushButton" name="new_cashtransfer_button">
          <property name="text">
-          <string>Cashtransfers</string>
+          <string>New cashtransfers</string>
          </property>
         </widget>
        </item>

@@ -125,6 +125,7 @@ public:
 
     std::vector<CashAccount> GetCashAccount_idPerson(int Person_idPerson); // get cashaccount with person id
     std::vector<CashAccount> GetCashAccounts(); // get all cashaccount
+    std::vector<QString> GetCashAccountsStr(QString Name = ""); // get all cashaccount
 
     bool PutCashAccount(CashAccount cashaccount); // insert cashaccount
     bool UpdateCashAccount(CashAccount cashaccount, bool CreateIfNotExists); // update cashaccount with cashaccount.id if not exists creates it
@@ -137,6 +138,8 @@ public:
 
     std::vector<Transfer> GetTransfer_idCashAccount(int CashAccount_idCashAccount); // get transfer with cashaccount id
     std::vector<Transfer> GetTransfers(); // get all transfer
+    std::vector<QString> GetTransfersStr(QString FIO); // get transfers
+    std::vector<QString> GetTransfersStr(QString FIO, QString type); // get transfers
 
     bool PutTransfer(Transfer transfer); // insert transfer
     bool UpdateTransfer(Transfer transfer, bool CreateIfNotExists); // update transfer with transfer.id if not exists creates it
@@ -150,6 +153,7 @@ public:
     std::vector<Document> GetDocument_idTransfer(int CashTransfer_idTransfer); // get document with transfer id
     std::vector<Document> GetDocument_idCar(int Car_idCar); // get document with car id
     std::vector<Document> GetDocuments(); // get all documents
+    std::vector<QString> GetDocumentsStr(QString FIO = "", QString car = "", QString begDate = "", QString endDate = ""); // get all documents
 
     bool PutDocument(Document document); // insert document
     bool UpdateDocument(Document document, bool CreateIfNotExists); // update document with document.id if not exists creates it
