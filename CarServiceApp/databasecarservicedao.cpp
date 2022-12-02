@@ -399,6 +399,57 @@ Client DataBaseCarServiceDAO::GetClient(int Person_idPerson) // SELECT
     throw std::runtime_error(QString("Incorrect id Client : %1").arg(Person_idPerson).toStdString());
 }
 
+std::vector<QString> DataBaseCarServiceDAO::GetClientsStr(QString Name)
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT person.idperson, client.lastvisit, person.fio, person.phonenumber, person.mailadres FROM client INNER JOIN person ON person.idperson = client.person_idperson WHERE person.fio ilike '%%1%'")
+               .arg(Name));
+    std::vector<QString> result;
+
+    while (query.next()) {
+        int id = query.value(0).toInt();
+        QDate LastVisit = query.value(1).toDate();
+        QString FIO = query.value(2).toString();
+        QString PhoneNumber = query.value(3).toString();
+        QString MailAdres = query.value(4).toString();
+
+        QSqlQuery q;
+        q.exec(QString("SELECT document.workacceptdate, document.workdonedate, document.price, brand.name, model.name, bodystyle.stylename, person.fio FROM document INNER JOIN car ON car.idcar = document.car_idcar INNER JOIN person ON person.idperson = car.client_person_idperson INNER JOIN model ON model.idmodel = car.model_idmodel INNER JOIN brand ON brand.idbrand = model.brand_idbrand INNER JOIN bodystyle ON bodystyle.idbodystyle = model.bodystyle_idbodystyle WHERE person.idperson = %1")
+               .arg(id));
+
+        QString pers =    QString("\nИмя заказчика   : ") + FIO
+                        + QString("\nТелефон         : ") + PhoneNumber
+                        + QString("\nEmail           : ") + MailAdres
+                        + QString("\nПоследний визит : ") + LastVisit.toString();
+
+        result.push_back(pers);
+
+        while (q.next())
+        {
+            QDate acceptDate = q.value(0).toDate();
+            QDate doneDate = q.value(1).toDate();
+            double price = q.value(2).toDouble();
+            QString Brand = q.value(3).toString();
+            QString Model = q.value(4).toString();
+            QString Style = q.value(5).toString();
+            QString FIO = q.value(6).toString();
+
+            QString record =  QString("   ----------------------------------------------------->")
+                            + QString("\n       Дата начала работ    : ") + acceptDate.toString()
+                            + QString("\n       Дата окончания работ : ") + doneDate.toString()
+                            + QString("\n       Цена работ           : ") + QString::number(price)
+                            + QString("\n       Марка машины         : ") + Brand
+                            + QString("\n       Модель машины        : ") + Model
+                            + QString("\n       Тип кузова           : ") + Style
+                            + QString("\n   ----------------------------------------------------->") ;
+
+            result.push_back(record);
+        }
+    }
+
+    return result;
+}
+
 std::vector<Client> DataBaseCarServiceDAO::GetClients() // SELECT ALL
 {
     QSqlQuery query;
@@ -469,6 +520,43 @@ Worker DataBaseCarServiceDAO::GetWorker(int Person_idPerson) // SELECT
     }
 
     throw std::runtime_error(QString("Incorrect id Worker : %1").arg(Person_idPerson).toStdString());
+}
+
+std::vector<QString> DataBaseCarServiceDAO::GetWorkersStr(QString Name)
+{
+    QSqlQuery query;
+    query.exec(QString("SELECT person.idperson, person.fio, person.phonenumber, person.mailadres, worker.salary, worker.paidhours, worker.unpaidhours, worker.hiredate, worker.qualification, worker.personalqualities FROM worker INNER JOIN person ON person.idperson = worker.person_idperson WHERE person.fio ilike '%%1%'")
+               .arg(Name));
+    std::vector<QString> result;
+
+    while (query.next()) {
+        int id = query.value(0).toInt(); Q_UNUSED(id);
+        QString FIO = query.value(1).toString();
+        QString PhoneNumber = query.value(2).toString();
+        QString MailAdres = query.value(3).toString();
+        double salary = query.value(4).toDouble();
+        int paidh = query.value(5).toInt();
+        int unpaidh = query.value(6).toInt();
+        QDate hireDate = query.value(7).toDate();
+        QString Qualification = query.value(8).toString();
+        QString PersonalQalities = query.value(9).toString();
+
+        QString pers =    QString("   ----------------------------------------------------->")
+                        + QString("\n       ФИО                  : ") + FIO
+                        + QString("\n       Телефон              : ") + PhoneNumber
+                        + QString("\n       Email                : ") + MailAdres
+                        + QString("\n       Зарплата             : ") + QString::number(salary)
+                        + QString("\n       Оплаченые часы       : ") + QString::number(paidh)
+                        + QString("\n       Не оплаченые часы    : ") + QString::number(unpaidh)
+                        + QString("\n       Дата начала работ    : ") + hireDate.toString()
+                        + QString("\n       Квалификация         : ") + Qualification
+                        + QString("\n       Персональные качества: ") + PersonalQalities
+                        + QString("\n   ----------------------------------------------------->") ;
+
+        result.push_back(pers);
+    }
+
+    return result;
 }
 
 std::vector<Worker> DataBaseCarServiceDAO::GetWorkers() // SELECT ALL

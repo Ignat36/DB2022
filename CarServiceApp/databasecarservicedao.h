@@ -77,6 +77,7 @@ public:
     ///                                Client                               ///
     ///////////////////////////////////////////////////////////////////////////
     Client GetClient(int Person_idPerson); // get client with client id
+    std::vector<QString> GetClientsStr(QString Name = ""); // get client with name like name
     std::vector<Client> GetClients(); // get clients
 
     bool PutClient(Client client); // insert client
@@ -87,6 +88,7 @@ public:
     ///                                Worker                               ///
     ///////////////////////////////////////////////////////////////////////////
     Worker GetWorker (int Person_idPerson); // get worker with worker id
+    std::vector<QString> GetWorkersStr(QString Name); // get workers with name like name
     std::vector<Worker> GetWorkers(); // get workers
 
     bool PutWorker(Worker worker); // insert worker

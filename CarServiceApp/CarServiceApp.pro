@@ -34,7 +34,11 @@ SOURCES += \
     model.cpp \
     component.cpp \
     role.cpp \
-    user.cpp
+    user.cpp \
+    newuserdialog.cpp \
+    newdocumentdialog.cpp \
+    newworkerdialog.cpp \
+    newcomponentdialog.cpp
 
 HEADERS += \
     car.h \
@@ -53,10 +57,18 @@ HEADERS += \
     model.h \
     component.h \
     role.h \
-    user.h
+    user.h \
+    newuserdialog.h \
+    newdocumentdialog.h \
+    newworkerdialog.h \
+    newcomponentdialog.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    newuserdialog.ui \
+    newdocumentdialog.ui \
+    newworkerdialog.ui \
+    newcomponentdialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

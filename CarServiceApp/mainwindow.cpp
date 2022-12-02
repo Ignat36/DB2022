@@ -1,6 +1,11 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include "newuserdialog.h"
+#include "newcomponentdialog.h"
+#include "newdocumentdialog.h"
+#include "newworkerdialog.h"
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -15,6 +20,22 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::setDisplaiedText(std::vector<QString> strings)
+{
+    QString text = "";
+
+    for (auto i : strings) {
+        text += (i + "\n");
+    }
+
+    ui->data_display_screen->setText(text);
+}
+
+void MainWindow::setDisplaiedText(const QString& string)
+{
+    ui->data_display_screen->setText(string);
 }
 
 void MainWindow::BindComboBox()
@@ -47,7 +68,9 @@ void MainWindow::on_SignIn_button_clicked()
 
 void MainWindow::on_workers_search_button_clicked()
 {
+    QString name = ui->person_serch_line_edit->text();
 
+    setDisplaiedText(dao.GetWorkersStr(name));
 }
 
 void MainWindow::resetWarning()
@@ -61,4 +84,26 @@ void MainWindow::setWarning(const QString &message, int time)
     ui->warning_message_label->setText(" * " + message + " * ");
     timer->stop();
     timer->start(time * 1000);
+}
+
+void MainWindow::on_client_search_button_clicked()
+{
+    QString name = ui->person_serch_line_edit->text();
+
+    setDisplaiedText(dao.GetClientsStr(name));
+}
+
+void MainWindow::on_workingequipment_button_clicked()
+{
+
+}
+
+void MainWindow::on_components_button_clicked()
+{
+
+}
+
+void MainWindow::on_exit_pushButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
 }

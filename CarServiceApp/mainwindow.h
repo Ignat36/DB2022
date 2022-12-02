@@ -19,6 +19,7 @@ public:
 
 private:
     void setDisplaiedText(std::vector<QString> strings);
+    void setDisplaiedText(const QString& string);
     void BindComboBox();
 
 private slots:
@@ -27,6 +28,14 @@ private slots:
     void on_SignIn_button_clicked();
 
     void on_workers_search_button_clicked();
+
+    void on_client_search_button_clicked();
+
+    void on_workingequipment_button_clicked();
+
+    void on_components_button_clicked();
+
+    void on_exit_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;

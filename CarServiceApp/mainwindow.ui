@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1013</width>
-    <height>677</height>
+    <width>1025</width>
+    <height>753</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,11 +20,11 @@
       <x>9</x>
       <y>9</y>
       <width>1001</width>
-      <height>641</height>
+      <height>701</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page_authorize">
      <widget class="QPushButton" name="SignIn_button">
@@ -76,7 +76,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Login        :</string>
+       <string>Логин        :</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_password">
@@ -92,7 +92,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Password :</string>
+       <string>Пароль      :</string>
       </property>
      </widget>
      <widget class="QLabel" name="warning_message_label">
@@ -239,9 +239,9 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="Clients_button">
+        <widget class="QPushButton" name="new_equipment_button">
          <property name="text">
-          <string>Clients</string>
+          <string>New equipment</string>
          </property>
         </widget>
        </item>
@@ -558,9 +558,9 @@ p, li { white-space: pre-wrap; }
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="workers_button">
+        <widget class="QPushButton" name="new_component_button">
          <property name="text">
-          <string>Workers</string>
+          <string>Request component</string>
          </property>
         </widget>
        </item>
@@ -601,6 +601,19 @@ p, li { white-space: pre-wrap; }
        </item>
       </layout>
      </widget>
+     <widget class="QPushButton" name="exit_pushButton">
+      <property name="geometry">
+       <rect>
+        <x>920</x>
+        <y>630</y>
+        <width>71</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Выход</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_register"/>
    </widget>
@@ -610,7 +623,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1013</width>
+     <width>1025</width>
      <height>20</height>
     </rect>
    </property>

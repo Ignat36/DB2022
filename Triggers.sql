@@ -20,3 +20,13 @@ $$ LANGUAGE plpgsql;
 
 CREATE TRIGGER recount_document BEFORE INSERT ON document_service
     FOR EACH ROW EXECUTE PROCEDURE recount_document();
+
+CREATE FUNCTION no_delete() RETURNS trigger AS $$
+    BEGIN
+        RETURN NULL;
+    END;
+$$ LANGUAGE plpgsql;
+	
+
+CREATE TRIGGER no_delete_role BEFORE DELETE OR UPDATE ON role
+    FOR EACH ROW EXECUTE PROCEDURE no_delete();
