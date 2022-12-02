@@ -65,6 +65,53 @@ void MainWindow::on_SignIn_button_clicked()
     try {
         User user = dao.GetUser(login, password);
         ui->stackedWidget->setCurrentIndex(1);
+        ui->data_display_screen->setText("");
+        ui->search_car_comp_line_edit->setText("");
+        ui->search_by_sender_line_edit->setText("");
+        ui->search_repair_by_car_line_edit->setText("");
+        ui->search_repair_end_date_dateEdit->setDate(QDate(2023, 1, 1));
+        ui->search_repair_begin_date_dateEdit->setDate(QDate(2000, 1, 1));
+        ui->search_repair_by_client_line_edit->setText("");
+        ui->person_serch_line_edit->setText("");
+        ui->LoginEnter->setText("");
+        ui->PasswordEnter->setText("");
+
+        ui->register_button->setEnabled(true);
+        ui->delet_user_button->setEnabled(true);
+        ui->givesalary_button->setEnabled(true);
+        ui->new_equipment_button->setEnabled(true);
+        ui->new_cashtransfer_button->setEnabled(true);
+        ui->car_components_button->setEnabled(true);
+        ui->hire_button->setEnabled(true);
+
+        switch (user.Role_idRole) {
+        case 3:
+        {
+            ui->register_button->setEnabled(false);
+            ui->delet_user_button->setEnabled(false);
+            ui->givesalary_button->setEnabled(false);
+            ui->new_equipment_button->setEnabled(false);
+            ui->new_cashtransfer_button->setEnabled(false);
+            ui->car_components_button->setEnabled(false);
+            ui->hire_button->setEnabled(false);
+        }
+            break;
+        case 2:
+        {
+            ui->register_button->setEnabled(false);
+            ui->delet_user_button->setEnabled(false);
+        }
+            break;
+        case 1:
+        {
+
+        }
+            break;
+        default:
+            throw std::runtime_error("Unknow error please call on this number +375293555104 ");
+        }
+
+
     } catch (std::runtime_error e) {
         setWarning(e.what());
         return;
