@@ -64,11 +64,35 @@ CREATE TABLE IF NOT EXISTS component
 
 CREATE TABLE IF NOT EXISTS client
 (
-    Person_idPerson integer PRIMARY KEY NOT NULL,
+    person_idPerson integer PRIMARY KEY NOT NULL,
     lastVisit date NOT NULL,
 	
 	FOREIGN KEY (Person_idPerson)
     	REFERENCES person (idPerson)
+    	ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS qualifications
+(
+    idQualification serial PRIMARY KEY NOT NULL,
+    description character varying(60)
+);
+
+CREATE TABLE IF NOT EXISTS shifts
+(
+    idShift serial PRIMARY KEY NOT NULL,
+    starts_at date NOT NULL,
+	ends_at date NOT NULL,
+	qualification_idQualification integer NOT NULL,
+	worker_Person_idPerson integer.
+	
+	
+	FOREIGN KEY (Qualification_idQualification)
+    	REFERENCES Qualification (idQualification)
+    	ON DELETE CASCADE,
+	
+	FOREIGN KEY (worker_person_idPerson)
+    	REFERENCES worker (person_idPerson)
     	ON DELETE CASCADE
 );
 
@@ -78,7 +102,7 @@ CREATE TABLE IF NOT EXISTS worker
     HireDate date NOT NULL,
     UnpaidHours integer NOT NULL,
     PaidHours integer NOT NULL,
-    Qualification character varying(60),
+    Qualification integer NOT NULL,
     PersonalQualities character varying(300),
     Person_idPerson integer PRIMARY KEY NOT NULL,
 	
@@ -169,11 +193,11 @@ CREATE TABLE IF NOT EXISTS document_service
 	
 	FOREIGN KEY (document_idDocument)
     	REFERENCES document (idDocument)
-    	ON DELETE CASCADE,
+    	ON DELETE NO ACTION,
 	
 	FOREIGN KEY (service_idService)
     	REFERENCES service (idService)
-    	ON DELETE CASCADE
+    	ON DELETE NO ACTION
 );
 
 CREATE TABLE IF NOT EXISTS service_workingequipment
@@ -183,11 +207,11 @@ CREATE TABLE IF NOT EXISTS service_workingequipment
 	
 	FOREIGN KEY (service_idService)
     	REFERENCES service (idService)
-    	ON DELETE CASCADE,
+    	ON DELETE NO ACTION,
 	
 	FOREIGN KEY (workingequipment_idWorkingEquipment)
     	REFERENCES workingequipment (idWorkingEquipment)
-    	ON DELETE CASCADE
+    	ON DELETE NO ACTION
 );
 
 CREATE TABLE IF NOT EXISTS worker_document
@@ -197,11 +221,11 @@ CREATE TABLE IF NOT EXISTS worker_document
 	
 	FOREIGN KEY (worker_Person_idPerson)
     	REFERENCES worker (Person_idPerson)
-    	ON DELETE CASCADE,
+    	ON DELETE NO ACTION,
 	
 	FOREIGN KEY (document_idDocument)
     	REFERENCES document (idDocument)
-    	ON DELETE CASCADE
+    	ON DELETE NO ACTION
 );
 
 CREATE TABLE IF NOT EXISTS car_component
@@ -211,9 +235,9 @@ CREATE TABLE IF NOT EXISTS car_component
 	
 	FOREIGN KEY (component_idComponent)
     	REFERENCES component (idComponent)
-    	ON DELETE CASCADE,
+    	ON DELETE NO ACTION,
 	
 	FOREIGN KEY (car_idCar)
     	REFERENCES car (idCar)
-    	ON DELETE CASCADE
+    	ON DELETE NO ACTION
 );
