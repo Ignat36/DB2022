@@ -1,7 +1,7 @@
 DROP SCHEMA public CASCADE;
 CREATE SCHEMA public;
 
-CREATE TABLE IF NOT EXISTS bodystyles
+CREATE TABLE IF NOT EXISTS body_styles
 (
     id serial PRIMARY KEY,
     name character varying(45) NOT NULL
@@ -11,18 +11,6 @@ CREATE TABLE IF NOT EXISTS roles
 (
     id serial PRIMARY KEY,
     name character varying(20) NOT NULL
-);
-
-CREATE TABLE IF NOT EXISTS users
-(
-    id serial PRIMARY KEY,
-    login character varying(45) NOT NULL,
-	password character varying(60) NOT NULL, 
-	role integer NOT NULL,
-	
-	FOREIGN KEY (role)
-    	REFERENCES roles (id)
-    	ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS brands
@@ -42,7 +30,7 @@ CREATE TABLE IF NOT EXISTS models
     	ON DELETE CASCADE,
 	
 	FOREIGN KEY (body_style)
-    	REFERENCES bodystyles (id)
+    	REFERENCES body_styles (id)
     	ON DELETE CASCADE
 );
 
@@ -51,7 +39,14 @@ CREATE TABLE IF NOT EXISTS persons
     id serial PRIMARY KEY,
     full_name character varying(45) NOT NULL,
     phone character varying(20) NOT NULL,
-    email character varying(45) NOT NULL
+    email character varying(45) NOT NULL,
+	login character varying(45) NOT NULL,
+	password character varying(60) NOT NULL, 
+	role integer NOT NULL,
+	
+	FOREIGN KEY (role)
+    	REFERENCES roles (id)
+    	ON DELETE CASCADE
 );
 
 
@@ -86,16 +81,11 @@ CREATE TABLE IF NOT EXISTS workers
     hire_date date NOT NULL,
     unpaid_hours integer NOT NULL,
     paid_hours integer NOT NULL,
-    qualification integer NOT NULL,
     personal_qualities character varying(300),
     id integer PRIMARY KEY NOT NULL,
 	
 	FOREIGN KEY (id)
     	REFERENCES persons (id)
-    	ON DELETE CASCADE,
-	
-	FOREIGN KEY (qualification)
-    	REFERENCES qualifications (id)
     	ON DELETE CASCADE
 );
 
@@ -161,7 +151,7 @@ CREATE TABLE IF NOT EXISTS cash_accounts
 (
     id serial PRIMARY KEY,
     number character varying(30) NOT NULL,
-    person integer NOT NULL,
+    person integer,
 	FOREIGN KEY (person)
     	REFERENCES persons (id)
     	ON DELETE CASCADE
@@ -215,7 +205,7 @@ CREATE TABLE IF NOT EXISTS reviews
 );
 
 -- Штрафы работникам
-CREATE TABLE IF NOT EXISTS penalty
+CREATE TABLE IF NOT EXISTS penalties
 (
 	id serial PRIMARY KEY,
 	worker integer NOT NULL,
@@ -348,6 +338,20 @@ CREATE TABLE IF NOT EXISTS worker_document
 	
 	FOREIGN KEY (document)
     	REFERENCES documents (id)
+    	ON DELETE NO ACTION
+);
+
+CREATE TABLE IF NOT EXISTS worker_qualification
+(
+    worker integer NOT NULL,
+    qualification integer NOT NULL,
+	
+	FOREIGN KEY (worker)
+    	REFERENCES workers (id)
+    	ON DELETE NO ACTION,
+	
+	FOREIGN KEY (qualification)
+    	REFERENCES qualifications (id)
     	ON DELETE NO ACTION
 );
 
