@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS equipment
 (
     id serial PRIMARY KEY,
     name character varying(45) NOT NULL,
-    description character varying(60) NOT NULL,
+    description character varying(300) NOT NULL,
     last_used timestamp NOT NULL,
 	expiery_date date NOT NULL,
     price real NOT NULL,
@@ -223,7 +223,6 @@ CREATE TABLE IF NOT EXISTS expenses
 (
 	id serial PRIMARY KEY,
 	description character varying(300) NOT NULL,
-	amount real NOT NULL,
 	transfer integer NOT NULL,
 	
 	FOREIGN KEY (transfer)
@@ -235,14 +234,9 @@ CREATE TABLE IF NOT EXISTS documents
 (
     id serial PRIMARY KEY,
     contract character varying(1000),
-    transfer integer,
     start_at date,
     end_at date,
     car integer NOT NULL,
-	
-	FOREIGN KEY (transfer)
-    	REFERENCES cash_transfers (id)
-    	ON DELETE CASCADE,
 	
 	FOREIGN KEY (car)
     	REFERENCES cars (id)
@@ -269,6 +263,7 @@ CREATE TABLE IF NOT EXISTS breakdowns
     price real NOT NULL,
     workload integer NOT NULL,
 	document integer NOT NULL,
+	description character varying(300) NOT NULL,
 	
 	FOREIGN KEY (document)
     	REFERENCES documents (id)
