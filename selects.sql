@@ -3,3 +3,8 @@ select * from models;
 select * from body_styles;
 select * from documents;
 select * from roles;
+select * from workers;
+select * from qualifications;
+select * from cash_transfers;
+select * from shifts;
+select * from components;

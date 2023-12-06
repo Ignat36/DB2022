@@ -43,3 +43,56 @@ CALL add_job(
     '2023-03-20'::date -- p_end_at
 );
 
+
+CALL add_worker(
+    'John Doe',
+    '+123456789',
+    'john.doe@example.com',
+    'johndoe',
+    'password123',
+    30.00,
+    '2023-01-15',
+    'Hardworking and dedicated',
+    ARRAY['Mechanic', 'Electrical Repairs']
+);
+CALL add_worker(
+    'Alice Smith',
+    '+987654321',
+    'alice.smith@example.com',
+    'alicesmith',
+    'securepass',
+    35.00,
+    '2023-02-01',
+    'Experienced in diagnostics',
+    ARRAY['Diagnostic Specialist', 'Engine Tuning']
+);
+CALL add_worker(
+    'Bob Johnson',
+    '+111222333',
+    'bob.johnson@example.com',
+    'bobjohnson',
+    'secretword',
+    28.00,
+    '2023-03-10',
+    'Attention to detail',
+    ARRAY['Oil Change', 'Tire Rotation']
+);
+
+call pay_salary(1);
+call pay_salary(2);
+call pay_salary(3);
+
+update shifts
+set worker = 1
+where id = 2;
+
+SELECT calculate_total_cost(1);
+SELECT * FROM get_document_info(1);
+SELECT * FROM get_document_costs(1);
+
+SELECT add_component_to_document(1, 'CPU', 300.00, '2023-01-15', 'Intel', 'SN12345');
+SELECT add_component_to_document(2, 'RAM', 80.00, '2023-02-20', 'Corsair', 'SN67890');
+SELECT add_component_to_document(3, 'GPU', 500.00, '2023-03-25', 'NVIDIA', 'SNABCDE');
+
+
+

@@ -55,8 +55,8 @@ CREATE TABLE IF NOT EXISTS providers
 (
     id serial PRIMARY KEY,
     name character varying(45) NOT NULL,
-    phone character varying(20) NOT NULL,
-    email character varying(45) NOT NULL
+    phone character varying(20),
+    email character varying(45)
 );
 
 CREATE TABLE IF NOT EXISTS clients
